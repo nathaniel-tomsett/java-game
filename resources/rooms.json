@@ -1,0 +1,42 @@
+[
+  {
+    "id" : "room-1",
+    "name" : "Dining Room",
+    "items" : [
+      { "id" :  "item-1", "name" :  "Swordy McSwordface", "type" : "1" },
+      { "id" :  "item-2", "name" :  "Matilda", "type" : "2" } ],
+    "exits" : [
+      { "id" :  "exit-1", "direction" :  "2", "destinationRoomId" :  "room-3"},
+      { "id" :  "exit-3", "direction" :  "3", "destinationRoomId" :  "room-2"}
+    ]
+  },
+
+  {
+    "id" : "room-2",
+    "name" : "Living Room",
+    "items" : [
+      { "id" :  "item-3", "name" :  "Key", "type" : "3" } ],
+    "exits" : [
+      { "id" :  "exit-4", "direction" :  "1", "destinationRoomId" :  "room-1"} ]
+  },
+
+  {
+    "id" : "room-3",
+    "name" : "Kitchen",
+    "items" : [
+      { "id" :  "item-4", "name" :  "Cooker", "type" : 4 } ],
+    "exits" : [
+      { "id" :  "exit-2", "direction" :  "4", "destinationRoomId" :  "room-1"},
+      { "id" :  "exit-5", "direction" :  "6", "destinationRoomId" :  "room-4"}
+    ]
+  },
+
+  {
+    "id" : "room-4",
+    "name" : "Basement",
+    "items" : [],
+    "exits" : [
+      { "id" :  "exit-6", "direction" :  "5", "destinationRoomId" :  "room-3"} ]
+  }
+]
+
