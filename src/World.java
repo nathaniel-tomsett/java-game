@@ -3,12 +3,16 @@ import java.util.List;
 
 public class World {
 
+    // List of rooms, containing items and exits
     private List<Room> rooms;
 
+    // Class which takes user input and writes back output to screen
     private UserIO userIO;
 
+    // Processes user input and tells you what the user is trying to do
     private Translator translator;
 
+    // Current room - updated each time we move room
     private String currentRoom;
 
     World() {
@@ -28,7 +32,7 @@ public class World {
     }
 
     private void setCurrentRoom() {
-        currentRoom = "room-1";
+        currentRoom = "1";
     }
 
     public void doGameLoop() {
@@ -54,6 +58,8 @@ public class World {
                 } else {
                     userIO.printToUser("invalid direction");
                 }
+            } else if (command == Translator.LOOK) {
+                // loop over rooms.items and print them out
             }
         }
     }
