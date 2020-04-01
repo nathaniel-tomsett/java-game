@@ -4,6 +4,8 @@ public class Translator {
     public static final int MOVE = 1;
     public static final int PICKUP = 2;
     public static final int DROP = 3;
+    public static final int LOOK = 4;
+
 
     // Movement directions
     public static final int NORTH = 1;
@@ -25,6 +27,9 @@ public class Translator {
         }
         else if (input == "drop ") {
             return DROP;
+        }
+        else if (input.startsWith ("look"))  {
+            return LOOK;
         }
         else {
             return ERROR;
@@ -52,6 +57,24 @@ public class Translator {
         }
         else {
             return ERROR;
+        }
+    }
+
+    public String getdirectionstring(int input) {
+        if (input == NORTH) {
+            return "north";
+        } else if (input == EAST) {
+            return "east";
+        } else if (input == SOUTH) {
+            return "south";
+        } else if (input == WEST) {
+            return "west";
+        } else if (input == UP) {
+            return "up";
+        } else if (input == DOWN) {
+            return "down";
+        } else {
+            return "error";
         }
     }
 }

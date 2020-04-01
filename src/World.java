@@ -58,8 +58,24 @@ public class World {
                 } else {
                     userIO.printToUser("invalid direction");
                 }
-            } else if (command == Translator.LOOK) {
-                // loop over rooms.items and print them out
+            }
+            else if (command == Translator.LOOK) {
+                Room r = getRoom(currentRoom);
+                List<Item> itemList = r.getItems();
+                for (Item i : itemList) {
+                    userIO.printToUser("item number #00" + i.getId() + " name: " + i.getName());
+                }
+
+                List<Exit> exitList =r.getExits();
+                for (Exit e : exitList) {
+                    Room d = getRoom(e.getDestinationRoomId());
+                    //make a sub routine that takes e.getdirection into a direction then put that subroutine into the code
+                    userIO.printToUser("go " + translator.getdirectionstring(e.getDirection())+ " to get to the " + d.getName());
+                }
+
+            }
+            else {
+                userIO.printToUser("I'm sorry, I don't recognise that");
             }
         }
     }
