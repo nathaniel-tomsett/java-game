@@ -22,10 +22,10 @@ public class Translator {
         if (input.startsWith("move ")) {
             return MOVE;
         }
-        else if (input == "pickup ") {
+        else if (input.startsWith ("pickup ")){
             return PICKUP;
         }
-        else if (input == "drop ") {
+        else if (input.startsWith ("drop ") ){
             return DROP;
         }
         else if (input.startsWith ("look"))  {
@@ -75,6 +75,15 @@ public class Translator {
             return "down";
         } else {
             return "error";
+        }
+    }
+
+    public String getitemstring (String input) {
+        String[] strings = input.split(" ");
+        if (strings.length == 2) {
+            return strings[1];
+        } else {
+            return "";
         }
     }
 }

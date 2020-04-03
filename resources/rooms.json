@@ -8,7 +8,8 @@
     "exits" : [
       { "id" :  "1", "direction" :  "2", "destinationRoomId" :  "3"},
       { "id" :  "3", "direction" :  "3", "destinationRoomId" :  "2"}
-    ]
+    ],
+    "description" : "an oven sits in the center of the room"
   },
 
   {
@@ -17,7 +18,8 @@
     "items" : [
       { "id" :  "3", "name" :  "Key", "type" : "3" } ],
     "exits" : [
-      { "id" :  "4", "direction" :  "1", "destinationRoomId" :  "1"} ]
+      { "id" :  "4", "direction" :  "1", "destinationRoomId" :  "1"} ],
+    "description" : "an oven sits in the center of the room"
   },
 
   {
@@ -28,7 +30,8 @@
     "exits" : [
       { "id" :  "2", "direction" :  "4", "destinationRoomId" :  "1"},
       { "id" :  "5", "direction" :  "6", "destinationRoomId" :  "4"}
-    ]
+    ],
+    "description" : "an oven sits in the center of the room"
   },
 
   {
@@ -36,7 +39,8 @@
     "name" : "Basement",
     "items" : [],
     "exits" : [
-      { "id" :  "6", "direction" :  "5", "destinationRoomId" :  "3"} ]
+      { "id" :  "6", "direction" :  "5", "destinationRoomId" :  "3"} ],
+    "description" : "an oven sits in the center of the room"
   }
 ]
 

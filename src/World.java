@@ -15,11 +15,14 @@ public class World {
     // Current room - updated each time we move room
     private String currentRoom;
 
+
+    private Player player;
+
     World() {
         rooms = new ArrayList<>();
         userIO = new UserIO();
         translator = new Translator();
-
+        player = new Player();
         currentRoom = "";
 
         loadTestWorld();
@@ -58,25 +61,40 @@ public class World {
                 } else {
                     userIO.printToUser("invalid direction");
                 }
-            }
-            else if (command == Translator.LOOK) {
+            } else if (command == Translator.LOOK) {
                 Room r = getRoom(currentRoom);
                 List<Item> itemList = r.getItems();
                 for (Item i : itemList) {
-                    userIO.printToUser("item number #00" + i.getId() + " name: " + i.getName());
+                    userIO.printToUser("item number " + i.getId() + " name: " + i.getName());
                 }
 
-                List<Exit> exitList =r.getExits();
+                List<Exit> exitList = r.getExits();
                 for (Exit e : exitList) {
                     Room d = getRoom(e.getDestinationRoomId());
                     //make a sub routine that takes e.getdirection into a direction then put that subroutine into the code
-                    userIO.printToUser("go " + translator.getdirectionstring(e.getDirection())+ " to get to the " + d.getName());
+                    userIO.printToUser("go " + translator.getdirectionstring(e.getDirection()) + " to get to the " + d.getName());
+                }
+                String roomDesc = r.getDescription();
+                userIO.printToUser(roomDesc);
+
+
+            } else if (command == Translator.PICKUP) {
+                String itemId = translator.getitemstring(input);
+                Item item = getItemFromRoom(itemId);
+                if (item == null){
+                    userIO.printToUser("pffff i dont know what youve done");
+                }
+                else{
+                    Inventory inventory = player.getInventory();
+                    inventory.addItem(item);
+                    userIO.printToUser("added " + item.getName() + " to your inventory");
                 }
 
-            }
-            else {
+
+            } else {
                 userIO.printToUser("I'm sorry, I don't recognise that");
             }
+
         }
     }
 
@@ -87,5 +105,17 @@ public class World {
             }
         }
         throw new RuntimeException("invalid room");
+    }
+
+    private Item getItemFromRoom(String itemId) {
+        Room r = getRoom(currentRoom);
+        List<Item> itemList = r.getItems();
+        for (Item i : itemList) {
+            if (i.getId().equals(itemId) ){
+                return i;
+            }
+
+        }
+        return null;
     }
 }

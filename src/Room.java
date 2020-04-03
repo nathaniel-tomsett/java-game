@@ -5,15 +5,17 @@ public class Room {
 
     private String id;
     private String name;
+    private String description;
 
     private List<Item> items;
     private List<Exit> exits;
 
-    Room(String i, String n) {
+    Room(String i, String n, String d) {
         id = i;
         name = n;
         items = new ArrayList<Item>();
         exits = new ArrayList<Exit>();
+        description = d;
     }
 
     public void setItems(List<Item> i) {
@@ -44,7 +46,7 @@ public class Room {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getName() { return name;}
+        public String getDescription () { return description;
+        }
     }
-}
