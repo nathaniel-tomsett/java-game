@@ -81,21 +81,40 @@ public class World {
             } else if (command == Translator.PICKUP) {
                 String itemId = translator.getitemstring(input);
                 Item item = getItemFromRoom(itemId);
-                if (item == null){
+                if (item == null) {
                     userIO.printToUser("pffff i dont know what youve done");
-                }
-                else{
+                } else {
                     Inventory inventory = player.getInventory();
                     inventory.addItem(item);
                     userIO.printToUser("added " + item.getName() + " to your inventory");
+                    removeItemFromRoom(itemId);
                 }
 
 
-            } else {
+            } else if (command == Translator.INVENTORY) {
+                Inventory inv = player.getInventory();
+                List<Item> Items = inv.getItems();
+                for (Item i : Items) {
+                    userIO.printToUser("ID " + i.getId() + " name: " + i.getName());
+                }
+
+            } else if (command == Translator.DROP){
+                String itemId = translator.getitemstring(input);
+                Room r = getRoom(currentRoom);
+                List<Item> itemList = r.getItems();
+                itemList.add(getItemFromInv(itemId));
+                removeItemFromInv(itemId);
+
+            }
+
+
+            else {
                 userIO.printToUser("I'm sorry, I don't recognise that");
             }
 
+
         }
+
     }
 
     private Room getRoom(String id) {
@@ -115,6 +134,46 @@ public class World {
                 return i;
             }
 
+        }
+        return null;
+    }
+    private Item removeItemFromRoom(String itemId) {
+        Room r = getRoom(currentRoom);
+        List<Item> itemList = r.getItems();
+        Item toDelete = null;
+        for (Item i : itemList) {
+            if (i.getId().equals(itemId)) {
+                toDelete = i;
+                break;
+            }
+        }
+        if (toDelete != null) {
+            itemList.remove(toDelete);
+        }
+        return null;
+    }
+    private void removeItemFromInv (String itemId){
+        Room r = getRoom(currentRoom);
+        Inventory Inventory = player.getInventory();
+        List<Item> invList = Inventory.getItems();
+        Item toRemove = null;
+        for (Item i:invList){
+            if (i.getId().equals(itemId)) {
+                toRemove = i;
+            }
+        }
+        if (toRemove != null) {
+        invList.remove(toRemove);
+        }
+    }
+
+    private Item getItemFromInv(String itemId) {
+        Inventory Inventory = player.getInventory();
+        List<Item> invList = Inventory.getItems();
+        for (Item i : invList) {
+            if (i.getId().equals(itemId)) {
+                return i;
+            }
         }
         return null;
     }

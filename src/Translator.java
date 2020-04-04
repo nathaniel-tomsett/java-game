@@ -5,6 +5,7 @@ public class Translator {
     public static final int PICKUP = 2;
     public static final int DROP = 3;
     public static final int LOOK = 4;
+    public static final int INVENTORY = 5;
 
 
     // Movement directions
@@ -30,6 +31,9 @@ public class Translator {
         }
         else if (input.startsWith ("look"))  {
             return LOOK;
+        }
+        else if (input.startsWith ("inv"))  {
+            return INVENTORY;
         }
         else {
             return ERROR;
