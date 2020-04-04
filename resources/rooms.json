@@ -5,9 +5,9 @@
     "items" : [
       { "id" :  "1", "name" :  "Swordy McSwordface", "type" : "1" },
       { "id" :  "2", "name" :  "Matilda", "type" : "2" } ],
-    "exits" : [
-      { "id" :  "1", "direction" :  "2", "destinationRoomId" :  "3"},
-      { "id" :  "3", "direction" :  "3", "destinationRoomId" :  "2"}
+    "doors" : [
+      { "id" :  "1", "direction" :  "2", "destinationRoomId" :  "3", "locked" : true},
+      { "id" :  "3", "direction" :  "3", "destinationRoomId" :  "2", "locked" : false}
     ],
     "description" : "an oven sits in the center of the room"
   },
@@ -17,8 +17,8 @@
     "name" : "Living Room",
     "items" : [
       { "id" :  "3", "name" :  "Key", "type" : "3" } ],
-    "exits" : [
-      { "id" :  "4", "direction" :  "1", "destinationRoomId" :  "1"} ],
+    "doors" : [
+      { "id" :  "4", "direction" :  "1", "destinationRoomId" :  "1", "locked" : false} ],
     "description" : "an oven sits in the center of the room"
   },
 
@@ -27,9 +27,9 @@
     "name" : "Kitchen",
     "items" : [
       { "id" :  "4", "name" :  "Cooker", "type" : 4 } ],
-    "exits" : [
-      { "id" :  "2", "direction" :  "4", "destinationRoomId" :  "1"},
-      { "id" :  "5", "direction" :  "6", "destinationRoomId" :  "4"}
+    "doors" : [
+      { "id" :  "2", "direction" :  "4", "destinationRoomId" :  "1", "locked" : false},
+      { "id" :  "5", "direction" :  "6", "destinationRoomId" :  "4", "locked" : false}
     ],
     "description" : "an oven sits in the center of the room"
   },
@@ -38,8 +38,8 @@
     "id" : "4",
     "name" : "Basement",
     "items" : [],
-    "exits" : [
-      { "id" :  "6", "direction" :  "5", "destinationRoomId" :  "3"} ],
+    "doors" : [
+      { "id" :  "6", "direction" :  "5", "destinationRoomId" :  "3", "locked" : false} ],
     "description" : "an oven sits in the center of the room"
   }
 ]

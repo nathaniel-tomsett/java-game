@@ -53,13 +53,26 @@ public class World {
                         direction == Translator.UP |
                         direction == Translator.DOWN) {
                     String id = getRoom(currentRoom).getDestination(direction);
-                    if (!id.isEmpty()) {
-                        currentRoom = id;
-                    } else {
-                        userIO.printToUser("no exit");
+                    Door door = getDoor(currentRoom, direction);
+                    if (door != null){
+                        if (!door.getlocked()) {
+                            if (!id.isEmpty()) {
+                                currentRoom = id;
+                            } else {
+                                userIO.printToUser("no exit");
+                            }
+                        } else {
+                            userIO.printToUser("the door is locked");
+                        }
                     }
+                    else{
+                        userIO.printToUser("invalid direction");
+                    }
+
+
                 } else {
                     userIO.printToUser("invalid direction");
+
                 }
             } else if (command == Translator.LOOK) {
                 Room r = getRoom(currentRoom);
@@ -68,8 +81,8 @@ public class World {
                     userIO.printToUser("item number " + i.getId() + " name: " + i.getName());
                 }
 
-                List<Exit> exitList = r.getExits();
-                for (Exit e : exitList) {
+                List<Door> exitList = r.getDoors();
+                for (Door e : exitList) {
                     Room d = getRoom(e.getDestinationRoomId());
                     //make a sub routine that takes e.getdirection into a direction then put that subroutine into the code
                     userIO.printToUser("go " + translator.getdirectionstring(e.getDirection()) + " to get to the " + d.getName());
@@ -176,5 +189,17 @@ public class World {
             }
         }
         return null;
+    }
+    private Door getDoor (String roomId, int direction  ){
+       Room r = getRoom(roomId);
+        List<Door> doors = r.getDoors();
+        for (Door d : doors) {
+            if (d.getDirection() == direction){
+                return d;
+            }
+
+        }
+        return null;
+
     }
 }

@@ -8,13 +8,13 @@ public class Room {
     private String description;
 
     private List<Item> items;
-    private List<Exit> exits;
+    private List<Door> doors;
 
     Room(String i, String n, String d) {
         id = i;
         name = n;
         items = new ArrayList<Item>();
-        exits = new ArrayList<Exit>();
+        doors = new ArrayList<Door>();
         description = d;
     }
 
@@ -26,12 +26,12 @@ public class Room {
         return items;
     }
 
-    public List<Exit> getExits() {
-        return exits;
+    public List<Door> getDoors() {
+        return doors;
     }
 
     public String getDestination(int direction) {
-        for (Exit e : exits) {
+        for (Door e : doors) {
             if (direction == e.getDirection()) {
                 return e.getDestinationRoomId();
             }
@@ -39,8 +39,8 @@ public class Room {
         return "";
     }
 
-    public void setExit(List<Exit> i) {
-        exits = i;
+    public void setExit(List<Door> i) {
+        doors = i;
     }
     public String getId() {
         return id;
