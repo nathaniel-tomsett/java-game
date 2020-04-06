@@ -1,3 +1,6 @@
+import javax.jws.soap.SOAPBinding;
+import java.util.Arrays;
+
 public class Translator {
 
     // Commands
@@ -6,6 +9,7 @@ public class Translator {
     public static final int DROP = 3;
     public static final int LOOK = 4;
     public static final int INVENTORY = 5;
+    public static final int USE = 6;
 
 
     // Movement directions
@@ -34,6 +38,9 @@ public class Translator {
         }
         else if (input.startsWith ("inv"))  {
             return INVENTORY;
+        }
+        else if (input.startsWith("use")){
+            return USE;
         }
         else {
             return ERROR;
@@ -90,4 +97,16 @@ public class Translator {
             return "";
         }
     }
+    public String[] getitemandoorstring (String input) {
+        String[] strings = input.split(" ");
+        if (strings.length == 4) {
+            String[] newArray = new String[2];
+            newArray[0] = strings[1];
+            newArray[1] = strings[3];
+            return newArray;
+        } else {
+            return null;
+        }
+    }
+
 }

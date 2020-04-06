@@ -6,7 +6,7 @@
       { "id" :  "1", "name" :  "Swordy McSwordface", "type" : "1" },
       { "id" :  "2", "name" :  "Matilda", "type" : "2" } ],
     "doors" : [
-      { "id" :  "1", "direction" :  "2", "destinationRoomId" :  "3", "locked" : true},
+      { "id" :  "1", "direction" :  "2", "destinationRoomId" :  "3", "locked" : true , "key" : "3"},
       { "id" :  "3", "direction" :  "3", "destinationRoomId" :  "2", "locked" : false}
     ],
     "description" : "an oven sits in the center of the room"

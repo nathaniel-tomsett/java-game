@@ -28,4 +28,13 @@ public class Inventory {
         }
         items.remove(i);
     }
+    public boolean doesexist(String itemId){
+        for (Item i : items ){
+            if (i.getId().equals(itemId)){
+                return true;
+            }
+        }
+        return false;
+
+    }
 }

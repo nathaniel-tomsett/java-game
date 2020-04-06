@@ -118,6 +118,24 @@ public class World {
                 itemList.add(getItemFromInv(itemId));
                 removeItemFromInv(itemId);
 
+            } else if (command == translator.USE){
+                String[] itemAndDoor = translator.getitemandoorstring(input);
+                String  itemId= itemAndDoor[0];
+                String doorId =itemAndDoor[1];
+                if (player.getInventory().doesexist(itemId)){
+                    Door d = getDoorfromdoorid(currentRoom , doorId);
+                    if (d.tryUnlock(itemId)){
+                        userIO.printToUser("the door opens");
+                    }
+                    else{
+                        userIO.printToUser("the item was innefective");
+                    }
+                }
+                else{
+                    userIO.printToUser("this item is not in your inventory");
+                }
+
+
             }
 
 
@@ -202,4 +220,17 @@ public class World {
         return null;
 
     }
+    private Door getDoorfromdoorid (String roomId,String doorId){
+        Room r = getRoom(roomId);
+        List<Door> doors = r.getDoors();
+        for (Door d : doors) {
+            if (d.getId().equals (doorId)){
+                return d;
+            }
+
+        }
+        return null;
+
+    }
+
 }

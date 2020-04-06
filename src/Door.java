@@ -4,12 +4,14 @@ public class Door {
     private int direction;
     private String destinationRoomId;
     private boolean locked;
+    private String key;
 
-    Door(String i, int d, String dId, boolean l) {
+    Door(String i, int d, String dId, boolean l, String k) {
         id = i;
         direction = d;
         destinationRoomId = dId;
         locked = l;
+        key = k;
     }
 
     public String getId() {
@@ -25,5 +27,16 @@ public class Door {
     }
 
     public boolean getlocked() {return locked; }
+
+    public boolean tryUnlock(String itemId){
+        if (itemId.equals(key)){
+            locked = false;
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 
 }
