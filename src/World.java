@@ -40,6 +40,7 @@ public class World {
 
     public void doGameLoop() {
         while (true) {
+            int movement = 1;
             userIO.printToUser("Currently in room: " + getRoom(currentRoom).getName());
 
             String input = userIO.readFromUser();
@@ -79,6 +80,10 @@ public class World {
                 List<Item> itemList = r.getItems();
                 for (Item i : itemList) {
                     userIO.printToUser("item number " + i.getId() + " name: " + i.getName());
+                }
+                List<NPC> npcList = r.getNpcs();
+                for (NPC n : npcList){
+                    userIO.printToUser("person "+ n.getId()+ " name: " + n.getName());
                 }
 
                 List<Door> exitList = r.getDoors();
@@ -141,8 +146,21 @@ public class World {
 
             else {
                 userIO.printToUser("I'm sorry, I don't recognise that");
+                movement = 0;
             }
+            if (movement == 1){
+                for (Room r: rooms){
+                    if (r.getNpcs()!= null) {
+                        for (NPC n : r.getNpcs()) {
+                            userIO.printToUser("name: " + n.getName() + "should move = " + n.shouldMove());
+                        }
+                    }
+                    else{
+                        userIO.printToUser("ahhhhhhhhhhhh you broke it");
+                    }
 
+                }
+            }
 
         }
 
@@ -231,6 +249,11 @@ public class World {
         }
         return null;
 
+    }
+
+    public static void main(String[] args) {
+        World w = new World();
+        w.doGameLoop();
     }
 
 }

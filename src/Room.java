@@ -9,13 +9,15 @@ public class Room {
 
     private List<Item> items;
     private List<Door> doors;
+    private List<NPC> npcs;
 
     Room(String i, String n, String d) {
         id = i;
         name = n;
-        items = new ArrayList<Item>();
-        doors = new ArrayList<Door>();
+        items = new ArrayList<>();
+        doors = new ArrayList<>();
         description = d;
+        npcs = new ArrayList<>();
     }
 
     public void setItems(List<Item> i) {
@@ -29,6 +31,8 @@ public class Room {
     public List<Door> getDoors() {
         return doors;
     }
+
+    public List<NPC> getNpcs() {return npcs;}
 
     public String getDestination(int direction) {
         for (Door e : doors) {
