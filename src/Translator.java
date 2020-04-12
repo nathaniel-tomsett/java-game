@@ -1,6 +1,3 @@
-import javax.jws.soap.SOAPBinding;
-import java.util.Arrays;
-
 public class Translator {
 
     // Commands
