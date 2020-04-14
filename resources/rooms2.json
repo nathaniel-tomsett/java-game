@@ -1,0 +1,260 @@
+[
+  {
+    "id" : "1",
+    "name" : "Entrance",
+    "items" : [
+      {"id" :  "1", "name" :  "House Key", "type" : "3" }
+    ],
+    "doors" : [
+      { "id" :  "1", "direction" :  "4", "destinationRoomId" :  "2", "locked" : false},
+      { "id" :  "2", "direction" :  "1", "destinationRoomId" :  "3", "locked" : false},
+      { "id" :  "24", "direction" :  "5",  "destinationRoomId" :  "11", "locked" : false},
+      { "id" :  "25", "direction" :  "3", "destinationRoomId" :  "4" , "locked" :  true, "key" : "1"}
+    ],
+    "npcs" : [
+      { "id" :  "", "name" : "", "moveChance": 0},
+      { "id" :  "", "name": "", "moveChance": 0}
+    ],
+    "description" : "A short hallway with a shoe cabinet on your right adn stairs leading further up into the house"
+  },
+  {
+    "id" : "2",
+    "name" : "Living Room",
+    "items" : [
+      {"id" :  "2", "name" :  "tv remote", "type" : "4" },
+      { "id" :  "3", "name" :  "book-1", "type" : "4" }
+    ],
+    "doors" : [
+      { "id" :  "3", "direction" :  "2", "destinationRoomId" :  "1", "locked" : false}
+    ],
+    "npcs" : [],
+    "description" : "A clean white room with a purple sofa to your left and a brown one to your right around the room there are cabinets holding an array of books"
+  },
+
+
+  {
+    "id" : "3",
+    "name" : "Floor 1 Hallway",
+    "items" : [],
+    "doors" : [
+      { "id" :  "4", "direction" :  "4", "destinationRoomId" :  "4", "locked" : false},
+      { "id" :  "5", "direction" :  "1", "destinationRoomId" :  "5", "locked" : false},
+      { "id" :  "6", "direction" :  "3",  "destinationRoomId" :  "1", "locked" : false}
+
+    ],
+    "npcs" : [],
+    "description" : "A conjoining short hallway with dog toys and boxs full of mysterious things that seem to be just out of reach"
+  },
+
+
+  {
+
+  "id" : "4",
+  "name" : "Dining Room",
+  "items" : [],
+  "doors" : [
+  { "id" :  "7", "direction" :  "2", "destinationRoomId" :  "3", "locked" : false}
+  ],
+
+  "npcs" : [],
+
+  "description" : "A room with the purpose for dining quite self explanatory however there is a piano to your right and a grey sofa situated in front of you"
+  },
+
+
+  {
+    "id" : "5",
+    "name" : "Kitchen",
+    "items" : [
+      {"id" :  "4", "name" :  "Backdoor Key", "type" : "3" },
+      { "id" :  "5", "name" :  "Bike Shed Key", "type" : "3" }
+    ],
+    "doors" : [
+      { "id" :  "8", "direction" :  "4", "destinationRoomId" :  "6", "locked" : false},
+      { "id" :  "9", "direction" :  "3", "destinationRoomId" :  "3", "locked" : false}
+    ],
+    "npcs" : [],
+    "description" : "Nothing special just a kitchen its got an oven a microwave and way too many cabinets with all the different spices"
+  },
+
+
+  {
+    "id" : "6",
+    "name" : "Porch",
+    "items" : [],
+    "doors" : [
+      { "id" :  "10", "direction" :  "4", "destinationRoomId" :  "8", "locked" : true , "key" : "4"},
+      { "id" :  "11", "direction" :  "1", "destinationRoomId" :  "7", "locked" : false},
+      { "id" :  "12", "direction" :  "2",  "destinationRoomId" :  "5", "locked" : false}
+
+    ],
+    "npcs" : [],
+    "description" : "The porch a curious small piece of land i dont quite understand seems to be of use for storing shoes and adding quite useful second bathroom to the house"
+  },
+
+
+  {
+    "id" : "7",
+  "name" : "Bathroom 2",
+  "items" : [],
+  "doors" : [
+  { "id" :  "13", "direction" :  "3", "destinationRoomId" :  "6", "locked" : false}
+],
+  "npcs" : [],
+  "description" : "A tiny little bathroom for ironically not the purposes of bathing"
+  },
+
+
+  {
+    "id" : "8",
+  "name" : "Garden",
+  "items" : [],
+  "doors" : [
+  { "id" :  "14", "direction" :  "4", "destinationRoomId" :  "9", "locked" : false},
+  { "id" :  "15", "direction" :  "3", "destinationRoomId" :  "10", "locked" : true , "key" :  "5"},
+  { "id" :  "16", "direction" :  "2",  "destinationRoomId" :  "6", "locked" : true , "key" :  "4"}
+
+],
+  "npcs" : [],
+  "description" : "A petite garden with a small patio and some well kempt grass by the resident grass man fraser"
+  },
+
+
+  {
+    "id" : "9",
+    "name" : "Shed",
+    "items" : [
+      {"id" :  "6", "name" :  "lawnmower", "type" : "4" },
+      { "id" :  "7", "name" :  "watering can", "type" : "4" }
+    ],
+    "doors" : [
+      { "id" :  "17", "direction" :  "2", "destinationRoomId" :  "8", "locked" : false}
+    ],
+    "npcs" : [],
+    "description" : "A dusty shed i think you would find you would rather not be in here"
+  },
+
+
+  {
+    "id" : "10",
+    "name" : "Bike Shed",
+    "items" : [
+      {"id" :  "8", "name" :  "bike", "type" : "4" }
+    ],
+    "doors" : [
+      { "id" :  "18", "direction" :  "3", "destinationRoomId" :  "", "locked" : true , "key" :  "5"},
+      { "id" :  "19", "direction" :  "1", "destinationRoomId" :  "8", "locked" : true, "key" :  "5"}
+
+
+    ],
+    "npcs" : [],
+    "description" : "A less dusty shed to the other one quite pleasant really full of an abundance of bike stuff"
+  },
+
+
+  {
+    "id" : "11",
+    "name" : "Floor 2 Landing",
+    "items" : [],
+    "doors" : [
+      { "id" :  "20", "direction" :  "6", "destinationRoomId" :  "1", "locked" : false},
+      { "id" :  "21", "direction" :  "1", "destinationRoomId" :  "12", "locked" : false},
+      { "id" :  "22", "direction" :  "4", "destinationRoomId" :  "13", "locked" : false},
+      {"id" :  "23", "direction" :  "3", "destinationRoomId" : "14", "locked" : false}
+    ],
+    "npcs" : [],
+    "description" : "Just a place to get to all the other places you wont to go. Now quit staring move along"
+  },
+
+
+  {
+    "id" : "12",
+    "name" : "Study",
+    "items" : [
+      {"id" :  "9", "name" :  "computer", "type" : "4"}
+    ],
+    "doors" : [
+      { "id" :  "24", "direction" :  "3", "destinationRoomId" :  "11", "locked" : false}
+
+    ],
+    "npcs" : [],
+    "description" : "the glorious study the keeper of the board games and the holder of the computer the thing that made this very game"
+  },
+
+
+  {
+    "id" : "13",
+    "name" : "Bathroom 1",
+    "items" : [],
+    "doors" : [
+      { "id" :  "25", "direction" :  "2", "destinationRoomId" :  "11", "locked" : false}
+    ],
+    "npcs" : [],
+    "description" : "a true bathroom designed for the purpose of bathing ahh we have reached true glory all of life lead up to this moment"
+  },
+
+
+  {
+    "id" : "14",
+    "name" : "Floor 2 Hallway 1",
+    "items" : [],
+    "doors" : [
+      { "id" :  "26", "direction" :  "1", "destinationRoomId" :  "11", "locked" : false},
+      { "id" :  "27", "direction" :  "4", "destinationRoomId" :  "15", "locked" : false},
+      {"id" :  "28", "direction" :  "3", "destinationRoomId" :  "16", "locked" : false}
+    ],
+    "npcs" : [],
+    "description" : "oh look another hallway"
+  },
+
+
+  {
+    "id" : "15",
+    "name" : "Bedroom Of F+B",
+    "items" : [],
+    "doors" : [
+      { "id" :  "29", "direction" :  "2", "destinationRoomId" :  "14", "locked" : false}
+
+    ],
+    "npcs" : [],
+    "description" : "oh look another hallway"
+  },
+
+
+  {
+    "id" : "16",
+    "name" : "Floor 2 Hallway 2",
+    "items" : [],
+    "doors" : [
+      { "id" :  "26", "direction" :  "5", "destinationRoomId" :  "18", "locked" : false},
+      { "id" :  "27", "direction" :  "1", "destinationRoomId" :  "14", "locked" : false},
+      {"id" :  "28", "direction" :  "4", "destinationRoomId" :  "17", "locked" : false}
+    ],
+    "npcs" : [],
+    "description" : "oh wowee will the hallways ever end venture forth to uncover this great mystery"
+  },
+
+
+  {
+    "id" : "17",
+    "name" : "My Bedroom",
+    "items" : [],
+    "doors" : [
+      { "id" :  "29", "direction" :  "2", "destinationRoomId" :  "16", "locked" : false}
+    ],
+    "npcs" : [],
+    "description" : "the glorious room of myself this is your living space just a regular space a child sits on the bed. looking at his phone.Ok thats enough looking at my room get out of here"
+  },
+
+
+  {
+    "id" : "18",
+    "name" : "Floor 2 Hallway 1",
+    "items" : [],
+    "doors" : [
+      { "id" :  "30", "direction" :  "6", "destinationRoomId" :  "17", "locked" : false}
+    ],
+    "npcs" : [],
+    "description" : "while walking up the flight of stairs you fret that there may be the existence of more hallways and the detremental effects this could cause to you. you even think of going bakc and leaving if you havent seen it then it cant exist but no you venture forth towards glory you fight and once you enter the final room of this house you are relieved to find there is no hallways to be seen you may rest here. finally at peace"
+  }
+]

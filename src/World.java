@@ -129,8 +129,13 @@ public class World {
                 String doorId =itemAndDoor[1];
                 if (player.getInventory().doesexist(itemId)){
                     Door d = getDoorfromdoorid(currentRoom , doorId);
-                    if (d.tryUnlock(itemId)){
-                        userIO.printToUser("the door opens");
+                    if (d != null && d.tryUnlock(itemId)){
+                        Door d2 = getDoor(d.getDestinationRoomId(), flipDirection(d.getDirection()));
+                        if (d2 != null && d2.tryUnlock(itemId)){
+                            userIO.printToUser("the door opens");
+                        } else {
+                            userIO.printToUser("error, check key settings for doors");
+                        }
                     }
                     else{
                         userIO.printToUser("the item was innefective");
@@ -254,6 +259,23 @@ public class World {
     public static void main(String[] args) {
         World w = new World();
         w.doGameLoop();
+    }
+
+    public int flipDirection (int direction) {
+        if (direction == translator.NORTH) {
+            return translator.SOUTH;
+        } else if (direction == translator.SOUTH) {
+            return translator.NORTH;
+        } else if (direction == translator.EAST) {
+            return translator.WEST;
+        } else if (direction == translator.WEST) {
+            return translator.EAST;
+        } else if (direction == translator.UP) {
+            return translator.DOWN;
+        } else if (direction == translator.DOWN) {
+            return translator.UP;
+        }
+        return translator.ERROR;
     }
 
 }
