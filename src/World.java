@@ -15,7 +15,6 @@ public class World {
     // Current room - updated each time we move room
     private String currentRoom;
 
-
     private Player player;
 
     World() {
@@ -39,9 +38,15 @@ public class World {
     }
 
     public void doGameLoop() {
+
+        String newRoom = "";
         while (true) {
             int movement = 1;
-            userIO.printToUser("Currently in room: " + getRoom(currentRoom).getName());
+
+            if (!newRoom.equals(currentRoom)) {
+                userIO.printToUser("Currently in room: " + getRoom(currentRoom).getName());
+            }
+            newRoom = currentRoom;
 
             String input = userIO.readFromUser();
             int command = translator.getCommand(input);
@@ -81,9 +86,12 @@ public class World {
                 for (Item i : itemList) {
                     userIO.printToUser("item number " + i.getId() + " name: " + i.getName());
                 }
+
                 List<NPC> npcList = r.getNpcs();
-                for (NPC n : npcList){
-                    userIO.printToUser("person "+ n.getId()+ " name: " + n.getName());
+                if (r.getNpcs()!= null) {
+                    for (NPC n : npcList) {
+                        userIO.printToUser("person " + n.getId() + " name: " + n.getName());
+                    }
                 }
 
                 List<Door> exitList = r.getDoors();
@@ -144,24 +152,20 @@ public class World {
                 else{
                     userIO.printToUser("this item is not in your inventory");
                 }
-
-
             }
-
-
             else {
                 userIO.printToUser("I'm sorry, I don't recognise that");
                 movement = 0;
             }
             if (movement == 1){
                 for (Room r: rooms){
-                    if (r.getNpcs()!= null) {
+                    if (r.getNpcs() != null) {
                         for (NPC n : r.getNpcs()) {
                             userIO.printToUser("name: " + n.getName() + "should move = " + n.shouldMove());
                         }
                     }
                     else{
-                        userIO.printToUser("ahhhhhhhhhhhh you broke it");
+                        //userIO.printToUser("ahhhhhhhhhhhh you broke it");
                     }
 
                 }
