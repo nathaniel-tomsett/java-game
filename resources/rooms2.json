@@ -11,10 +11,7 @@
       { "id" :  "24", "direction" :  "5",  "destinationRoomId" :  "11", "locked" : false},
       { "id" :  "25", "direction" :  "3", "destinationRoomId" :  "4" , "locked" :  true, "key" : "1"}
     ],
-    "npcs" : [
-      { "id" :  "", "name" : "", "moveChance": 0},
-      { "id" :  "", "name": "", "moveChance": 0}
-    ],
+    "npcs" : [],
     "description" : "A short hallway with a shoe cabinet on your right adn stairs leading further up into the house"
   },
   {
@@ -115,7 +112,9 @@
   { "id" :  "16", "direction" :  "2",  "destinationRoomId" :  "6", "locked" : true , "key" :  "4"}
 
 ],
-  "npcs" : [],
+  "npcs" : [
+    {"id" : "1" , "name" :  "fraser" , "moveChance" :  90}
+  ],
   "description" : "A petite garden with a small patio and some well kempt grass by the resident grass man fraser"
   },
 

@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class World {
 
@@ -90,7 +89,7 @@ public class World {
                 List<NPC> npcList = r.getNpcs();
                 if (r.getNpcs()!= null) {
                     for (NPC n : npcList) {
-                        userIO.printToUser("person " + n.getId() + " name: " + n.getName());
+                        userIO.printToUser("this is " + n.getName());
                     }
                 }
 
@@ -158,10 +157,35 @@ public class World {
                 movement = 0;
             }
             if (movement == 1){
+
+                Set<String> movedPlayers = new HashSet<>();
+
                 for (Room r: rooms){
                     if (r.getNpcs() != null) {
-                        for (NPC n : r.getNpcs()) {
-                            userIO.printToUser("name: " + n.getName() + "should move = " + n.shouldMove());
+                        List<NPC> copyOfList = new ArrayList<>(r.getNpcs());
+                        for (NPC n : copyOfList) {
+
+                            if (!movedPlayers.contains(n.getId()) && n.shouldMove()){
+                                Random rand = new Random();
+                                int randExit = rand.nextInt(r.getDoors().size());
+                                Door randDirection = r.getDoors().get(randExit);
+
+                                userIO.printToUser("NPC: " + n.getName() + " is going to move to room " + getRoom(randDirection.getDestinationRoomId()).getName());
+
+                                if (!randDirection.getlocked()) {
+                                    String randDID = randDirection.getDestinationRoomId();
+                                    removeNpcFromRoom( r, n  );
+                                    addNpcFromRoom(getRoom(randDID), n);
+                                    userIO.printToUser("move worked!");
+
+                                    movedPlayers.add(n.getId());
+                                } else {
+                                    userIO.printToUser("room was locked!");
+                                }
+
+
+                            }
+
                         }
                     }
                     else{
@@ -178,7 +202,7 @@ public class World {
     private Room getRoom(String id) {
         for (Room r : rooms) {
             if (r.getId().equals(id)) {
-                return r;
+                    return r;
             }
         }
         throw new RuntimeException("invalid room");
@@ -210,6 +234,20 @@ public class World {
         }
         return null;
     }
+    private void removeNpcFromRoom(Room currentRoom, NPC NPC){
+        List <NPC> npcList = currentRoom.getNpcs();
+        npcList.remove(NPC);
+
+    }
+
+    private void addNpcFromRoom(Room destinationRoom, NPC NPC){
+        List <NPC> npcList = destinationRoom.getNpcs();
+        npcList.add(NPC);
+
+    }
+
+
+
     private void removeItemFromInv (String itemId){
         Room r = getRoom(currentRoom);
         Inventory Inventory = player.getInventory();
