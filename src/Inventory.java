@@ -14,11 +14,13 @@ public class Inventory {
         return items;
     }
 
-    public void addItem(Item i) {
+    public boolean addItem(Item i) {
         if (items.size() < MAX_SIZE) {
             items.add(i);
+            return true;
         } else {
             System.out.println("Inventory is full");
+            return false;
         }
     }
 

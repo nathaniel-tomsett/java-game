@@ -94,6 +94,13 @@ public class Translator {
             return "";
         }
     }
+
+    public String getItemToPickup(String input) {
+        int firstSpace = input.indexOf(" ");
+        String thing = input.substring(firstSpace);
+        return thing.trim();
+    }
+
     public String[] getitemandoorstring (String input) {
         String[] strings = input.split(" ");
         if (strings.length == 4) {

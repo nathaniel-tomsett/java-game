@@ -81,38 +81,48 @@ public class World {
                 }
             } else if (command == Translator.LOOK) {
                 Room r = getRoom(currentRoom);
-                List<Item> itemList = r.getItems();
-                for (Item i : itemList) {
-                    userIO.printToUser("item number " + i.getId() + " name: " + i.getName());
-                }
 
-                List<NPC> npcList = r.getNpcs();
-                if (r.getNpcs()!= null) {
-                    for (NPC n : npcList) {
-                        userIO.printToUser("this is " + n.getName());
-                    }
-                }
-
-                List<Door> exitList = r.getDoors();
-                for (Door e : exitList) {
-                    Room d = getRoom(e.getDestinationRoomId());
-                    //make a sub routine that takes e.getdirection into a direction then put that subroutine into the code
-                    userIO.printToUser("go " + translator.getdirectionstring(e.getDirection()) + " to get to the " + d.getName());
-                }
+                // Prints the description
                 String roomDesc = r.getDescription();
                 userIO.printToUser(roomDesc);
 
+                // Print the available directions to move
+                List<Door> exitList = r.getDoors();
+                userIO.printToUser("Exits: ");
+                for (Door e : exitList) {
+                    Room d = getRoom(e.getDestinationRoomId());
+                    //make a sub routine that takes e.getdirection into a direction then put that subroutine into the code
+                    userIO.printToUser("    " + translator.getdirectionstring(e.getDirection()) + " - " + d.getName());
+                }
+
+                List<Item> itemList = r.getItems();
+                if (itemList != null && !itemList.isEmpty()) {
+                    userIO.printToUser("Items: ");
+                    for (Item i : itemList) {
+                        userIO.printToUser("    " + i.getName());
+                    }
+                }
+
+                List<NPC> npcList = r.getNpcs();
+                if (r.getNpcs()!= null && !r.getNpcs().isEmpty()) {
+                    userIO.printToUser("Characters in the room:");
+                    for (NPC n : npcList) {
+                        userIO.printToUser("    " + n.getName());
+                    }
+                }
+
 
             } else if (command == Translator.PICKUP) {
-                String itemId = translator.getitemstring(input);
-                Item item = getItemFromRoom(itemId);
+                String itemName = translator.getItemToPickup(input);
+                Item item = getItemFromRoomByName(itemName);
                 if (item == null) {
                     userIO.printToUser("pffff i dont know what youve done");
                 } else {
                     Inventory inventory = player.getInventory();
-                    inventory.addItem(item);
-                    userIO.printToUser("added " + item.getName() + " to your inventory");
-                    removeItemFromRoom(itemId);
+                    if (inventory.addItem(item)){
+                        userIO.printToUser("Added " + item.getName() + " to your inventory");
+                        removeItemFromRoomByName(itemName);
+                    }
                 }
 
 
@@ -170,17 +180,17 @@ public class World {
                                 int randExit = rand.nextInt(r.getDoors().size());
                                 Door randDirection = r.getDoors().get(randExit);
 
-                                userIO.printToUser("NPC: " + n.getName() + " is going to move to room " + getRoom(randDirection.getDestinationRoomId()).getName());
+                                //userIO.printToUser("NPC: " + n.getName() + " is going to move to room " + getRoom(randDirection.getDestinationRoomId()).getName());
 
                                 if (!randDirection.getlocked()) {
                                     String randDID = randDirection.getDestinationRoomId();
                                     removeNpcFromRoom( r, n  );
                                     addNpcFromRoom(getRoom(randDID), n);
-                                    userIO.printToUser("move worked!");
+                                  //  userIO.printToUser("move worked!");
 
                                     movedPlayers.add(n.getId());
                                 } else {
-                                    userIO.printToUser("room was locked!");
+                                  //  userIO.printToUser("room was locked!");
                                 }
 
 
@@ -208,7 +218,7 @@ public class World {
         throw new RuntimeException("invalid room");
     }
 
-    private Item getItemFromRoom(String itemId) {
+    private Item getItemFromRoomById(String itemId) {
         Room r = getRoom(currentRoom);
         List<Item> itemList = r.getItems();
         for (Item i : itemList) {
@@ -219,7 +229,21 @@ public class World {
         }
         return null;
     }
-    private Item removeItemFromRoom(String itemId) {
+
+    private Item getItemFromRoomByName(String itemName) {
+        Room r = getRoom(currentRoom);
+        List<Item> itemList = r.getItems();
+        for (Item i : itemList) {
+            if (i.getName().equalsIgnoreCase(itemName) ){
+                return i;
+            }
+
+        }
+        return null;
+    }
+
+
+    private Item removeItemFromRoomById(String itemId) {
         Room r = getRoom(currentRoom);
         List<Item> itemList = r.getItems();
         Item toDelete = null;
@@ -234,6 +258,24 @@ public class World {
         }
         return null;
     }
+
+    private Item removeItemFromRoomByName(String name) {
+        Room r = getRoom(currentRoom);
+        List<Item> itemList = r.getItems();
+        Item toDelete = null;
+        for (Item i : itemList) {
+            if (i.getName().equalsIgnoreCase(name)) {
+                toDelete = i;
+                break;
+            }
+        }
+        if (toDelete != null) {
+            itemList.remove(toDelete);
+        }
+        return null;
+    }
+
+
     private void removeNpcFromRoom(Room currentRoom, NPC NPC){
         List <NPC> npcList = currentRoom.getNpcs();
         npcList.remove(NPC);

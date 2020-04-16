@@ -3,15 +3,17 @@
     "id" : "1",
     "name" : "Entrance",
     "items" : [
-      {"id" :  "1", "name" :  "House Key", "type" : "3" }
+      {"id" :  "1", "name" :  "House Key", "type" : "3" },
     ],
     "doors" : [
       { "id" :  "1", "direction" :  "4", "destinationRoomId" :  "2", "locked" : false},
       { "id" :  "2", "direction" :  "1", "destinationRoomId" :  "3", "locked" : false},
       { "id" :  "24", "direction" :  "5",  "destinationRoomId" :  "11", "locked" : false},
-      { "id" :  "25", "direction" :  "3", "destinationRoomId" :  "4" , "locked" :  true, "key" : "1"}
+      { "id" :  "25", "direction" :  "3", "destinationRoomId" :  "19" , "locked" :  true, "key" : "1"}
     ],
-    "npcs" : [],
+    "npcs" : [
+      {"id" : "1" , "name" :  "fraser" , "moveChance" :  20}
+    ],
     "description" : "A short hallway with a shoe cabinet on your right adn stairs leading further up into the house"
   },
   {
@@ -113,7 +115,7 @@
 
 ],
   "npcs" : [
-    {"id" : "1" , "name" :  "fraser" , "moveChance" :  90}
+
   ],
   "description" : "A petite garden with a small patio and some well kempt grass by the resident grass man fraser"
   },
@@ -248,12 +250,27 @@
 
   {
     "id" : "18",
-    "name" : "Floor 2 Hallway 1",
+    "name" : "Loft Room",
     "items" : [],
     "doors" : [
       { "id" :  "30", "direction" :  "6", "destinationRoomId" :  "17", "locked" : false}
     ],
     "npcs" : [],
-    "description" : "while walking up the flight of stairs you fret that there may be the existence of more hallways and the detremental effects this could cause to you. you even think of going bakc and leaving if you havent seen it then it cant exist but no you venture forth towards glory you fight and once you enter the final room of this house you are relieved to find there is no hallways to be seen you may rest here. finally at peace"
+    "description" : "while walking up the flight of stairs you fret that there may be the existence of more hallways and the detremental effects this could cause to you. you even think of going back and leaving if you havent seen it then it cant exist but no you venture forth towards glory you fight and once you enter the final room of this house you are relieved to find there is no hallways to be seen you may rest here. finally at peace"
+  },
+
+
+  {
+    "id" : "19",
+    "name" : "Newport Road",
+    "items" : [],
+    "doors" : [
+      { "id" :  "31", "direction" :  "1", "destinationRoomId" :  "1", "locked" : true, "key" :  "1"},
+      { "id" :  "32", "direction" :  "2", "destinationRoomId" :  "1", "locked" : false},
+      { "id" :  "33", "direction" :  "4", "destinationRoomId" :  "1", "locked" : false}
+    ],
+    "npcs" : [],
+    "description" : "the road"
   }
+
 ]
