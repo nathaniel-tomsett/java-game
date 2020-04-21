@@ -129,16 +129,21 @@ public class World {
             } else if (command == Translator.INVENTORY) {
                 Inventory inv = player.getInventory();
                 List<Item> Items = inv.getItems();
+                userIO.printToUser("Inventory: ");
+
                 for (Item i : Items) {
-                    userIO.printToUser("ID " + i.getId() + " name: " + i.getName());
+                    userIO.printToUser("name: " + i.getName());
+                }
+                if (Items.isEmpty()){
+                    userIO.printToUser("You're inventory is empty");
                 }
 
             } else if (command == Translator.DROP){
-                String itemId = translator.getitemstring(input);
+                String itemName = translator.getItemToPickup(input);
                 Room r = getRoom(currentRoom);
                 List<Item> itemList = r.getItems();
-                itemList.add(getItemFromInv(itemId));
-                removeItemFromInv(itemId);
+                itemList.add(getItemFromInv(itemName));
+                removeItemFromInv(itemName);
 
             } else if (command == translator.USE){
                 String[] itemAndDoor = translator.getitemandoorstring(input);
@@ -180,7 +185,7 @@ public class World {
                                 int randExit = rand.nextInt(r.getDoors().size());
                                 Door randDirection = r.getDoors().get(randExit);
 
-                                //userIO.printToUser("NPC: " + n.getName() + " is going to move to room " + getRoom(randDirection.getDestinationRoomId()).getName());
+                               // userIO.printToUser("NPC: " + n.getName() + " is going to move to room " + getRoom(randDirection.getDestinationRoomId()).getName());
 
                                 if (!randDirection.getlocked()) {
                                     String randDID = randDirection.getDestinationRoomId();
@@ -190,7 +195,7 @@ public class World {
 
                                     movedPlayers.add(n.getId());
                                 } else {
-                                  //  userIO.printToUser("room was locked!");
+                                   // userIO.printToUser("room was locked!");
                                 }
 
 
@@ -290,13 +295,13 @@ public class World {
 
 
 
-    private void removeItemFromInv (String itemId){
+    private void removeItemFromInv (String itemName){
         Room r = getRoom(currentRoom);
         Inventory Inventory = player.getInventory();
         List<Item> invList = Inventory.getItems();
         Item toRemove = null;
         for (Item i:invList){
-            if (i.getId().equals(itemId)) {
+            if (i.getName().equalsIgnoreCase(itemName)) {
                 toRemove = i;
             }
         }
@@ -305,11 +310,11 @@ public class World {
         }
     }
 
-    private Item getItemFromInv(String itemId) {
+    private Item getItemFromInv(String itemName) {
         Inventory Inventory = player.getInventory();
         List<Item> invList = Inventory.getItems();
         for (Item i : invList) {
-            if (i.getId().equals(itemId)) {
+            if (i.getName().equalsIgnoreCase(itemName)) {
                 return i;
             }
         }

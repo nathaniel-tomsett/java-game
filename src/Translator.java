@@ -86,7 +86,7 @@ public class Translator {
         }
     }
 
-    public String getitemstring (String input) {
+    public String getItemString (String input) {
         String[] strings = input.split(" ");
         if (strings.length == 2) {
             return strings[1];

@@ -260,6 +260,7 @@
   },
 
 
+ ,
   {
     "id" : "19",
     "name" : "Newport Road",
@@ -270,7 +271,48 @@
       { "id" :  "33", "direction" :  "4", "destinationRoomId" :  "1", "locked" : false}
     ],
     "npcs" : [],
-    "description" : "the road"
-  }
+    "description" : "this is the road your house lays upon "
+  },
 
+  ,{
+  "id" : "20",
+  "name" : "Fairfield Road 7",
+  "items" : [],
+  "doors" : [
+    { "id" :  "34", "direction" :  "1", "destinationRoomId" :  "22", "locked" : false},
+    { "id" :  "35", "direction" :  "2", "destinationRoomId" :  "19", "locked" : false},
+    { "id" :  "36", "direction" :  "3", "destinationRoomId" :  "21", "locked" : false},
+    { "id" :  "37", "direction" :  "4", "destinationRoomId" :  "22", "locked" : false}
+  ],
+  "npcs" : [],
+  "description" : "a grassy field lays further to the north"
+   },
+
+  {
+    "id" : "21",
+    "name" : "Fairfield Road 8",
+    "items" : [],
+    "doors" : [
+      { "id" :  "38", "direction" :  "1", "destinationRoomId" :  "20", "locked" : false},
+      { "id" :  "39", "direction" :  "2", "destinationRoomId" :  "25", "locked" : false},
+      { "id" :  "40", "direction" :  "3", "destinationRoomId" :  "24", "locked" : false}
+
+    ],
+    "npcs" : [],
+    "description" : "a grassy field lays even further to the north"
+  },
+
+  {
+    "id" : "22",
+    "name" : "Western Road 1",
+    "items" : [],
+    "doors" : [
+      { "id" :  "34", "direction" :  "1", "destinationRoomId" :  "22", "locked" : false},
+      { "id" :  "35", "direction" :  "2", "destinationRoomId" :  "19", "locked" : false},
+      { "id" :  "36", "direction" :  "3", "destinationRoomId" :  "20", "locked" : false},
+      { "id" :  "37", "direction" :  "4", "destinationRoomId" :  "21", "locked" : false}
+    ],
+    "npcs" : [],
+    "description" : "a grassy field lays further to the north"
+  }
 ]
