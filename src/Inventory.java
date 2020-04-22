@@ -30,9 +30,9 @@ public class Inventory {
         }
         items.remove(i);
     }
-    public boolean doesexist(String itemId){
+    public boolean doesexistByName(String itemName){
         for (Item i : items ){
-            if (i.getId().equals(itemId)){
+            if (i.getName().equalsIgnoreCase(itemName)){
                 return true;
             }
         }

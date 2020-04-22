@@ -103,7 +103,7 @@ public class Translator {
 
     public String[] getitemandoorstring (String input) {
         String[] strings = input.split(" ");
-        if (strings.length == 4) {
+        if (strings.length >= 4) {
             String[] newArray = new String[2];
             newArray[0] = strings[1];
             newArray[1] = strings[3];
@@ -112,5 +112,23 @@ public class Translator {
             return null;
         }
     }
+
+    public String[] getitemandoorstring_new (String input) {
+        // turn input into two strings
+        int onIndex = input.indexOf("on");
+        String doorIndex = input.substring(onIndex);
+        int SpaceIndex = doorIndex.indexOf(" ");
+        String subDoorIndex = doorIndex.substring(SpaceIndex).trim();
+
+        String itemIndex = input.substring(3, onIndex).trim();
+        String [] returnArray = {itemIndex , subDoorIndex};
+        return returnArray;
+
+
+
+
+    }
+
+
 
 }

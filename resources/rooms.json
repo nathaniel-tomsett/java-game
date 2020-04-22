@@ -7,7 +7,7 @@
       { "id" :  "2", "name" :  "Matilda", "type" : "2" }
     ],
     "doors" : [
-      { "id" :  "1", "direction" :  "2", "destinationRoomId" :  "3", "locked" : true , "key" : "3"},
+      { "id" :  "1", "direction" :  "2", "destinationRoomId" :  "3", "locked" : true , "key" : "key"},
       { "id" :  "3", "direction" :  "3", "destinationRoomId" :  "2", "locked" : false}
     ],
     "npcs" : [
@@ -37,7 +37,7 @@
       { "id" :  "4", "name" :  "Cooker", "type" : 4 }
     ],
     "doors" : [
-      { "id" :  "2", "direction" :  "4", "destinationRoomId" :  "1", "locked" : true , "key" :  "3"},
+      { "id" :  "2", "direction" :  "4", "destinationRoomId" :  "1", "locked" : true , "key" :  "key"},
       { "id" :  "5", "direction" :  "6", "destinationRoomId" :  "4", "locked" : false}
     ],
     "npcs" : [],

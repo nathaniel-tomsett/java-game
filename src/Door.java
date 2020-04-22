@@ -28,8 +28,8 @@ public class Door {
 
     public boolean getlocked() {return locked; }
 
-    public boolean tryUnlock(String itemId){
-        if (itemId.equals(key)){
+    public boolean tryUnlock(String itemName){
+        if (itemName.equalsIgnoreCase(key)){
             locked = false;
             return true;
         }

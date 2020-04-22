@@ -146,14 +146,14 @@ public class World {
                 removeItemFromInv(itemName);
 
             } else if (command == translator.USE){
-                String[] itemAndDoor = translator.getitemandoorstring(input);
-                String  itemId= itemAndDoor[0];
-                String doorId =itemAndDoor[1];
-                if (player.getInventory().doesexist(itemId)){
-                    Door d = getDoorfromdoorid(currentRoom , doorId);
-                    if (d != null && d.tryUnlock(itemId)){
+                String[] itemAndDoor = translator.getitemandoorstring_new(input);
+                String  itemName= itemAndDoor[0];
+                String doorDestination =itemAndDoor[1];
+                if (player.getInventory().doesexistByName(itemName)){
+                    Door d = getDoorfromdoorid(currentRoom , doorDestination);
+                    if (d != null && d.tryUnlock(itemName)){
                         Door d2 = getDoor(d.getDestinationRoomId(), flipDirection(d.getDirection()));
-                        if (d2 != null && d2.tryUnlock(itemId)){
+                        if (d2 != null && d2.tryUnlock(itemName)){
                             userIO.printToUser("the door opens");
                         } else {
                             userIO.printToUser("error, check key settings for doors");
@@ -332,11 +332,13 @@ public class World {
         return null;
 
     }
-    private Door getDoorfromdoorid (String roomId,String doorId){
+    private Door getDoorfromdoorid (String roomId,String destinationRoom){
         Room r = getRoom(roomId);
         List<Door> doors = r.getDoors();
         for (Door d : doors) {
-            if (d.getId().equals (doorId)){
+           String DRI = d.getDestinationRoomId();
+            Room destRoom = getRoom(DRI);
+            if (destRoom.getName().equalsIgnoreCase (destinationRoom)){
                 return d;
             }
 
