@@ -48,36 +48,22 @@ public class World {
             newRoom = currentRoom;
 
             String input = userIO.readFromUser();
-            int command = translator.getCommand(input);
+           int command = translator.getCommand(input);
             if (command == Translator.MOVE) {
-                int direction = translator.getEndMovementArg(input);
-                if (direction == Translator.NORTH |
-                        direction == Translator.EAST |
-                        direction == Translator.SOUTH |
-                        direction == Translator.WEST |
-                        direction == Translator.UP |
-                        direction == Translator.DOWN) {
-                    String id = getRoom(currentRoom).getDestination(direction);
-                    Door door = getDoor(currentRoom, direction);
-                    if (door != null){
-                        if (!door.getlocked()) {
-                            if (!id.isEmpty()) {
-                                currentRoom = id;
-                            } else {
-                                userIO.printToUser("no exit");
-                            }
-                        } else {
-                            userIO.printToUser("the door is locked");
+                String RoomName = translator.getRoomName(input);
+                Room r = getRoom(currentRoom);
+                List<Door> doorList = r.getDoors();
+                for (Door d : doorList) {
+                    String DID = d.getDestinationRoomId();
+                    Room DestRoom = getRoom(DID);
+                    if (DestRoom != null && RoomName.equalsIgnoreCase(DestRoom.getName())) {
+                        if (!d.getlocked()) {
+                            currentRoom = DestRoom.getId();
+                        }
+                        else {
+                           userIO.printToUser("the door is locked");
                         }
                     }
-                    else{
-                        userIO.printToUser("invalid direction");
-                    }
-
-
-                } else {
-                    userIO.printToUser("invalid direction");
-
                 }
             } else if (command == Translator.LOOK) {
                 Room r = getRoom(currentRoom);
@@ -220,7 +206,7 @@ public class World {
                     return r;
             }
         }
-        throw new RuntimeException("invalid room");
+        return null;
     }
 
     private Item getItemFromRoomById(String itemId) {

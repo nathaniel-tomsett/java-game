@@ -3,13 +3,13 @@
     "id" : "1",
     "name" : "Entrance",
     "items" : [
-      {"id" :  "1", "name" :  "House Key", "type" : "3" },
+      {"id" :  "1", "name" :  "House Key", "type" : "3" }
     ],
     "doors" : [
       { "id" :  "1", "direction" :  "4", "destinationRoomId" :  "2", "locked" : false},
       { "id" :  "2", "direction" :  "1", "destinationRoomId" :  "3", "locked" : false},
       { "id" :  "24", "direction" :  "5",  "destinationRoomId" :  "11", "locked" : false},
-      { "id" :  "25", "direction" :  "3", "destinationRoomId" :  "19" , "locked" :  true, "key" : "1"}
+      { "id" :  "25", "direction" :  "3", "destinationRoomId" :  "19" , "locked" :  true, "key" : "house key"}
     ],
     "npcs" : [
       {"id" : "1" , "name" :  "fraser" , "moveChance" :  20}
@@ -260,59 +260,192 @@
   },
 
 
- ,
+
   {
     "id" : "19",
     "name" : "Newport Road",
     "items" : [],
     "doors" : [
-      { "id" :  "31", "direction" :  "1", "destinationRoomId" :  "1", "locked" : true, "key" :  "1"},
-      { "id" :  "32", "direction" :  "2", "destinationRoomId" :  "1", "locked" : false},
-      { "id" :  "33", "direction" :  "4", "destinationRoomId" :  "1", "locked" : false}
+      { "id" :  "31", "direction" :  "1", "destinationRoomId" :  "1", "locked" : true, "key" :  "house key"},
+      { "id" :  "32", "direction" :  "2", "destinationRoomId" :  "100", "locked" : false},
+      { "id" :  "33", "direction" :  "4", "destinationRoomId" :  "20", "locked" : false}
     ],
     "npcs" : [],
     "description" : "this is the road your house lays upon "
   },
 
-  ,{
-  "id" : "20",
-  "name" : "Fairfield Road 7",
-  "items" : [],
-  "doors" : [
-    { "id" :  "34", "direction" :  "1", "destinationRoomId" :  "22", "locked" : false},
-    { "id" :  "35", "direction" :  "2", "destinationRoomId" :  "19", "locked" : false},
-    { "id" :  "36", "direction" :  "3", "destinationRoomId" :  "21", "locked" : false},
-    { "id" :  "37", "direction" :  "4", "destinationRoomId" :  "22", "locked" : false}
-  ],
-  "npcs" : [],
-  "description" : "a grassy field lays further to the north"
-   },
+  {
+    "id" : "20",
+    "name" : "Fairfield Road",
+    "items" : [],
+    "doors" : [
+      { "id" :  "34", "direction" :  "2", "destinationRoomId" :  "19", "locked" : false},
+      { "id" :  "35", "direction" :  "2", "destinationRoomId" :  "21", "locked" : false},
+      { "id" :  "36", "direction" :  "2", "destinationRoomId" :  "22", "locked" : false},
+      { "id" :  "37", "direction" :  "2", "destinationRoomId" :  "23", "locked" : false},
+      { "id" :  "38", "direction" :  "2", "destinationRoomId" :  "24", "locked" : false},
+      { "id" :  "39", "direction" :  "3", "destinationRoomId" :  "25", "locked" : false},
+      { "id" :  "40", "direction" :  "3", "destinationRoomId" :  "26", "locked" : false},
+      { "id" :  "41", "direction" :  "4", "destinationRoomId" :  "27", "locked" : false},
+      { "id" :  "42", "direction" :  "4", "destinationRoomId" :  "28", "locked" : false},
+      { "id" :  "43", "direction" :  "4", "destinationRoomId" :  "29", "locked" : false},
+      { "id" :  "44", "direction" :  "4", "destinationRoomId" :  "30", "locked" : false},
+      { "id" :  "45", "direction" :  "4", "destinationRoomId" :  "31", "locked" : false},
+      { "id" :  "46", "direction" :  "3", "destinationRoomId" :  "100", "locked" : false}
 
+    ],
+    "npcs" : [],
+    "description" : "this is the road your house lays upon "
+  },
   {
     "id" : "21",
-    "name" : "Fairfield Road 8",
+    "name" : "Slimridge Road",
     "items" : [],
     "doors" : [
-      { "id" :  "38", "direction" :  "1", "destinationRoomId" :  "20", "locked" : false},
-      { "id" :  "39", "direction" :  "2", "destinationRoomId" :  "25", "locked" : false},
-      { "id" :  "40", "direction" :  "3", "destinationRoomId" :  "24", "locked" : false}
-
+      { "id" :  "47", "direction" :  "4", "destinationRoomId" :  "20", "locked" : false},
+      { "id" :  "48", "direction" :  "3", "destinationRoomId" :  "22", "locked" : false}
     ],
     "npcs" : [],
-    "description" : "a grassy field lays even further to the north"
+    "description" : "this is the road your house lays upon "
   },
-
   {
     "id" : "22",
-    "name" : "Western Road 1",
+    "name" : "Gloucester Road",
     "items" : [],
     "doors" : [
-      { "id" :  "34", "direction" :  "1", "destinationRoomId" :  "22", "locked" : false},
-      { "id" :  "35", "direction" :  "2", "destinationRoomId" :  "19", "locked" : false},
-      { "id" :  "36", "direction" :  "3", "destinationRoomId" :  "20", "locked" : false},
-      { "id" :  "37", "direction" :  "4", "destinationRoomId" :  "21", "locked" : false}
+      { "id" :  "49", "direction" :  "2", "destinationRoomId" :  "100", "locked" : false},
+      { "id" :  "50", "direction" :  "4", "destinationRoomId" :  "20" , "locked" : false},
+      { "id" :  "51", "direction" :  "1", "destinationRoomId" :  "21", "locked" : false}
+
     ],
     "npcs" : [],
-    "description" : "a grassy field lays further to the north"
+    "description" : "this is the road your house lays upon "
+  },
+  {
+    "id" : "23",
+    "name" : "Fairfield Close",
+    "items" : [],
+    "doors" : [
+      { "id" :  "52", "direction" :  "4", "destinationRoomId" :  "20", "locked" : false}
+    ],
+    "npcs" : [],
+    "description" : "this is the road your house lays upon "
+  },
+  {
+    "id" : "25",
+    "name" : "Toll Gate",
+    "items" : [],
+    "doors" : [
+      { "id" :  "53", "direction" :  "2", "destinationRoomId" :  "20", "locked" : false}
+
+
+    ],
+    "npcs" : [],
+    "description" : "this is the road your house lays upon "
+  },
+  //unfinished
+  {
+    "id" : "26",
+    "name" : "Royal George Road",
+    "items" : [],
+    "doors" : [
+      { "id" :  "54", "direction" :  "2", "destinationRoomId" :  "100", "locked" : false},
+      { "id" :  "55", "direction" :  "4", "destinationRoomId" :  "20" , "locked" : false},
+      { "id" :  "56", "direction" :  "1", "destinationRoomId" :  "21", "locked" : false}
+
+    ],
+    "npcs" :[] ,
+    "description" : "this is the road your house lays upon "
+  },
+  //unfinished
+  {
+    "id" : "24",
+    "name" : "West Street",
+    "items" : [],
+    "doors" : [
+      { "id" :  "57", "direction" :  "2", "destinationRoomId" :  "100", "locked" : false},
+      { "id" :  "58", "direction" :  "4", "destinationRoomId" :  "20" , "locked" : false},
+      { "id" :  "59", "direction" :  "1", "destinationRoomId" :  "21", "locked" : false}
+
+    ],
+    "npcs" : [],
+    "description" : "this is the road your house lays upon "
+  },
+  {
+    "id" : "27",
+    "name" : "Small Gravel Path",
+    "items" : [],
+    "doors" : [
+      { "id" :  "60", "direction" :  "2", "destinationRoomId" :  "20", "locked" : false},
+      { "id" :  "61", "direction" :  "4", "destinationRoomId" :  "1" , "locked" : false}
+
+
+    ],
+    "npcs" : [],
+    "description" : "this is the road your house lays upon "
+  },
+  //unfinished
+  {
+    "id" : "28",
+    "name" : "Western Road",
+    "items" : [],
+    "doors" : [
+      { "id" :  "62", "direction" :  "2", "destinationRoomId" :  "20", "locked" : false},
+      { "id" :  "63", "direction" :  "4", "destinationRoomId" :  "1" , "locked" : false},
+      { "id" :  "64", "direction" :  "2", "destinationRoomId" :  "1", "locked" : false},
+      { "id" :  "65", "direction" :  "4", "destinationRoomId" :  "1" , "locked" : false},
+      { "id" :  "66", "direction" :  "2", "destinationRoomId" :  "1", "locked" : false},
+      { "id" :  "67", "direction" :  "4", "destinationRoomId" :  "1" , "locked" : false}
+
+
+    ],
+    "npcs" : [],
+    "description" : "this is the road your house lays upon "
+  },
+  //unfinished
+  {
+    "id" : "29",
+    "name" : "St Mary Road",
+    "items" : [],
+    "doors" : [
+      { "id" :  "68", "direction" :  "2", "destinationRoomId" :  "20", "locked" : false},
+      { "id" :  "69", "direction" :  "4", "destinationRoomId" :  "1" , "locked" : false},
+      { "id" :  "70", "direction" :  "2", "destinationRoomId" :  "1", "locked" : false},
+      { "id" :  "71", "direction" :  "4", "destinationRoomId" :  "1" , "locked" : false},
+      { "id" :  "72", "direction" :  "2", "destinationRoomId" :  "1", "locked" : false},
+      { "id" :  "73", "direction" :  "4", "destinationRoomId" :  "1" , "locked" : false}
+
+
+    ],
+    "npcs" : [],
+    "description" : "this is the road your house lays upon "
+  },
+  {
+    "id" : "30",
+    "name" : "Franks Close",
+    "items" : [],
+    "doors" : [
+      { "id" :  "74", "direction" :  "2", "destinationRoomId" :  "20", "locked" : false}
+    ],
+    "npcs" : [],
+    "description" : "this is the road your house lays upon "
+  },
+  //unfinished
+  {
+    "id" : "31",
+    "name" : "Fairfield Rec",
+    "items" : [],
+    "doors" : [
+      { "id" :  "78", "direction" :  "2", "destinationRoomId" :  "20", "locked" : false},
+      { "id" :  "79", "direction" :  "4", "destinationRoomId" :  "1" , "locked" : false},
+      { "id" :  "80", "direction" :  "2", "destinationRoomId" :  "1", "locked" : false},
+      { "id" :  "81", "direction" :  "4", "destinationRoomId" :  "1" , "locked" : false},
+      { "id" :  "82", "direction" :  "2", "destinationRoomId" :  "1", "locked" : false},
+      { "id" :  "83", "direction" :  "4", "destinationRoomId" :  "1" , "locked" : false}
+
+
+    ],
+    "npcs" : [],
+    "description" : "this is the road your house lays upon "
   }
 ]

@@ -128,6 +128,13 @@ public class Translator {
 
 
     }
+    public String getRoomName (String input){
+        int firstSpace = input.indexOf(" ");
+        String thing = input.substring(firstSpace);
+        return thing.trim();
+
+    }
+
 
 
 
