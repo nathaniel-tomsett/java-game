@@ -7,6 +7,7 @@ public class Translator {
     public static final int LOOK = 4;
     public static final int INVENTORY = 5;
     public static final int USE = 6;
+    public static final int TALK = 7;
 
 
     // Movement directions
@@ -38,6 +39,9 @@ public class Translator {
         }
         else if (input.startsWith("use")){
             return USE;
+        }
+        else if (input.startsWith("talk")){
+            return TALK;
         }
         else {
             return ERROR;

@@ -47,13 +47,6 @@ public class ResourceReader {
 
         if (!listOfNPCs.isEmpty()) {
             for (NPC n : listOfNPCs) {
-                System.out.println(n.getRandomDialog());
-                System.out.println(n.getRandomDialog());
-                System.out.println(n.getRandomDialog());
-                System.out.println(n.getRandomDialog());
-                System.out.println(n.getRandomDialog());
-                System.out.println("");
-
                 for (Room r : listOfRooms) {
                     if (r.getId().equalsIgnoreCase(n.getStartingRoomID())) {
                         r.getNpcs().add(n);

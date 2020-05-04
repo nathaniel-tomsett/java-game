@@ -152,11 +152,36 @@ public class World {
                 else{
                     userIO.printToUser("this item is not in your inventory");
                 }
+            } else if (command ==translator.TALK){
+                String NpcName = translator.getItemToPickup(input);
+                Room r = getRoom(currentRoom);
+                List<NPC> npcList =r.getNpcs();
+                boolean foundNpc = false;
+                for (NPC n : npcList){
+                    if (n.getName().equalsIgnoreCase(NpcName)){
+                       String Dialogue = n.getRandomDialog();
+                       userIO.printToUser(n.getName()+ " says: "+ Dialogue);
+                       foundNpc = true;
+                       break;
+                    }
+                }
+                if (!foundNpc){
+                    userIO.printToUser("this persons not in the room with you");
+                }
+
+
+
             }
             else {
                 userIO.printToUser("I'm sorry, I don't recognise that");
                 movement = 0;
             }
+
+
+
+
+
+
             if (movement == 1){
 
                 Set<String> movedPlayers = new HashSet<>();
