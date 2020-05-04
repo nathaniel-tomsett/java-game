@@ -7,18 +7,18 @@ public class Room{
     private String name;
     private String description;
 
-    private List<Item> items;
-    private List<Door> doors;
-    private List<NPC> npcs;
+    private List<Item> items = new ArrayList<>();
+    private List<Door> doors = new ArrayList<>();
+    private List<NPC> npcs = new ArrayList<>();
 
-    Room(String i, String n, String d) {
-        id = i;
-        name = n;
-        items = new ArrayList<>();
-        doors = new ArrayList<>();
-        description = d;
-        npcs = new ArrayList<>();
-    }
+//    Room(String i, String n, String d) {
+//        id = i;
+//        name = n;
+//        items = new ArrayList<>();
+//        doors = new ArrayList<>();
+//        description = d;
+//        npcs = new ArrayList<>();
+//    }
 
     public void setItems(List<Item> i) {
         items = i;

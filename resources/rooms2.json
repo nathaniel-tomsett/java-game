@@ -11,9 +11,6 @@
       { "id" :  "24", "direction" :  "5",  "destinationRoomId" :  "11", "locked" : false},
       { "id" :  "25", "direction" :  "3", "destinationRoomId" :  "19" , "locked" :  true, "key" : "house key"}
     ],
-    "npcs" : [
-      {"id" : "1" , "name" :  "fraser" , "moveChance" :  20}
-    ],
     "description" : "A short hallway with a shoe cabinet on your right adn stairs leading further up into the house"
   },
   {
@@ -26,7 +23,6 @@
     "doors" : [
       { "id" :  "3", "direction" :  "2", "destinationRoomId" :  "1", "locked" : false}
     ],
-    "npcs" : [],
     "description" : "A clean white room with a purple sofa to your left and a brown one to your right around the room there are cabinets holding an array of books"
   },
 
@@ -41,7 +37,6 @@
       { "id" :  "6", "direction" :  "3",  "destinationRoomId" :  "1", "locked" : false}
 
     ],
-    "npcs" : [],
     "description" : "A conjoining short hallway with dog toys and boxs full of mysterious things that seem to be just out of reach"
   },
 
@@ -54,9 +49,6 @@
   "doors" : [
   { "id" :  "7", "direction" :  "2", "destinationRoomId" :  "3", "locked" : false}
   ],
-
-  "npcs" : [],
-
   "description" : "A room with the purpose for dining quite self explanatory however there is a piano to your right and a grey sofa situated in front of you"
   },
 
@@ -72,7 +64,6 @@
       { "id" :  "8", "direction" :  "4", "destinationRoomId" :  "6", "locked" : false},
       { "id" :  "9", "direction" :  "3", "destinationRoomId" :  "3", "locked" : false}
     ],
-    "npcs" : [],
     "description" : "Nothing special just a kitchen its got an oven a microwave and way too many cabinets with all the different spices"
   },
 
@@ -87,7 +78,6 @@
       { "id" :  "12", "direction" :  "2",  "destinationRoomId" :  "5", "locked" : false}
 
     ],
-    "npcs" : [],
     "description" : "The porch a curious small piece of land i dont quite understand seems to be of use for storing shoes and adding quite useful second bathroom to the house"
   },
 
@@ -97,9 +87,8 @@
   "name" : "Bathroom 2",
   "items" : [],
   "doors" : [
-  { "id" :  "13", "direction" :  "3", "destinationRoomId" :  "6", "locked" : false}
-],
-  "npcs" : [],
+    { "id" :  "13", "direction" :  "3", "destinationRoomId" :  "6", "locked" : false}
+  ],
   "description" : "A tiny little bathroom for ironically not the purposes of bathing"
   },
 
@@ -109,13 +98,9 @@
   "name" : "Garden",
   "items" : [],
   "doors" : [
-  { "id" :  "14", "direction" :  "4", "destinationRoomId" :  "9", "locked" : false},
-  { "id" :  "15", "direction" :  "3", "destinationRoomId" :  "10", "locked" : true , "key" :  "5"},
-  { "id" :  "16", "direction" :  "2",  "destinationRoomId" :  "6", "locked" : true , "key" :  "4"}
-
-],
-  "npcs" : [
-
+    { "id" :  "14", "direction" :  "4", "destinationRoomId" :  "9", "locked" : false},
+    { "id" :  "15", "direction" :  "3", "destinationRoomId" :  "10", "locked" : true , "key" :  "5"},
+    { "id" :  "16", "direction" :  "2",  "destinationRoomId" :  "6", "locked" : true , "key" :  "4"}
   ],
   "description" : "A petite garden with a small patio and some well kempt grass by the resident grass man fraser"
   },
@@ -131,7 +116,6 @@
     "doors" : [
       { "id" :  "17", "direction" :  "2", "destinationRoomId" :  "8", "locked" : false}
     ],
-    "npcs" : [],
     "description" : "A dusty shed i think you would find you would rather not be in here"
   },
 
@@ -145,10 +129,7 @@
     "doors" : [
       { "id" :  "18", "direction" :  "3", "destinationRoomId" :  "", "locked" : true , "key" :  "5"},
       { "id" :  "19", "direction" :  "1", "destinationRoomId" :  "8", "locked" : true, "key" :  "5"}
-
-
     ],
-    "npcs" : [],
     "description" : "A less dusty shed to the other one quite pleasant really full of an abundance of bike stuff"
   },
 
@@ -163,7 +144,6 @@
       { "id" :  "22", "direction" :  "4", "destinationRoomId" :  "13", "locked" : false},
       {"id" :  "23", "direction" :  "3", "destinationRoomId" : "14", "locked" : false}
     ],
-    "npcs" : [],
     "description" : "Just a place to get to all the other places you wont to go. Now quit staring move along"
   },
 
@@ -178,7 +158,6 @@
       { "id" :  "24", "direction" :  "3", "destinationRoomId" :  "11", "locked" : false}
 
     ],
-    "npcs" : [],
     "description" : "the glorious study the keeper of the board games and the holder of the computer the thing that made this very game"
   },
 
@@ -190,7 +169,6 @@
     "doors" : [
       { "id" :  "25", "direction" :  "2", "destinationRoomId" :  "11", "locked" : false}
     ],
-    "npcs" : [],
     "description" : "a true bathroom designed for the purpose of bathing ahh we have reached true glory all of life lead up to this moment"
   },
 
@@ -204,7 +182,6 @@
       { "id" :  "27", "direction" :  "4", "destinationRoomId" :  "15", "locked" : false},
       {"id" :  "28", "direction" :  "3", "destinationRoomId" :  "16", "locked" : false}
     ],
-    "npcs" : [],
     "description" : "oh look another hallway"
   },
 
@@ -217,7 +194,6 @@
       { "id" :  "29", "direction" :  "2", "destinationRoomId" :  "14", "locked" : false}
 
     ],
-    "npcs" : [],
     "description" : "oh look another hallway"
   },
 
@@ -231,7 +207,6 @@
       { "id" :  "27", "direction" :  "1", "destinationRoomId" :  "14", "locked" : false},
       {"id" :  "28", "direction" :  "4", "destinationRoomId" :  "17", "locked" : false}
     ],
-    "npcs" : [],
     "description" : "oh wowee will the hallways ever end venture forth to uncover this great mystery"
   },
 
@@ -243,7 +218,6 @@
     "doors" : [
       { "id" :  "29", "direction" :  "2", "destinationRoomId" :  "16", "locked" : false}
     ],
-    "npcs" : [],
     "description" : "the glorious room of myself this is your living space just a regular space a child sits on the bed. looking at his phone.Ok thats enough looking at my room get out of here"
   },
 
@@ -255,7 +229,6 @@
     "doors" : [
       { "id" :  "30", "direction" :  "6", "destinationRoomId" :  "17", "locked" : false}
     ],
-    "npcs" : [],
     "description" : "while walking up the flight of stairs you fret that there may be the existence of more hallways and the detremental effects this could cause to you. you even think of going back and leaving if you havent seen it then it cant exist but no you venture forth towards glory you fight and once you enter the final room of this house you are relieved to find there is no hallways to be seen you may rest here. finally at peace"
   },
 
@@ -270,7 +243,6 @@
       { "id" :  "32", "direction" :  "2", "destinationRoomId" :  "100", "locked" : false},
       { "id" :  "33", "direction" :  "4", "destinationRoomId" :  "20", "locked" : false}
     ],
-    "npcs" : [],
     "description" : "this is the road your house lays upon "
   },
 
@@ -294,7 +266,6 @@
       { "id" :  "46", "direction" :  "3", "destinationRoomId" :  "100", "locked" : false}
 
     ],
-    "npcs" : [],
     "description" : "this is the road your house lays upon "
   },
   {
@@ -305,7 +276,6 @@
       { "id" :  "47", "direction" :  "4", "destinationRoomId" :  "20", "locked" : false},
       { "id" :  "48", "direction" :  "3", "destinationRoomId" :  "22", "locked" : false}
     ],
-    "npcs" : [],
     "description" : "this is the road your house lays upon "
   },
   {
@@ -318,7 +288,6 @@
       { "id" :  "51", "direction" :  "1", "destinationRoomId" :  "21", "locked" : false}
 
     ],
-    "npcs" : [],
     "description" : "this is the road your house lays upon "
   },
   {
@@ -328,7 +297,6 @@
     "doors" : [
       { "id" :  "52", "direction" :  "4", "destinationRoomId" :  "20", "locked" : false}
     ],
-    "npcs" : [],
     "description" : "this is the road your house lays upon "
   },
   {
@@ -340,7 +308,6 @@
 
 
     ],
-    "npcs" : [],
     "description" : "this is the road your house lays upon "
   },
   //unfinished
@@ -354,7 +321,6 @@
       { "id" :  "56", "direction" :  "1", "destinationRoomId" :  "21", "locked" : false}
 
     ],
-    "npcs" :[] ,
     "description" : "this is the road your house lays upon "
   },
   //unfinished
@@ -368,7 +334,6 @@
       { "id" :  "59", "direction" :  "1", "destinationRoomId" :  "21", "locked" : false}
 
     ],
-    "npcs" : [],
     "description" : "this is the road your house lays upon "
   },
   {
@@ -381,7 +346,6 @@
 
 
     ],
-    "npcs" : [],
     "description" : "this is the road your house lays upon "
   },
   //unfinished
@@ -399,7 +363,6 @@
 
 
     ],
-    "npcs" : [],
     "description" : "this is the road your house lays upon "
   },
   //unfinished
@@ -417,7 +380,6 @@
 
 
     ],
-    "npcs" : [],
     "description" : "this is the road your house lays upon "
   },
   {
@@ -427,7 +389,6 @@
     "doors" : [
       { "id" :  "74", "direction" :  "2", "destinationRoomId" :  "20", "locked" : false}
     ],
-    "npcs" : [],
     "description" : "this is the road your house lays upon "
   },
   //unfinished
@@ -445,7 +406,6 @@
 
 
     ],
-    "npcs" : [],
     "description" : "this is the road your house lays upon "
   }
 ]

@@ -48,7 +48,7 @@ public class World {
             newRoom = currentRoom;
 
             String input = userIO.readFromUser();
-           int command = translator.getCommand(input);
+            int command = translator.getCommand(input);
             if (command == Translator.MOVE) {
                 String RoomName = translator.getRoomName(input);
                 Room r = getRoom(currentRoom);
