@@ -2,9 +2,9 @@ public class Translator {
 
     // Commands
     public static final int MOVE = 1;
-    public static final int PICKUP = 2;
+    public static final int PICKUP= 2;
     public static final int DROP = 3;
-    public static final int LOOK = 4;
+    public static final int LOOK= 4;
     public static final int INVENTORY = 5;
     public static final int USE = 6;
     public static final int TALK = 7;
@@ -22,25 +22,25 @@ public class Translator {
     public static final int ERROR = -1;
 
     public int getCommand(String input) {
-        if (input.startsWith("move ")) {
+        if (input.startsWith("m")) {
             return MOVE;
         }
-        else if (input.startsWith ("pickup ")){
+        else if (input.startsWith ("p")){
             return PICKUP;
         }
-        else if (input.startsWith ("drop ") ){
+        else if (input.startsWith ("d") ){
             return DROP;
         }
-        else if (input.startsWith ("look"))  {
+        else if (input.startsWith ("l"))  {
             return LOOK;
         }
         else if (input.startsWith ("inv"))  {
             return INVENTORY;
         }
-        else if (input.startsWith("use")){
+        else if (input.startsWith("u")){
             return USE;
         }
-        else if (input.startsWith("talk")){
+        else if (input.startsWith("t")){
             return TALK;
         }
         else {
@@ -124,7 +124,8 @@ public class Translator {
         int SpaceIndex = doorIndex.indexOf(" ");
         String subDoorIndex = doorIndex.substring(SpaceIndex).trim();
 
-        String itemIndex = input.substring(3, onIndex).trim();
+        int UseIndex = input.indexOf(" ");
+        String itemIndex = input.substring(UseIndex, onIndex).trim();
         String [] returnArray = {itemIndex , subDoorIndex};
         return returnArray;
 

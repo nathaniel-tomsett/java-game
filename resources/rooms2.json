@@ -9,7 +9,7 @@
       { "id" :  "1", "direction" :  "4", "destinationRoomId" :  "2", "locked" : false},
       { "id" :  "2", "direction" :  "1", "destinationRoomId" :  "3", "locked" : false},
       { "id" :  "24", "direction" :  "5",  "destinationRoomId" :  "11", "locked" : false},
-      { "id" :  "25", "direction" :  "3", "destinationRoomId" :  "19" , "locked" :  true, "key" : "house key"}
+      { "id" :  "25", "direction" :  "3", "destinationRoomId" :  "19" , "locked" :  true, "key" : "House Key"}
     ],
     "description" : "A short hallway with a shoe cabinet on your right adn stairs leading further up into the house"
   },
