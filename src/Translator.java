@@ -2,9 +2,9 @@ public class Translator {
 
     // Commands
     public static final int MOVE = 1;
-    public static final int PICKUP= 2;
+    public static final int PICKUP = 2;
     public static final int DROP = 3;
-    public static final int LOOK= 4;
+    public static final int LOOK = 4;
     public static final int INVENTORY = 5;
     public static final int USE = 6;
     public static final int TALK = 7;
@@ -24,26 +24,19 @@ public class Translator {
     public int getCommand(String input) {
         if (input.startsWith("m")) {
             return MOVE;
-        }
-        else if (input.startsWith ("p")){
+        } else if (input.startsWith("p ") || input.startsWith("pickup ")) {
             return PICKUP;
-        }
-        else if (input.startsWith ("d") ){
+        } else if (input.startsWith("d")|| input.startsWith("drop ")) {
             return DROP;
-        }
-        else if (input.startsWith ("l"))  {
+        } else if (input.equalsIgnoreCase("l") || input.equalsIgnoreCase("look")) {
             return LOOK;
-        }
-        else if (input.startsWith ("inv"))  {
+        } else if (input.startsWith("inv")) {
             return INVENTORY;
-        }
-        else if (input.startsWith("u")){
+        } else if (input.startsWith("u ")|| input.startsWith("use ")) {
             return USE;
-        }
-        else if (input.startsWith("t")){
+        } else if (input.startsWith("t ")|| input.startsWith("talk ")) {
             return TALK;
-        }
-        else {
+        } else {
             return ERROR;
         }
     }
@@ -51,23 +44,17 @@ public class Translator {
     public int getEndMovementArg(String input) {
         if (input.endsWith("east")) {
             return EAST;
-        }
-        else if (input.endsWith("west")) {
+        } else if (input.endsWith("west")) {
             return WEST;
-        }
-        else if (input.endsWith("north")) {
+        } else if (input.endsWith("north")) {
             return NORTH;
-        }
-        else if (input.endsWith("south")) {
+        } else if (input.endsWith("south")) {
             return SOUTH;
-        }
-        else if (input.endsWith("up")) {
+        } else if (input.endsWith("up")) {
             return UP;
-        }
-        else if (input.endsWith("down")) {
+        } else if (input.endsWith("down")) {
             return DOWN;
-        }
-        else {
+        } else {
             return ERROR;
         }
     }
@@ -90,7 +77,7 @@ public class Translator {
         }
     }
 
-    public String getItemString (String input) {
+    public String getItemString(String input) {
         String[] strings = input.split(" ");
         if (strings.length == 2) {
             return strings[1];
@@ -105,7 +92,7 @@ public class Translator {
         return thing.trim();
     }
 
-    public String[] getitemandoorstring (String input) {
+    public String[] getitemandoorstring(String input) {
         String[] strings = input.split(" ");
         if (strings.length >= 4) {
             String[] newArray = new String[2];
@@ -117,30 +104,37 @@ public class Translator {
         }
     }
 
-    public String[] getitemandoorstring_new (String input) {
+    public String[] getitemandoorstring_new(String input) {
         // turn input into two strings
         int onIndex = input.indexOf("on");
+        if (onIndex == -1){
+            return null;
+        }
         String doorIndex = input.substring(onIndex);
         int SpaceIndex = doorIndex.indexOf(" ");
+        if (SpaceIndex == -1) {
+            return null;
+        }
         String subDoorIndex = doorIndex.substring(SpaceIndex).trim();
 
         int UseIndex = input.indexOf(" ");
         String itemIndex = input.substring(UseIndex, onIndex).trim();
-        String [] returnArray = {itemIndex , subDoorIndex};
+        String[] returnArray = {itemIndex, subDoorIndex};
         return returnArray;
 
 
-
-
     }
-    public String getRoomName (String input){
+
+    public String getRoomName(String input) {
         int firstSpace = input.indexOf(" ");
+        if (firstSpace == -1) {
+            return null;
+        }
         String thing = input.substring(firstSpace);
         return thing.trim();
-
     }
-
-
 
 
 }
+
+

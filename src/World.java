@@ -50,20 +50,26 @@ public class World {
             String input = userIO.readFromUser();
             int command = translator.getCommand(input);
             if (command == Translator.MOVE) {
+                boolean  roomValid = false;
                 String RoomName = translator.getRoomName(input);
                 Room r = getRoom(currentRoom);
                 List<Door> doorList = r.getDoors();
                 for (Door d : doorList) {
                     String DID = d.getDestinationRoomId();
                     Room DestRoom = getRoom(DID);
-                    if (DestRoom != null && RoomName.equalsIgnoreCase(DestRoom.getName())) {
+                    if (DestRoom != null && RoomName != null && RoomName.equalsIgnoreCase(DestRoom.getName())) {
                         if (!d.getlocked()) {
                             currentRoom = DestRoom.getId();
+                             roomValid = true;
                         }
                         else {
                            userIO.printToUser("the door is locked");
                         }
                     }
+
+                }
+                if (! roomValid ){
+                    userIO.printToUser("the room doesnt exist");
                 }
             } else if (command == Translator.LOOK) {
                 Room r = getRoom(currentRoom);
@@ -128,29 +134,38 @@ public class World {
                 String itemName = translator.getItemToPickup(input);
                 Room r = getRoom(currentRoom);
                 List<Item> itemList = r.getItems();
-                itemList.add(getItemFromInv(itemName));
-                removeItemFromInv(itemName);
+               Item fred = getItemFromInv(itemName);
+               if (fred == null){
+                   userIO.printToUser("you dont have that item at the moment");
+               }
+               else {
+                   itemList.add(fred);
+                   removeItemFromInv(itemName);
+                   userIO.printToUser("yay you dropped an item well done");
+               }
 
             } else if (command == translator.USE){
                 String[] itemAndDoor = translator.getitemandoorstring_new(input);
-                String  itemName= itemAndDoor[0];
-                String doorDestination =itemAndDoor[1];
-                if (player.getInventory().doesexistByName(itemName)){
-                    Door d = getDoorfromdoorid(currentRoom , doorDestination);
-                    if (d != null && d.tryUnlock(itemName)){
-                        Door d2 = getDoor(d.getDestinationRoomId(), flipDirection(d.getDirection()));
-                        if (d2 != null && d2.tryUnlock(itemName)){
-                            userIO.printToUser("the door opens");
+                if  (itemAndDoor != null) {
+                    String itemName = itemAndDoor[0];
+                    String doorDestination = itemAndDoor[1];
+                    if (player.getInventory().doesexistByName(itemName)) {
+                        Door d = getDoorfromdoorid(currentRoom, doorDestination);
+                        if (d != null && d.tryUnlock(itemName)) {
+                            Door d2 = getDoor(d.getDestinationRoomId(), flipDirection(d.getDirection()));
+                            if (d2 != null && d2.tryUnlock(itemName)) {
+                                userIO.printToUser("the door opens");
+                            } else {
+                                userIO.printToUser("error, check key settings for doors");
+                            }
                         } else {
-                            userIO.printToUser("error, check key settings for doors");
+                            userIO.printToUser("the item was innefective");
                         }
+                    } else {
+                        userIO.printToUser("this item is not in your inventory");
                     }
-                    else{
-                        userIO.printToUser("the item was innefective");
-                    }
-                }
-                else{
-                    userIO.printToUser("this item is not in your inventory");
+                }else{
+                    userIO.printToUser("thats invalid");
                 }
             } else if (command ==translator.TALK){
                 String NpcName = translator.getItemToPickup(input);
