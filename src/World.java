@@ -18,7 +18,7 @@ public class World {
 
     World() {
         rooms = new ArrayList<>();
-        userIO = new UserIO();
+        userIO = new UserIO(false);
         translator = new Translator();
         player = new Player();
         currentRoom = "";
