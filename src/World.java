@@ -50,7 +50,7 @@ public class World {
             String input = userIO.readFromUser();
             int command = translator.getCommand(input);
             if (command == Translator.MOVE) {
-                boolean  roomValid = false;
+                boolean roomValid = false;
                 String RoomName = translator.getRoomName(input);
                 Room r = getRoom(currentRoom);
                 List<Door> doorList = r.getDoors();
@@ -60,15 +60,14 @@ public class World {
                     if (DestRoom != null && RoomName != null && RoomName.equalsIgnoreCase(DestRoom.getName())) {
                         if (!d.getlocked()) {
                             currentRoom = DestRoom.getId();
-                             roomValid = true;
-                        }
-                        else {
-                           userIO.printToUser("the door is locked");
+                            roomValid = true;
+                        } else {
+                            userIO.printToUser("the door is locked");
                         }
                     }
 
                 }
-                if (! roomValid ){
+                if (!roomValid) {
                     userIO.printToUser("the room doesnt exist");
                 }
             } else if (command == Translator.LOOK) {
@@ -96,7 +95,7 @@ public class World {
                 }
 
                 List<NPC> npcList = r.getNpcs();
-                if (r.getNpcs()!= null && !r.getNpcs().isEmpty()) {
+                if (r.getNpcs() != null && !r.getNpcs().isEmpty()) {
                     userIO.printToUser("Characters in the room:");
                     for (NPC n : npcList) {
                         userIO.printToUser("    " + n.getName());
@@ -111,7 +110,7 @@ public class World {
                     userIO.printToUser("pffff i dont know what youve done");
                 } else {
                     Inventory inventory = player.getInventory();
-                    if (inventory.addItem(item)){
+                    if (inventory.addItem(item)) {
                         userIO.printToUser("Added " + item.getName() + " to your inventory");
                         removeItemFromRoomByName(itemName);
                     }
@@ -126,27 +125,26 @@ public class World {
                 for (Item i : Items) {
                     userIO.printToUser("name: " + i.getName());
                 }
-                if (Items.isEmpty()){
+                if (Items.isEmpty()) {
                     userIO.printToUser("You're inventory is empty");
                 }
 
-            } else if (command == Translator.DROP){
+            } else if (command == Translator.DROP) {
                 String itemName = translator.getItemToPickup(input);
                 Room r = getRoom(currentRoom);
                 List<Item> itemList = r.getItems();
-               Item fred = getItemFromInv(itemName);
-               if (fred == null){
-                   userIO.printToUser("you dont have that item at the moment");
-               }
-               else {
-                   itemList.add(fred);
-                   removeItemFromInv(itemName);
-                   userIO.printToUser("yay you dropped an item well done");
-               }
+                Item fred = getItemFromInv(itemName);
+                if (fred == null) {
+                    userIO.printToUser("you dont have that item at the moment");
+                } else {
+                    itemList.add(fred);
+                    removeItemFromInv(itemName);
+                    userIO.printToUser("yay you dropped an item well done");
+                }
 
-            } else if (command == translator.USE){
+            } else if (command == translator.USE) {
                 String[] itemAndDoor = translator.getitemandoorstring_new(input);
-                if  (itemAndDoor != null) {
+                if (itemAndDoor != null) {
                     String itemName = itemAndDoor[0];
                     String doorDestination = itemAndDoor[1];
                     if (player.getInventory().doesexistByName(itemName)) {
@@ -164,29 +162,49 @@ public class World {
                     } else {
                         userIO.printToUser("this item is not in your inventory");
                     }
-                }else{
+                } else {
                     userIO.printToUser("thats invalid");
                 }
-            } else if (command ==translator.TALK){
+            } else if (command == translator.TALK) {
                 String NpcName = translator.getItemToPickup(input);
                 Room r = getRoom(currentRoom);
-                List<NPC> npcList =r.getNpcs();
+                List<NPC> npcList = r.getNpcs();
                 boolean foundNpc = false;
-                for (NPC n : npcList){
-                    if (n.getName().equalsIgnoreCase(NpcName)){
-                       String Dialogue = n.getRandomDialog();
-                       userIO.printToUser(n.getName()+ " says: "+ Dialogue);
-                       foundNpc = true;
-                       break;
+                for (NPC n : npcList) {
+                    if (n.getName().equalsIgnoreCase(NpcName)) {
+                        String Dialogue = n.getRandomDialog();
+                        userIO.printToUser(n.getName() + " says: " + Dialogue);
+                        foundNpc = true;
+                        break;
                     }
                 }
-                if (!foundNpc){
+                if (!foundNpc) {
                     userIO.printToUser("this persons not in the room with you");
                 }
 
 
+            }else if (command == translator.HELP) {
+            userIO.printToUser("move (insert name of place you'd like to go here)to move to that place");
+            userIO.printToUser("look to see your current surroundings and where you can go" );
+            userIO.printToUser("pickup (insert item name here) to pickup an item" );
+            userIO.printToUser("drop (insert item name here) to drop an item" );
+            userIO.printToUser("talk (insert NPC name here) to talk to an NPC " );
+            userIO.printToUser("inv to look at your inventory" );
+            userIO.printToUser("use (insert item name here) on (insert name of thing you'd like to use item on here) to use an item" );
+            userIO.printToUser("about to see credits of this game" );
+            userIO.printToUser("all of the above excluding inv can be shortened to their first letter e.g (m newport road or p house key)" );
+            userIO.printToUser("have fun!!!" );
+        }
 
-            }
+
+            else if (command == translator.ABOUT) {
+            userIO.printToUser("an untitled game");
+            userIO.printToUser("that is still unfinished and in progress" );
+            userIO.printToUser("coded by Nathaniel and Fraser" );
+            userIO.printToUser("\nthanks for playing " );
+
+        }
+
             else {
                 userIO.printToUser("I'm sorry, I don't recognise that");
                 movement = 0;

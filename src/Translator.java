@@ -8,6 +8,8 @@ public class Translator {
     public static final int INVENTORY = 5;
     public static final int USE = 6;
     public static final int TALK = 7;
+    public static final int HELP = 8;
+    public static final int ABOUT = 9;
 
 
     // Movement directions
@@ -36,6 +38,10 @@ public class Translator {
             return USE;
         } else if (input.startsWith("t ")|| input.startsWith("talk ")) {
             return TALK;
+        }  else if (input.startsWith("h")|| input.startsWith("help")) {
+        return HELP;
+        }  else if (input.startsWith("a")|| input.startsWith("about")) {
+        return ABOUT;
         } else {
             return ERROR;
         }
