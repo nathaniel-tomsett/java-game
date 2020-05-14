@@ -5,7 +5,29 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+
+
+
 public class UserIO {
+
+    public static final String RESET
+            = "\u001B[0m";
+    public static final String BLACK =
+            "\u001B[30m";
+    public static final String RED =
+            "\u001B[31m";
+    public static final String GREEN =
+            "\u001B[32m";
+    public static final String YELLOW =
+            "\u001B[33m";
+    public static final  String BLUE =
+            "\u001B[34m";
+    public static final String PURPLE =
+            "\u001B[35m";
+    public static final String CYAN =
+            "\u001B[36m";
+    public static final String WHITE =
+            "\u001B[37m";
 
     private boolean network = false;
 
@@ -28,12 +50,15 @@ public class UserIO {
         }
     }
 
-
     public void printToUser(String message) {
+        printToUser(message, RESET);
+    }
+
+    public void printToUser(String message, String colour) {
         if (network) {
             out.println(message);
         } else {
-            System.out.println(message);
+            System.out.println(colour + message);
         }
     }
 
@@ -46,7 +71,7 @@ public class UserIO {
                 String line = br.readLine();
                 return line;
             } else {
-                System.out.print("Input> ");
+                printToUser("Input> ");
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
                 String value = br.readLine();
                 return value;

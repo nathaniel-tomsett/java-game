@@ -24,7 +24,8 @@ public class Translator {
     public static final int ERROR = -1;
 
     public int getCommand(String input) {
-        if (input.startsWith("m")) {
+         if (input.startsWith("m")|| input.startsWith("move "))
+        {
             return MOVE;
         } else if (input.startsWith("p ") || input.startsWith("pickup ")) {
             return PICKUP;
@@ -36,7 +37,7 @@ public class Translator {
             return INVENTORY;
         } else if (input.startsWith("u ")|| input.startsWith("use ")) {
             return USE;
-        } else if (input.startsWith("t ")|| input.startsWith("talk ")) {
+        } else if (input.startsWith("t ")|| input.startsWith("talk to ")) {
             return TALK;
         }  else if (input.startsWith("h")|| input.startsWith("help")) {
         return HELP;
@@ -93,6 +94,13 @@ public class Translator {
     }
 
     public String getItemToPickup(String input) {
+
+        int firstSpace = input.lastIndexOf(" ");
+        String thing = input.substring(firstSpace);
+        return thing.trim();
+    }
+    public String getItemTopickup2(String input) {
+
         int firstSpace = input.indexOf(" ");
         String thing = input.substring(firstSpace);
         return thing.trim();
@@ -131,7 +139,7 @@ public class Translator {
 
     }
 
-    public String getRoomName(String input) {
+    public String getDirectionName(String input) {
         int firstSpace = input.indexOf(" ");
         if (firstSpace == -1) {
             return null;

@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class World {
@@ -51,13 +52,50 @@ public class World {
             int command = translator.getCommand(input);
             if (command == Translator.MOVE) {
                 boolean roomValid = false;
-                String RoomName = translator.getRoomName(input);
+                String directionName = translator.getDirectionName(input);
+                int directionValue = translator.getEndMovementArg(directionName);
+                List<Room> roomOB = getRoomDirection(directionValue);
+                userIO.printToUser("you can move to these rooms");
+                List<String> roomNameList =new ArrayList<>();
+                for (Room i: roomOB){
+                   String roomName2 = i.getName();
+                    roomNameList.add(roomName2);
+                    userIO.printToUser(roomName2);
+                }
+                userIO.printToUser("where would you like to go");
+                String newinput  = userIO.readFromUser();
+                for (String i : roomNameList){
+                    if (i.equalsIgnoreCase(newinput)){
+
+                        Room r = getRoom(currentRoom);
+                        List<Door> doorList = r.getDoors();
+                        for (Door d : doorList) {
+                            String DID = d.getDestinationRoomId();
+                            Room DestRoom = getRoom(DID);
+                            if ( DestRoom != null && newinput.equalsIgnoreCase(DestRoom.getName())) {
+                                if (!d.getlocked()) {
+                                    currentRoom = DestRoom.getId();
+                                    roomValid = true;
+                                } else {
+                                    userIO.printToUser("the door is locked");
+                                }
+                            }
+                        }
+                        if (!roomValid) {
+                            userIO.printToUser("the room doesnt exist");
+                        }
+                    }
+
+
+                }
+
+
                 Room r = getRoom(currentRoom);
                 List<Door> doorList = r.getDoors();
                 for (Door d : doorList) {
                     String DID = d.getDestinationRoomId();
                     Room DestRoom = getRoom(DID);
-                    if (DestRoom != null && RoomName != null && RoomName.equalsIgnoreCase(DestRoom.getName())) {
+                   if ( DestRoom != null && newinput.equalsIgnoreCase(DestRoom.getName())) {
                         if (!d.getlocked()) {
                             currentRoom = DestRoom.getId();
                             roomValid = true;
@@ -65,7 +103,6 @@ public class World {
                             userIO.printToUser("the door is locked");
                         }
                     }
-
                 }
                 if (!roomValid) {
                     userIO.printToUser("the room doesnt exist");
@@ -104,7 +141,7 @@ public class World {
 
 
             } else if (command == Translator.PICKUP) {
-                String itemName = translator.getItemToPickup(input);
+                String itemName = translator.getItemTopickup2(input);
                 Item item = getItemFromRoomByName(itemName);
                 if (item == null) {
                     userIO.printToUser("pffff i dont know what youve done");
@@ -173,7 +210,7 @@ public class World {
                 for (NPC n : npcList) {
                     if (n.getName().equalsIgnoreCase(NpcName)) {
                         String Dialogue = n.getRandomDialog();
-                        userIO.printToUser(n.getName() + " says: " + Dialogue);
+                        userIO.printToUser(n.getName() + " says: " + Dialogue, UserIO.GREEN);
                         foundNpc = true;
                         break;
                     }
@@ -188,7 +225,7 @@ public class World {
             userIO.printToUser("look to see your current surroundings and where you can go" );
             userIO.printToUser("pickup (insert item name here) to pickup an item" );
             userIO.printToUser("drop (insert item name here) to drop an item" );
-            userIO.printToUser("talk (insert NPC name here) to talk to an NPC " );
+            userIO.printToUser("talk to (insert NPC name here) to talk to an NPC " );
             userIO.printToUser("inv to look at your inventory" );
             userIO.printToUser("use (insert item name here) on (insert name of thing you'd like to use item on here) to use an item" );
             userIO.printToUser("about to see credits of this game" );
@@ -211,6 +248,7 @@ public class World {
             }
 
 
+            String fred = new String();
 
 
 
@@ -412,5 +450,22 @@ public class World {
         }
         return translator.ERROR;
     }
+   public List<Room> getRoomDirection( int directionValue ) {
+       Room r = getRoom(currentRoom);
+       List<Room> exitName = new ArrayList<>();
+       List<Door> exits = r.getDoors();
+       for (Door e : exits) {
+           int direction = e.getDirection();
+           if (direction == directionValue) {
+               String DiD = e.getDestinationRoomId();
+               Room roomOb = getRoom(DiD);
+               exitName.add(roomOb);
 
+
+           }
+       }
+       return exitName;
+
+
+   }
 }

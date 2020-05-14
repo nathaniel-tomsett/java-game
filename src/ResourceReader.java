@@ -13,7 +13,7 @@ public class ResourceReader {
         // Load rooms...
         List<Room> listOfRooms = new ArrayList<>();
         try {
-            InputStream is = ResourceReader.class.getResourceAsStream("rooms2.json");
+            InputStream is = ResourceReader.class.getResourceAsStream("BH.json");
             while (is.available() > 0) {
                 byte[] input = new byte[is.available()];
                 is.read(input);
