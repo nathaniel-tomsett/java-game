@@ -24,7 +24,7 @@ public class Translator {
     public static final int ERROR = -1;
 
     public int getCommand(String input) {
-         if (input.startsWith("m")|| input.startsWith("move "))
+         if (input.startsWith("m ")|| input.startsWith("move "))
         {
             return MOVE;
         } else if (input.startsWith("p ") || input.startsWith("pickup ")) {
