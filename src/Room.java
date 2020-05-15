@@ -9,7 +9,6 @@ public class Room{
 
     private List<Item> items = new ArrayList<>();
     private List<Door> doors = new ArrayList<>();
-    private List<NPC> npcs = new ArrayList<>();
 
 //    Room(String i, String n, String d) {
 //        id = i;
@@ -31,8 +30,6 @@ public class Room{
     public List<Door> getDoors() {
         return doors;
     }
-
-    public List<NPC> getNpcs() {return npcs;}
 
     public String getDestination(int direction) {
         for (Door e : doors) {

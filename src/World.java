@@ -6,6 +6,9 @@ public class World {
     // List of rooms, containing items and exits
     private List<Room> rooms;
 
+    // List of NPCs
+    private List<NPC> npcs;
+
     // Class which takes user input and writes back output to screen
     private UserIO userIO;
 
@@ -19,6 +22,7 @@ public class World {
 
     World() {
         rooms = new ArrayList<>();
+        npcs = new ArrayList<>();
         userIO = new UserIO(false);
         translator = new Translator();
         player = new Player();
@@ -31,6 +35,7 @@ public class World {
     private void loadTestWorld() {
         ResourceReader resourceReader = new ResourceReader();
         rooms = resourceReader.loadRoomsFromResources();
+        npcs = resourceReader.loadNPCs();
     }
 
     private void setCurrentRoom() {
@@ -131,14 +136,13 @@ public class World {
                     }
                 }
 
-                List<NPC> npcList = r.getNpcs();
-                if (r.getNpcs() != null && !r.getNpcs().isEmpty()) {
+                List<NPC> npcList = getNPCsInRoom(currentRoom);
+                if (npcList != null && !npcList.isEmpty()) {
                     userIO.printToUser("Characters in the room:");
                     for (NPC n : npcList) {
                         userIO.printToUser("    " + n.getName());
                     }
                 }
-
 
             } else if (command == Translator.PICKUP) {
                 String itemName = translator.getItemTopickup2(input);
@@ -204,93 +208,75 @@ public class World {
                 }
             } else if (command == translator.TALK) {
                 String NpcName = translator.getItemToPickup(input);
-                Room r = getRoom(currentRoom);
-                List<NPC> npcList = r.getNpcs();
-                boolean foundNpc = false;
-                for (NPC n : npcList) {
-                    if (n.getName().equalsIgnoreCase(NpcName)) {
-                        String Dialogue = n.getRandomDialog();
-                        userIO.printToUser(n.getName() + " says: " + Dialogue, UserIO.GREEN);
-                        foundNpc = true;
-                        break;
-                    }
-                }
-                if (!foundNpc) {
+                NPC n = getNPCFromRoom(NpcName, currentRoom);
+                if (n != null) {
+                    String Dialogue = n.getRandomDialog();
+                    userIO.printToUser(n.getName() + " says: " + Dialogue, UserIO.GREEN);
+                } else {
                     userIO.printToUser("this persons not in the room with you");
                 }
-
-
             }else if (command == translator.HELP) {
-            userIO.printToUser("move (insert name of place you'd like to go here)to move to that place");
-            userIO.printToUser("look to see your current surroundings and where you can go" );
-            userIO.printToUser("pickup (insert item name here) to pickup an item" );
-            userIO.printToUser("drop (insert item name here) to drop an item" );
-            userIO.printToUser("talk to (insert NPC name here) to talk to an NPC " );
-            userIO.printToUser("inv to look at your inventory" );
-            userIO.printToUser("use (insert item name here) on (insert name of thing you'd like to use item on here) to use an item" );
-            userIO.printToUser("about to see credits of this game" );
-            userIO.printToUser("all of the above excluding inv can be shortened to their first letter e.g (m newport road or p house key)" );
-            userIO.printToUser("have fun!!!" );
-        }
-
-
+                userIO.printToUser("move (insert name of place you'd like to go here)to move to that place");
+                userIO.printToUser("look to see your current surroundings and where you can go" );
+                userIO.printToUser("pickup (insert item name here) to pickup an item" );
+                userIO.printToUser("drop (insert item name here) to drop an item" );
+                userIO.printToUser("talk to (insert NPC name here) to talk to an NPC " );
+                userIO.printToUser("inv to look at your inventory" );
+                userIO.printToUser("use (insert item name here) on (insert name of thing you'd like to use item on here) to use an item" );
+                userIO.printToUser("about to see credits of this game" );
+                userIO.printToUser("all of the above excluding inv can be shortened to their first letter e.g (m newport road or p house key)" );
+                userIO.printToUser("have fun!!!" );
+            }
             else if (command == translator.ABOUT) {
-            userIO.printToUser("an untitled game");
-            userIO.printToUser("that is still unfinished and in progress" );
-            userIO.printToUser("coded by Nathaniel and Fraser" );
-            userIO.printToUser("\nthanks for playing " );
-
-        }
-
+                userIO.printToUser("an untitled game");
+                userIO.printToUser("that is still unfinished and in progress" );
+                userIO.printToUser("coded by Nathaniel and Fraser" );
+                userIO.printToUser("\nthanks for playing " );
+            }
             else {
                 userIO.printToUser("I'm sorry, I don't recognise that");
                 movement = 0;
             }
 
 
-            String fred = new String();
-
-
-
-
-            if (movement == 1){
-
-                Set<String> movedPlayers = new HashSet<>();
-
-                for (Room r: rooms){
-                    if (r.getNpcs() != null) {
-                        List<NPC> copyOfList = new ArrayList<>(r.getNpcs());
-                        for (NPC n : copyOfList) {
-
-                            if (!movedPlayers.contains(n.getId()) && n.shouldMove()){
-                                Random rand = new Random();
-                                int randExit = rand.nextInt(r.getDoors().size());
-                                Door randDirection = r.getDoors().get(randExit);
-
-                               // userIO.printToUser("NPC: " + n.getName() + " is going to move to room " + getRoom(randDirection.getDestinationRoomId()).getName());
-
-                                if (!randDirection.getlocked()) {
-                                    String randDID = randDirection.getDestinationRoomId();
-                                    removeNpcFromRoom( r, n  );
-                                    addNpcFromRoom(getRoom(randDID), n);
-                                  //  userIO.printToUser("move worked!");
-
-                                    movedPlayers.add(n.getId());
-                                } else {
-                                   // userIO.printToUser("room was locked!");
-                                }
-
-
-                            }
-
-                        }
-                    }
-                    else{
-                        //userIO.printToUser("ahhhhhhhhhhhh you broke it");
-                    }
-
-                }
-            }
+//            if (movement == 1){
+//
+//                Set<String> movedPlayers = new HashSet<>();
+//
+//                for (Room r: rooms){
+//                    if (r.getNpcs() != null) {
+//                        List<NPC> copyOfList = new ArrayList<>(r.getNpcs());
+//                        for (NPC n : copyOfList) {
+//
+//                            if (!movedPlayers.contains(n.getId()) && n.shouldMove()){
+//                                Random rand = new Random();
+//                                int randExit = rand.nextInt(r.getDoors().size());
+//                                Door randDirection = r.getDoors().get(randExit);
+//
+//                               // userIO.printToUser("NPC: " + n.getName() + " is going to move to room " + getRoom(randDirection.getDestinationRoomId()).getName());
+//
+//                                if (!randDirection.getlocked()) {
+//                                    String randDID = randDirection.getDestinationRoomId();
+//                                    removeNpcFromRoom( r, n  );
+//                                    addNpcFromRoom(getRoom(randDID), n);
+//                                  //  userIO.printToUser("move worked!");
+//
+//                                    movedPlayers.add(n.getId());
+//                                } else {
+//                                   // userIO.printToUser("room was locked!");
+//                                }
+//
+//
+//                            }
+//
+//                        }
+//                    }
+//                    else{
+//                        //userIO.printToUser("ahhhhhhhhhhhh you broke it");
+//                    }
+//
+//                }
+//            }
 
         }
 
@@ -363,18 +349,18 @@ public class World {
     }
 
 
-    private void removeNpcFromRoom(Room currentRoom, NPC NPC){
-        List <NPC> npcList = currentRoom.getNpcs();
-        npcList.remove(NPC);
-
-    }
-
-    private void addNpcFromRoom(Room destinationRoom, NPC NPC){
-        List <NPC> npcList = destinationRoom.getNpcs();
-        npcList.add(NPC);
-
-    }
-
+//    private void removeNpcFromRoom(Room currentRoom, NPC NPC){
+//        List <NPC> npcList = currentRoom.getNpcs();
+//        npcList.remove(NPC);
+//
+//    }
+//
+//    private void addNpcFromRoom(Room destinationRoom, NPC NPC){
+//        List <NPC> npcList = destinationRoom.getNpcs();
+//        npcList.add(NPC);
+//
+//    }
+//
 
 
     private void removeItemFromInv (String itemName){
@@ -450,6 +436,26 @@ public class World {
         }
         return translator.ERROR;
     }
+
+    private List<NPC> getNPCsInRoom(String roomID) {
+        List<NPC> retNPCList = new ArrayList<>();
+        for (NPC n : npcs) {
+            if (n.getCurrentRoomID().equals(roomID)) {
+                retNPCList.add(n);
+            }
+        }
+        return retNPCList;
+    }
+
+    private NPC getNPCFromRoom(String npcName, String roomID) {
+        for (NPC n : npcs) {
+            if (n.getCurrentRoomID().equals(roomID)) {
+                return n;
+            }
+        }
+        return null;
+    }
+
    public List<Room> getRoomDirection( int directionValue ) {
        Room r = getRoom(currentRoom);
        List<Room> exitName = new ArrayList<>();

@@ -13,7 +13,7 @@ public class ResourceReader {
         // Load rooms...
         List<Room> listOfRooms = new ArrayList<>();
         try {
-            InputStream is = ResourceReader.class.getResourceAsStream("BH.json");
+            InputStream is = ResourceReader.class.getResourceAsStream("rooms2.json");
             while (is.available() > 0) {
                 byte[] input = new byte[is.available()];
                 is.read(input);
@@ -26,8 +26,10 @@ public class ResourceReader {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        return listOfRooms;
+    }
 
-        // Load NPCs and add to their starting rooms
+    public List<NPC> loadNPCs() {
         List<NPC> listOfNPCs = new ArrayList<>();
         try {
             InputStream is = ResourceReader.class.getResourceAsStream("npcs.json");
@@ -43,19 +45,6 @@ public class ResourceReader {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
-
-        if (!listOfNPCs.isEmpty()) {
-            for (NPC n : listOfNPCs) {
-                for (Room r : listOfRooms) {
-                    if (r.getId().equalsIgnoreCase(n.getStartingRoomID())) {
-                        r.getNpcs().add(n);
-                    }
-                }
-            }
-        }
-
-
-        return listOfRooms;
+        return listOfNPCs;
     }
 }

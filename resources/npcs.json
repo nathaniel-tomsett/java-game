@@ -3,7 +3,7 @@
     "id" : "1" ,
     "name" :  "Fraser" ,
     "moveChance" :  0,
-    "startingRoomID" : "2",
+    "currentRoomID" : "2",
     "dialog" : [
       "I'm hungry...",
       "Have you seen my headphones, I can't find them",
@@ -15,7 +15,7 @@
     "id" : "2" ,
     "name" :  "Bella" ,
     "moveChance" :  20,
-    "startingRoomID" : "2",
+    "currentRoomID" : "2",
     "dialog" : [
       "You are a silly sausage",
       "Your piano playing was very nice",
@@ -26,7 +26,7 @@
     "id" : "3" ,
     "name" :  "Mabel" ,
     "moveChance" :  80,
-    "startingRoomID" : "2",
+    "currentRoomID" : "2",
     "dialog" : [
       "Barrrrrk!",
       "Woof",

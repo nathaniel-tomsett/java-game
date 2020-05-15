@@ -5,12 +5,12 @@ public class NPC {
     private String id;
     private String name;
     private int moveChance;
-    private String startingRoomID;
+    private String currentRoomID;
     private List<String> dialog;
 
     public String getId(){return id;}
     public String getName() {return name;}
-    public String getStartingRoomID() {return startingRoomID;}
+    public String getCurrentRoomID() {return currentRoomID;}
 
      public boolean shouldMove (){
         Random rand = new Random();
