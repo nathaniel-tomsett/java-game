@@ -11,6 +11,7 @@ public class NPC {
     public String getId(){return id;}
     public String getName() {return name;}
     public String getCurrentRoomID() {return currentRoomID;}
+    public void setCurrentRoomID(String roomID) { this.currentRoomID = roomID; }
 
      public boolean shouldMove (){
         Random rand = new Random();

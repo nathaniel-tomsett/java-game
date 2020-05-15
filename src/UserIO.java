@@ -56,30 +56,30 @@ public class UserIO {
 
     public void printToUser(String message, String colour) {
         if (network) {
-            out.println(message);
+            out.println(colour + message);
         } else {
             System.out.println(colour + message);
         }
     }
 
-    public void printToUserSameLine(String message) {
+    public void printToUserSameLine(String message, String colour) {
         if (network) {
-            out.print(message);
+            out.print(colour + message);
             out.flush();
         } else {
-            System.out.print(message);
+            System.out.print(colour + message);
         }
     }
 
     public String readFromUser() {
         try {
             if (network) {
-                printToUserSameLine("Input> ");
+                printToUserSameLine("Input> ", RESET);
                 BufferedReader br = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 String line = br.readLine();
                 return line;
             } else {
-                printToUserSameLine("Input> ");
+                printToUserSameLine("Input> ", RESET);
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
                 String value = br.readLine();
                 return value;
