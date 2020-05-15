@@ -60,14 +60,14 @@ public class World {
                 String directionName = translator.getDirectionName(input);
                 int directionValue = translator.getEndMovementArg(directionName);
                 List<Room> roomOB = getRoomDirection(directionValue);
-                userIO.printToUser("you can move to these rooms");
+                userIO.printToUser("You can move to these rooms:");
                 List<String> roomNameList =new ArrayList<>();
                 for (Room i: roomOB){
                    String roomName2 = i.getName();
                     roomNameList.add(roomName2);
-                    userIO.printToUser(roomName2);
+                    userIO.printToUser("    " + roomName2);
                 }
-                userIO.printToUser("where would you like to go");
+                userIO.printToUser("Where would you like to go?");
                 String newinput  = userIO.readFromUser();
                 for (String i : roomNameList){
                     if (i.equalsIgnoreCase(newinput)){
