@@ -7,6 +7,7 @@ public class Player {
     public String getName() {
         return name;
     }
+
     public Inventory getInventory() {return inventory;}
     Player(){
     inventory = new Inventory();

@@ -17,17 +17,17 @@ public class World {
 
     // Current room - updated each time we move room
     private String currentRoom;
-
-    private Player player;
+    private List<Player> players;
 
     World() {
         rooms = new ArrayList<>();
         npcs = new ArrayList<>();
         userIO = new UserIO(false);
         translator = new Translator();
-        player = new Player();
+        Player player = new Player();
+        players = new ArrayList<>();
         currentRoom = "";
-
+        players.add(player);
         loadTestWorld();
         setCurrentRoom();
     }
@@ -36,6 +36,7 @@ public class World {
         ResourceReader resourceReader = new ResourceReader();
         rooms = resourceReader.loadRoomsFromResources();
         npcs = resourceReader.loadNPCs();
+
     }
 
     private void setCurrentRoom() {
@@ -150,7 +151,7 @@ public class World {
                 if (item == null) {
                     userIO.printToUser("pffff i dont know what youve done");
                 } else {
-                    Inventory inventory = player.getInventory();
+                    Inventory inventory = players.get(0).getInventory();
                     if (inventory.addItem(item)) {
                         userIO.printToUser("Added " + item.getName() + " to your inventory");
                         removeItemFromRoomByName(itemName);
@@ -159,7 +160,7 @@ public class World {
 
 
             } else if (command == Translator.INVENTORY) {
-                Inventory inv = player.getInventory();
+                Inventory inv = players.get(0).getInventory();
                 List<Item> Items = inv.getItems();
                 userIO.printToUser("Inventory: ");
 
@@ -188,7 +189,7 @@ public class World {
                 if (itemAndDoor != null) {
                     String itemName = itemAndDoor[0];
                     String doorDestination = itemAndDoor[1];
-                    if (player.getInventory().doesexistByName(itemName)) {
+                    if (players.get(0).getInventory().doesexistByName(itemName)) {
                         Door d = getDoorfromdoorid(currentRoom, doorDestination);
                         if (d != null && d.tryUnlock(itemName)) {
                             Door d2 = getDoor(d.getDestinationRoomId(), flipDirection(d.getDirection()));
@@ -365,7 +366,7 @@ public class World {
 
     private void removeItemFromInv (String itemName){
         Room r = getRoom(currentRoom);
-        Inventory Inventory = player.getInventory();
+        Inventory Inventory = players.get(0).getInventory();
         List<Item> invList = Inventory.getItems();
         Item toRemove = null;
         for (Item i:invList){
@@ -379,7 +380,7 @@ public class World {
     }
 
     private Item getItemFromInv(String itemName) {
-        Inventory Inventory = player.getInventory();
+        Inventory Inventory = players.get(0).getInventory();
         List<Item> invList = Inventory.getItems();
         for (Item i : invList) {
             if (i.getName().equalsIgnoreCase(itemName)) {
