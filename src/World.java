@@ -68,6 +68,11 @@ public class World {
                     roomNameList.add(roomName2);
                     userIO.printToUser("    " + roomName2);
                 }
+                if (roomNameList.isEmpty()){
+                    userIO.printToUser("there are no rooms in this direction");
+
+                }
+                else{
                 userIO.printToUser("Where would you like to go?");
                 String newinput  = userIO.readFromUser();
                 for (String i : roomNameList){
@@ -112,7 +117,8 @@ public class World {
                 }
                 if (!roomValid) {
                     userIO.printToUser("the room doesnt exist");
-                }
+                }}
+
             } else if (command == Translator.LOOK) {
                 Room r = getRoom(currentRoom);
 
@@ -217,7 +223,7 @@ public class World {
                     userIO.printToUser("this persons not in the room with you");
                 }
             }else if (command == translator.HELP) {
-                userIO.printToUser("move (insert name of place you'd like to go here)to move to that place");
+                userIO.printToUser("move (direction on compass) move to that place then once it asks for input again type one of the street names the console just showed you");
                 userIO.printToUser("look to see your current surroundings and where you can go" );
                 userIO.printToUser("pickup (insert item name here) to pickup an item" );
                 userIO.printToUser("drop (insert item name here) to drop an item" );
