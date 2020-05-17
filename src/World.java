@@ -239,48 +239,33 @@ public class World {
                 movement = 0;
             }
 
+            if (movement == 1){
+                for (NPC n : npcs) {
 
-//            if (movement == 1){
-//
-//                Set<String> movedPlayers = new HashSet<>();
-//
-//                for (Room r: rooms){
-//                    if (r.getNpcs() != null) {
-//                        List<NPC> copyOfList = new ArrayList<>(r.getNpcs());
-//                        for (NPC n : copyOfList) {
-//
-//                            if (!movedPlayers.contains(n.getId()) && n.shouldMove()){
-//                                Random rand = new Random();
-//                                int randExit = rand.nextInt(r.getDoors().size());
-//                                Door randDirection = r.getDoors().get(randExit);
-//
-//                               // userIO.printToUser("NPC: " + n.getName() + " is going to move to room " + getRoom(randDirection.getDestinationRoomId()).getName());
-//
-//                                if (!randDirection.getlocked()) {
-//                                    String randDID = randDirection.getDestinationRoomId();
-//                                    removeNpcFromRoom( r, n  );
-//                                    addNpcFromRoom(getRoom(randDID), n);
-//                                  //  userIO.printToUser("move worked!");
-//
-//                                    movedPlayers.add(n.getId());
-//                                } else {
-//                                   // userIO.printToUser("room was locked!");
-//                                }
-//
-//
-//                            }
-//
-//                        }
-//                    }
-//                    else{
-//                        //userIO.printToUser("ahhhhhhhhhhhh you broke it");
-//                    }
-//
-//                }
-//            }
+                    // should this NPC move right now?
+                    if (n.shouldMove()) {
+                        //userIO.printToUser("----->"+n.getName()+" will move");
 
+                        // which room are they currently in?
+                        Room r = getRoom(n.getCurrentRoomID());
+                        Random rand = new Random();
+                        int randExit = rand.nextInt(r.getDoors().size());
+                        Door randDirection = r.getDoors().get(randExit);
+
+                        // Only move if door not locked
+                        if (!randDirection.getlocked()) {
+                            String newRoomID = randDirection.getDestinationRoomId();
+                            n.setCurrentRoomID(newRoomID);
+                            //userIO.printToUser("----->move worked!");
+                        } else {
+                            //userIO.printToUser("------>room was locked!");
+                        }
+                    } else {
+                        //userIO.printToUser("----->"+n.getName()+" not moving");
+                    }
+                }
+            }
         }
-
     }
 
     private Room getRoom(String id) {
@@ -450,7 +435,7 @@ public class World {
 
     private NPC getNPCFromRoom(String npcName, String roomID) {
         for (NPC n : npcs) {
-            if (n.getCurrentRoomID().equals(roomID)) {
+            if (n.getCurrentRoomID().equals(roomID) && npcName.equalsIgnoreCase(n.getName())) {
                 return n;
             }
         }
