@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.*;
+import java.util.HashMap;
 
 public class World {
 
@@ -17,17 +18,19 @@ public class World {
 
     // Current room - updated each time we move room
     private String currentRoom;
-    private List<Player> players;
+
+    HashMap<String, Player > playerhash = new HashMap<String, Player>();
 
     World() {
+        playerhash = new HashMap<String, Player>();
+        Player player = new Player();
+        playerhash.put("nathaniel", player);
+
         rooms = new ArrayList<>();
         npcs = new ArrayList<>();
         userIO = new UserIO(false);
         translator = new Translator();
-        Player player = new Player();
-        players = new ArrayList<>();
         currentRoom = "";
-        players.add(player);
         loadTestWorld();
         setCurrentRoom();
     }
@@ -157,7 +160,7 @@ public class World {
                 if (item == null) {
                     userIO.printToUser("pffff i dont know what youve done");
                 } else {
-                    Inventory inventory = players.get(0).getInventory();
+                    Inventory inventory = playerhash.get("nathaniel").getInventory();
                     if (inventory.addItem(item)) {
                         userIO.printToUser("Added " + item.getName() + " to your inventory");
                         removeItemFromRoomByName(itemName);
@@ -166,7 +169,7 @@ public class World {
 
 
             } else if (command == Translator.INVENTORY) {
-                Inventory inv = players.get(0).getInventory();
+                Inventory inv = playerhash.get("nathaniel").getInventory();
                 List<Item> Items = inv.getItems();
                 userIO.printToUser("Inventory: ");
 
@@ -195,7 +198,7 @@ public class World {
                 if (itemAndDoor != null) {
                     String itemName = itemAndDoor[0];
                     String doorDestination = itemAndDoor[1];
-                    if (players.get(0).getInventory().doesexistByName(itemName)) {
+                    if (playerhash.get("nathaniel").getInventory().doesexistByName(itemName)) {
                         Door d = getDoorfromdoorid(currentRoom, doorDestination);
                         if (d != null && d.tryUnlock(itemName)) {
                             Door d2 = getDoor(d.getDestinationRoomId(), flipDirection(d.getDirection()));
@@ -357,7 +360,7 @@ public class World {
 
     private void removeItemFromInv (String itemName){
         Room r = getRoom(currentRoom);
-        Inventory Inventory = players.get(0).getInventory();
+        Inventory Inventory = playerhash.get("nathaniel").getInventory();
         List<Item> invList = Inventory.getItems();
         Item toRemove = null;
         for (Item i:invList){
@@ -371,7 +374,7 @@ public class World {
     }
 
     private Item getItemFromInv(String itemName) {
-        Inventory Inventory = players.get(0).getInventory();
+        Inventory Inventory = playerhash.get("nathaniel").getInventory();
         List<Item> invList = Inventory.getItems();
         for (Item i : invList) {
             if (i.getName().equalsIgnoreCase(itemName)) {
