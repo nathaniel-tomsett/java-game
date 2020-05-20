@@ -1,4 +1,8 @@
+package util;
+
 import com.google.gson.Gson;
+import entities.NPC;
+import entities.Room;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +17,7 @@ public class ResourceReader {
         // Load rooms...
         List<Room> listOfRooms = new ArrayList<>();
         try {
-            InputStream is = ResourceReader.class.getResourceAsStream("rooms2.json");
+            InputStream is = ResourceReader.class.getResourceAsStream("../rooms2.json");
             while (is.available() > 0) {
                 byte[] input = new byte[is.available()];
                 is.read(input);
@@ -32,7 +36,7 @@ public class ResourceReader {
     public List<NPC> loadNPCs() {
         List<NPC> listOfNPCs = new ArrayList<>();
         try {
-            InputStream is = ResourceReader.class.getResourceAsStream("npcs.json");
+            InputStream is = ResourceReader.class.getResourceAsStream("../npcs.json");
             while (is.available() > 0) {
                 byte[] input = new byte[is.available()];
                 is.read(input);

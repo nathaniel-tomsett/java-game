@@ -1,3 +1,5 @@
+package entities;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +12,7 @@ public class Room{
     private List<Item> items = new ArrayList<>();
     private List<Door> doors = new ArrayList<>();
 
-//    Room(String i, String n, String d) {
+//    things.Room(String i, String n, String d) {
 //        id = i;
 //        name = n;
 //        items = new ArrayList<>();

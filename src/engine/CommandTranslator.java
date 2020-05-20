@@ -1,4 +1,6 @@
-public class Translator {
+package engine;
+
+public class CommandTranslator {
 
     // Commands
     public static final int MOVE = 1;

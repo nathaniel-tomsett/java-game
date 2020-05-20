@@ -1,3 +1,5 @@
+package entities;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,14 +21,14 @@ public class Inventory {
             items.add(i);
             return true;
         } else {
-            System.out.println("Inventory is full");
+            System.out.println("things.Inventory is full");
             return false;
         }
     }
 
     public void removeItem(Item i) {
         if (items.size() == 0) {
-            System.out.println("Inventory is empty");
+            System.out.println("things.Inventory is empty");
         }
         items.remove(i);
     }

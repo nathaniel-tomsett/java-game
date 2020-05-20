@@ -1,3 +1,5 @@
+package entities;
+
 public class Item {
 
     public static final int WEAPON = 1;
