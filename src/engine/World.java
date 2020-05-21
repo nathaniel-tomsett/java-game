@@ -34,6 +34,18 @@ public class World {
         return playersHash.get(userId);
     }
 
+    public List<Player> getListOfPlayersInRoom(String roomId){
+        List<Player> playerList = new ArrayList<>();
+      Set<String>   playersKey = playersHash.keySet();
+      for (String p : playersKey){
+         Player player = playersHash.get(p);
+          if (player.getCurrentRoomID().equalsIgnoreCase(roomId)){
+              playerList.add(player);
+          }
+      }
+      return playerList;
+    }
+
     private void loadTestWorld() {
         ResourceReader resourceReader = new ResourceReader();
         roomList = resourceReader.loadRoomsFromResources();
@@ -49,7 +61,7 @@ public class World {
     }
 
     public static void main(String[] args) {
-        UserConnections userIO = new UserConnections(false);
+        UserConnections userIO = new UserConnections(true);
         userIO.start();
     }
 }

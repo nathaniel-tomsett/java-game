@@ -121,6 +121,13 @@ public class CommandHandler extends Thread {
                     userStream.printToUser("    " + n.getName());
                 }
             }
+            List<Player> playerList = getplayersInRoom(currentRoom);
+            if (playerList!= null && !playerList.isEmpty()) {
+                userStream.printToUser("Players in the room:");
+                for (Player p : playerList) {
+                    userStream.printToUser("    " + p.getName());
+                }
+            }
 
         } else if (command == CommandTranslator.PICKUP) {
             String itemName = commandTranslator.getItemTopickup2(input);
@@ -402,6 +409,16 @@ public class CommandHandler extends Thread {
             }
         }
         return retNPCList;
+    }
+    private List<Player> getplayersInRoom(String roomID) {
+        List<Player> retplayerList = new ArrayList<>();
+        List<Player> playerList = world.getListOfPlayersInRoom(roomID);
+        for (Player p : playerList) {
+            if (p.getCurrentRoomID().equals(roomID)) {
+                retplayerList.add(p);
+            }
+        }
+        return retplayerList;
     }
 
     private NPC getNPCFromRoom(String npcName, String roomID) {

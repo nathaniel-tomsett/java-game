@@ -25,6 +25,8 @@ public class UserConnections extends Thread {
         this.world = new World();
     }
 
+    private int playerCounter = 0;
+
     @Override
     public void run() {
         try {
@@ -37,9 +39,11 @@ public class UserConnections extends Thread {
                     stream.initForConsole();
                 }
 
-                world.addPlayer("nat", new Player("nat"));
-                CommandHandler processor = new CommandHandler(world, "nat", stream);
-                inputProcessors.put("nat", processor);
+                //TODO: hack-tastic
+                String playerName = "nat" + playerCounter++;
+                world.addPlayer(playerName, new Player(playerName));
+                CommandHandler processor = new CommandHandler(world, playerName, stream);
+                inputProcessors.put(playerName, processor);
             } while (network);
         } catch(Exception e) {
             e.printStackTrace();
