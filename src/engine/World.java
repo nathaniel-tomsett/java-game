@@ -49,7 +49,7 @@ public class World {
     }
 
     public static void main(String[] args) {
-        UserConnections userIO = new UserConnections(true);
+        UserConnections userIO = new UserConnections(false);
         userIO.start();
     }
 }
