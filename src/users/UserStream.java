@@ -40,6 +40,10 @@ public class UserStream {
         printToUser(message, TextColours.RESET);
     }
 
+    public void printToUserSameLine(String message) {
+        printToUserSameLine(message, TextColours.RESET);
+    }
+
     public void printToUserSameLine(String message, String colour) {
         out.print(colour + message + TextColours.RESET);
         out.flush();
