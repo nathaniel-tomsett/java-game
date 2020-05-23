@@ -225,34 +225,34 @@ public class CommandHandler extends Thread {
             printCurrentRoom();
         }
 
-        if (npcsShouldMove){
-            List<NPC> pncList = world.getNPCList();
-            for (NPC n : pncList) {
-
-                // should this things.NPC move right now?
-                if (n.shouldMove()) {
-                    //userStream.printToUser("----->"+n.getName()+" will move");
-
-                    // which room are they currently in?
-                    Room r = getRoom(n.getCurrentRoomID());
-                    Random rand = new Random();
-                    int randExit = rand.nextInt(r.getDoors().size());
-                    Door randDirection = r.getDoors().get(randExit);
-
-                    // Only move if door not locked
-                    if (!randDirection.getlocked()) {
-                        String newRoomID = randDirection.getDestinationRoomId();
-                        n.setCurrentRoomID(newRoomID);
-                        //userStream.printToUser("----->move worked!");
-                    } else {
-                        //userStream.printToUser("------>room was locked!");
-                    }
-                } else {
-                    //userStream.printToUser("----->"+n.getName()+" not moving");
-                }
-            }
-        }
-
+//        if (npcsShouldMove){
+//            List<NPC> pncList = world.getNPCList();
+//            for (NPC n : pncList) {
+//
+//                // should this things.NPC move right now?
+//                if (n.shouldMove()) {
+//                    //userStream.printToUser("----->"+n.getName()+" will move");
+//
+//                    // which room are they currently in?
+//                    Room r = getRoom(n.getCurrentRoomID());
+//                    Random rand = new Random();
+//                    int randExit = rand.nextInt(r.getDoors().size());
+//                    Door randDirection = r.getDoors().get(randExit);
+//
+//                    // Only move if door not locked
+//                    if (!randDirection.getlocked()) {
+//                        String newRoomID = randDirection.getDestinationRoomId();
+//                        n.setCurrentRoomID(newRoomID);
+//                        //userStream.printToUser("----->move worked!");
+//                    } else {
+//                        //userStream.printToUser("------>room was locked!");
+//                    }
+//                } else {
+//                    //userStream.printToUser("----->"+n.getName()+" not moving");
+//                }
+//            }
+//        }
+//
     }
 
     private void printCurrentRoom() {
