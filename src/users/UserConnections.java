@@ -18,13 +18,10 @@ public class UserConnections extends Thread {
     private ServerSocket serverSocket;
     private Socket clientSocket;
 
-    Map<String, CommandHandler> inputProcessors = new HashMap<>();
-
     public UserConnections(boolean network) {
         this.network = network;
         this.world = new World();
     }
-
 
     @Override
     public void run() {
@@ -44,7 +41,6 @@ public class UserConnections extends Thread {
                 String playerName = username ;
                 world.addPlayer(playerName, new Player(playerName));
                 CommandHandler processor = new CommandHandler(world, playerName, stream);
-                inputProcessors.put(playerName, processor);
             } while (network);
         } catch(Exception e) {
             e.printStackTrace();
