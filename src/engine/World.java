@@ -42,12 +42,11 @@ public class World extends Thread {
         List<NPC> pncList = getNPCList();
         while (true) {
 
-
             for (NPC n : pncList) {
 
                 // should this things.NPC move right now?
                 if (n.shouldMove()) {
-                    System.out.println("----->" + n.getName() + " will move");
+                    //System.out.println("----->" + n.getName() + " will move");
 
                     // which room are they currently in?
                     Room r = getRoom(n.getCurrentRoomID());
@@ -59,12 +58,12 @@ public class World extends Thread {
                     if (!randDirection.getlocked()) {
                         String newRoomID = randDirection.getDestinationRoomId();
                         n.setCurrentRoomID(newRoomID);
-                        System.out.println("----->move worked!");
+                        //System.out.println("----->move worked!");
                     } else {
-                        System.out.println("------>room was locked!");
+                        //System.out.println("------>room was locked!");
                     }
                 } else {
-                    System.out.println("----->" + n.getName() + " not moving");
+                    //System.out.println("----->" + n.getName() + " not moving");
                 }
             }
 
@@ -73,9 +72,7 @@ public class World extends Thread {
             } catch (InterruptedException e) {
 
             }
-
         }
-
     }
 
 
@@ -114,7 +111,8 @@ public class World extends Thread {
     }
 
     public static void main(String[] args) {
-        UserConnections userIO = new UserConnections(true);
-        userIO.start();
+        World world = new World();
+        UserConnections userIO = new UserConnections(world);
+        userIO.startListeningForUsers();
     }
 }
