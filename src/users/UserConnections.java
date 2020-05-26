@@ -26,6 +26,7 @@ public class UserConnections extends Thread {
     public UserConnections(boolean network) {
         this.network = network;
         this.world = new World();
+        start();
     }
 
 
@@ -48,40 +49,40 @@ public class UserConnections extends Thread {
                 List<Player> PlayerList = new ArrayList<>();
 
                 boolean nameOk = false;
-               String username = "";
+                String username = "";
                 while (!nameOk){
-                   boolean foundNPC = false;
+                    boolean foundNPC = false;
 
 
-                stream.printToUser("what is your name?");
-                 username = stream.readFromUser();
-                for (NPC i : NPCList){
-                    if (i.getName().equalsIgnoreCase(username)){
-                        stream.printToUser("this username is already taken");
-                         foundNPC = true;
+                    stream.printToUser("what is your name?");
+                    username = stream.readFromUser();
+                    for (NPC i : NPCList){
+                        if (i.getName().equalsIgnoreCase(username)){
+                            stream.printToUser("this username is already taken");
+                            foundNPC = true;
+                        }
+
+
+                    }
+                    if (foundNPC){
+                        continue;
+
+                    }
+                    Player playerExists = world.getPlayer(username);
+
+                    if (playerExists != null) {
+                        stream.printToUser("username is taken");
+                        continue;
                     }
 
 
-                }
-                if (foundNPC){
-                    continue;
-
-                }
-                   Player playerExists = world.getPlayer(username);
-
-                if (playerExists != null) {
-                    stream.printToUser("username is taken");
-                    continue;
-                    }
 
 
 
 
 
 
-
-
-                        nameOk = true;
+                    nameOk = true;
 
                 }
                 String playerName = username;
