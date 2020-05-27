@@ -112,6 +112,7 @@ public class World extends Thread {
 
     public static void main(String[] args) {
         World world = new World();
-        UserConnections userIO = new UserConnections(true);
+        UserConnections userIO = new UserConnections(world);
+        userIO.startListeningForUsers();
     }
 }
