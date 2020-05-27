@@ -56,6 +56,11 @@ public class UserConnections extends Thread {
 
                     stream.printToUser("what is your name?");
                     username = stream.readFromUser();
+                   String empty = "";
+                    if (username.equals(empty)){
+                        stream.printToUser("that is an invalid username");
+                        continue;
+                    }
                     for (NPC i : NPCList){
                         if (i.getName().equalsIgnoreCase(username)){
                             stream.printToUser("this username is already taken");

@@ -2,22 +2,22 @@ package entities;
 
 public class Player {
 
-    private String name;
+    private String userId;
     private Inventory inventory;
     private String currentRoomID;
     public String getCurrentRoomID() {return currentRoomID;}
     public void setCurrentRoomID(String roomID) { this.currentRoomID = roomID; }
 
     public Player(String name) {
-        this.name = name;
+        this.userId = name;
         inventory = new Inventory();
         currentRoomID = "1";
     }
 
-    public String getName() {
-        return name;
+    public String getUserId() {
+        return userId;
     }
-    public void setName(String name) { this.name = name; }
+    public void setUserId(String name) { this.userId = name; }
 
     public Inventory getInventory() {return inventory;}
 }
