@@ -75,9 +75,10 @@ public class World extends Thread {
         }
     }
 
-
-    public void addPlayer(String userId, Player player) {
+    public void addNewPlayer(String userId, Player player) {
         playersHash.put(userId, player);
+        CommandHandler handler = new CommandHandler(this, player);
+        handler.start();
     }
 
     public Player getPlayer(String userId) {

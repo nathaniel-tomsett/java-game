@@ -20,8 +20,6 @@ public class UserConnections {
     private int serverPort = 1001;
     private ServerSocket serverSocket;
 
-    Map<String, CommandHandler> inputProcessors = new HashMap<>();
-
     public UserConnections(World world) {
         this.world = world;
     }
@@ -29,24 +27,24 @@ public class UserConnections {
     public void startListeningForUsers() {
         new Thread() {
             public void run() {
-                try {
-                    serverSocket = new ServerSocket(serverPort);
-                    while (true) {
-                        UserStream stream = new UserStream();
-                        stream.initForNetwork(serverSocket.accept());
-                        newUserConnectionRequest(stream);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
+            try {
+                serverSocket = new ServerSocket(serverPort);
+                while (true) {
+                    UserStream stream = new UserStream();
+                    stream.initForNetwork(serverSocket.accept());
+                    newUserConnectionRequest(stream);
                 }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             }
         }.start();
 
         new Thread() {
             public void run() {
-                UserStream stream = new UserStream();
-                stream.initForConsole();
-                newUserConnectionRequest(stream);
+            UserStream stream = new UserStream();
+            stream.initForConsole();
+            newUserConnectionRequest(stream);
             }
         }.start();
     }
@@ -81,8 +79,6 @@ public class UserConnections {
             nameOk = true;
         }
         String playerName = username;
-        world.addPlayer(playerName, new Player(playerName));
-        CommandHandler processor = new CommandHandler(world, playerName, stream);
-        inputProcessors.put(playerName, processor);
+        world.addNewPlayer(playerName, new Player(playerName, stream));
     }
 }

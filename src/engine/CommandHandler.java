@@ -15,13 +15,12 @@ public class CommandHandler extends Thread {
     private CommandTranslator commandTranslator;
     private String lastRoom;
 
-    public CommandHandler(World world, String userId, UserStream userStream) {
+    public CommandHandler(World world, Player player) {
         this.world = world;
-        this.userId = userId;
-        this.userStream = userStream;
+        this.userId = player.getName();
+        this.userStream = player.getUserStream();
         this.commandTranslator = new CommandTranslator();
         this.lastRoom = "";
-        start();
     }
 
     @Override
