@@ -17,7 +17,7 @@ public class CommandHandler extends Thread {
 
     public CommandHandler(World world, Player player) {
         this.world = world;
-        this.userId = player.getName();
+        this.userId = player.getUserId();
         this.userStream = player.getUserStream();
         this.commandTranslator = new CommandTranslator();
         this.lastRoom = "";
@@ -123,8 +123,11 @@ public class CommandHandler extends Thread {
             List<Player> playerList = getplayersInRoom(currentRoom);
             if (playerList!= null && !playerList.isEmpty()) {
                 userStream.printToUser("Players in the room:");
+
                 for (Player p : playerList) {
-                    userStream.printToUser("    " + p.getName());
+                    if (!p.getUserId().equalsIgnoreCase(userId)) {
+                        userStream.printToUser("    " + p.getUserId());
+                    }
                 }
             }
 

@@ -4,7 +4,7 @@ import users.UserStream;
 
 public class Player {
 
-    private String name;
+    private String userId;
     private Inventory inventory;
     private String currentRoomID;
     private UserStream userStream;
@@ -12,16 +12,16 @@ public class Player {
     public void setCurrentRoomID(String roomID) { this.currentRoomID = roomID; }
 
     public Player(String name, UserStream userStream) {
-        this.name = name;
+        this.userId = name;
         this.inventory = new Inventory();
         this.currentRoomID = "1";
         this.userStream = userStream;
     }
 
-    public String getName() {
-        return name;
+    public String getUserId() {
+        return userId;
     }
-    public void setName(String name) { this.name = name; }
+
     public Inventory getInventory() { return inventory; }
     public UserStream getUserStream() { return userStream; }
 }

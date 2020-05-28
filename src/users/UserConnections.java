@@ -60,6 +60,13 @@ public class UserConnections {
 
             stream.printToUser("What is your name?");
             username = stream.readFromUser();
+
+            String empty = "";
+            if (username.equals(empty)) {
+                stream.printToUser("that is an invalid username");
+                continue;
+            }
+
             for (NPC i : NPCList){
                 if (i.getName().equalsIgnoreCase(username)){
                     stream.printToUser("This username is already taken");
