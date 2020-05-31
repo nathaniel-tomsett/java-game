@@ -1,5 +1,6 @@
 package engine;
 
+import com.sun.media.jfxmedia.events.PlayerEvent;
 import entities.Door;
 import entities.NPC;
 import entities.Player;
