@@ -199,18 +199,24 @@ public class CommandHandler extends Thread {
                 userStream.printToUser(n.getName() + " says: " + Dialogue, TextColours.GREEN);
             } else {
               Player  playerName = world.getPlayer(NpcName);
-                if (playerName != null){
-                    boolean end = false;
-                    while (!end) {
+                if (playerName != null) {
+                    if (!(NpcName.equalsIgnoreCase(userId))) {
 
 
+                        boolean end = false;
                         userStream.printToUser("youve connected to " + playerName.getUserId());
-                        String userType = userStream.readFromUser();
-                        if (userType.equalsIgnoreCase("/end")){
-                            end = true;
+                        while (!end) {
+
+                            String userType = userStream.readFromUser();
+                            if (userType.equalsIgnoreCase("/end")) {
+                                end = true;
+                            }
+                            String userTypeFrom = ("\nmessage from " + userId + ":" + userType);
+                            playerName.getUserStream().printToUser(userTypeFrom);
                         }
-                       String userTypeFrom = ("\nmessage from "+ userId+ ":" + userType);
-                        playerName.getUserStream().printToUser(userTypeFrom);
+                    }
+                    else{
+                        userStream.printToUser("you cant talk to yourself it wouldnt be very interesting");
                     }
                 }
                 else{
