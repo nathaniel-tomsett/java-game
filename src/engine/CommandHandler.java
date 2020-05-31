@@ -198,8 +198,9 @@ public class CommandHandler extends Thread {
                 String Dialogue = n.getRandomDialog();
                 userStream.printToUser(n.getName() + " says: " + Dialogue, TextColours.GREEN);
             } else {
+              Player p = getPlayerFromRoom(NpcName, currentRoom);
               Player  playerName = world.getPlayer(NpcName);
-                if (playerName != null) {
+                if (p != null) {
                     if (!(NpcName.equalsIgnoreCase(userId))) {
 
 
@@ -462,6 +463,15 @@ public class CommandHandler extends Thread {
         return null;
     }
 
+    private Player getPlayerFromRoom(String PlayerName, String roomID) {
+        List<Player> PlayerList = world.getListOfPlayersInRoom(roomID);
+        for (Player p : PlayerList) {
+            if (p.getCurrentRoomID().equals(roomID) && PlayerName.equalsIgnoreCase(p.getUserId())) {
+                return p;
+            }
+        }
+        return null;
+    }
     public List<Room> getRoomDirection( int directionValue ) {
         Room r = getRoom(getCurrentRoomID());
         List<Room> exitName = new ArrayList<>();
