@@ -113,7 +113,8 @@ public class World extends Thread {
 
     public static void main(String[] args) {
         World world = new World();
-        UserConnections userIO = new UserConnections(world);
+        boolean consoleOff = args.length > 0 && args[0].equalsIgnoreCase("consoleOff");
+        UserConnections userIO = new UserConnections(world, consoleOff);
         userIO.startListeningForUsers();
     }
 }

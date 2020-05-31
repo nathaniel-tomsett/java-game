@@ -19,34 +19,42 @@ public class UserConnections {
 
     private int serverPort = 1001;
     private ServerSocket serverSocket;
+    private boolean consoleOff;
 
-    public UserConnections(World world) {
+    public UserConnections(World world, boolean consoleOff) {
         this.world = world;
+        this.consoleOff = consoleOff;
     }
 
     public void startListeningForUsers() {
         new Thread() {
             public void run() {
-            try {
-                serverSocket = new ServerSocket(serverPort);
-                while (true) {
-                    UserStream stream = new UserStream();
-                    stream.initForNetwork(serverSocket.accept());
-                    newUserConnectionRequest(stream);
+                try {
+                    serverSocket = new ServerSocket(serverPort);
+                    while (true) {
+                        try {
+                            UserStream stream = new UserStream();
+                            stream.initForNetwork(serverSocket.accept());
+                            newUserConnectionRequest(stream);
+                        } catch (IOException e) {
+                        }
+                    }
+                } catch (IOException e) {
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
             }
         }.start();
-
-        new Thread() {
-            public void run() {
-            UserStream stream = new UserStream();
-            stream.initForConsole();
-            newUserConnectionRequest(stream);
-            }
-        }.start();
+        if (!consoleOff) {
+            new Thread() {
+                public void run() {
+                    try {
+                        UserStream stream = new UserStream();
+                        stream.initForConsole();
+                        newUserConnectionRequest(stream);
+                    } catch (Exception e) {
+                    }
+                }
+            }.start();
+        }
     }
 
     private void newUserConnectionRequest(UserStream stream) {
@@ -62,6 +70,9 @@ public class UserConnections {
             username = stream.readFromUser();
 
             String empty = "";
+            if (username == null) {
+                break;
+            }
             if (username.equals(empty)) {
                 stream.printToUser("that is an invalid username");
                 continue;
