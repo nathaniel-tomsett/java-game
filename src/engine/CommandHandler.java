@@ -198,8 +198,31 @@ public class CommandHandler extends Thread {
                 String Dialogue = n.getRandomDialog();
                 userStream.printToUser(n.getName() + " says: " + Dialogue, TextColours.GREEN);
             } else {
+              Player  playerName = world.getPlayer(NpcName);
+                if (playerName != null){
+                    boolean end = false;
+                    while (!end) {
+
+
+                        userStream.printToUser("youve connected to " + playerName.getUserId());
+                        String userType = userStream.readFromUser();
+                        if (userType.equalsIgnoreCase("/end")){
+                            end = true;
+                        }
+                       String userTypeFrom = ("\nmessage from "+ userId+ ":" + userType);
+                        playerName.getUserStream().printToUser(userTypeFrom);
+                    }
+                }
+                else{
+
+
                 userStream.printToUser("this persons not in the room with you");
             }
+
+            }
+
+
+
         }else if (command == commandTranslator.HELP) {
             userStream.printToUser("move (direction on compass) move to that place then once it asks for input again type one of the street names the console just showed you");
             userStream.printToUser("look to see your current surroundings and where you can go" );
