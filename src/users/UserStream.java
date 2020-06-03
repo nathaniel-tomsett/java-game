@@ -50,7 +50,7 @@ public class UserStream {
     }
 
     public void printToUser(String message, String colour) {
-        out.println(colour + message + TextColours.RESET);
+        out.print(colour + message + TextColours.RESET+ "\n\r");
         out.flush();
     }
 }
