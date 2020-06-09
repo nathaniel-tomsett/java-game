@@ -39,6 +39,7 @@ public class UserStream {
     public void printToUser(String message) {
         printToUser(message, TextColours.RESET);
     }
+    //here
 
     public void printToUserSameLine(String message) {
         printToUserSameLine(message, TextColours.RESET);
@@ -53,4 +54,16 @@ public class UserStream {
         out.print(colour + message + TextColours.RESET+ "\n\r");
         out.flush();
     }
+
+    public void killStream() {
+        try {
+            in.close();
+            out.close();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }
 }
+
+

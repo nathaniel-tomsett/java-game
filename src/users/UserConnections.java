@@ -63,40 +63,69 @@ public class UserConnections {
 
         boolean nameOk = false;
         String username = "";
+        String passGuess = "";
+        String password = "fred";
+        int guesses = 0;
+        boolean passwordOk = false;
+
         while (!nameOk){
             boolean foundNPC = false;
 
-            stream.printToUser("What is your name?");
-            username = stream.readFromUser();
-
-            String empty = "";
-            if (username == null) {
-                break;
-            }
-            if (username.equals(empty)) {
-                stream.printToUser("that is an invalid username");
-                continue;
-            }
-
-            for (NPC i : NPCList){
-                if (i.getName().equalsIgnoreCase(username)){
-                    stream.printToUser("This username is already taken");
-                    foundNPC = true;
+            while (!passwordOk) {
+                stream.printToUser("what is the password");
+                passGuess = stream.readFromUser();
+                if (passGuess.equals(password)) {
+                    stream.printToUser("thats correct");
+                    passwordOk = true;
+                } else {
+                    stream.printToUser("thats incorrect");
+                    guesses += 1;
+                    if (guesses == 3){
+                        stream.printToUser("youve guessed incorrectly too many times");
+                        stream.killStream();
+                        break;
+                    }
                 }
             }
-            if (foundNPC){
-                continue;
-            }
-            Player playerExists = world.getPlayer(username);
 
-            if (playerExists != null) {
-                stream.printToUser("username is taken");
-                continue;
-            }
+            if (passwordOk) {
+                stream.printToUser("What is your name?");
+                username = stream.readFromUser();
+                //here to see username
 
-            nameOk = true;
+                String empty = "";
+                if (username == null) {
+                    break;
+                }
+                if (username.equals(empty)) {
+                    stream.printToUser("that is an invalid username");
+                    continue;
+                }
+
+                for (NPC i : NPCList) {
+                    if (i.getName().equalsIgnoreCase(username)) {
+                        stream.printToUser("This username is already taken");
+                        foundNPC = true;
+                    }
+                }
+                if (foundNPC) {
+                    continue;
+                }
+                Player playerExists = world.getPlayer(username);
+
+                if (playerExists != null) {
+                    stream.printToUser("username is taken");
+                    continue;
+                }
+
+                nameOk = true;
+            } else {
+                break;
+            }
         }
-        String playerName = username;
-        world.addNewPlayer(playerName, new Player(playerName, stream));
+        if (!username.isEmpty()) {
+            String playerName = username;
+            world.addNewPlayer(playerName, new Player(playerName, stream));
+        }
     }
 }

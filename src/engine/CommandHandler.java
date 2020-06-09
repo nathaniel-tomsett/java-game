@@ -1,12 +1,18 @@
 package engine;
 
+
 import entities.*;
 import users.UserStream;
 import util.TextColours;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+
+import java.io.File;  // Import the File class
+import java.io.IOException;
 
 public class CommandHandler extends Thread {
     private World world;
@@ -36,6 +42,22 @@ public class CommandHandler extends Thread {
         }
     }
 
+
+    //TODO: make a class
+    public void whenWriteStringUsingBufferedWritter_thenCorrect() {
+        try {
+            File fileName = new File("fileWriter.txt");
+            String str = "hello " + userId;
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+            writer.write(str);
+
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public void doUserCommand(String input) {
         boolean npcsShouldMove = true;
         boolean shouldPrintCurrentRoomAfterMove = false;
@@ -43,6 +65,7 @@ public class CommandHandler extends Thread {
         String currentRoom = world.getPlayer(userId).getCurrentRoomID();
 
         int command = commandTranslator.getCommand(input);
+        //here to see every time an input is entered that have been entered
         if (command == CommandTranslator.MOVE) {
             boolean roomValid = false;
             String directionName = commandTranslator.getDirectionName(input);
@@ -231,6 +254,8 @@ public class CommandHandler extends Thread {
 
 
         }else if (command == commandTranslator.HELP) {
+            //TODO: update for latest commands
+
             userStream.printToUser("move (direction on compass) move to that place then once it asks for input again type one of the street names the console just showed you");
             userStream.printToUser("look to see your current surroundings and where you can go" );
             userStream.printToUser("pickup (insert item name here) to pickup an item" );
