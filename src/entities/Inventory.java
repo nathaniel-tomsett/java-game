@@ -21,14 +21,12 @@ public class Inventory {
             items.add(i);
             return true;
         } else {
-            System.out.println("things.Inventory is full");
             return false;
         }
     }
 
     public void removeItem(Item i) {
         if (items.size() == 0) {
-            System.out.println("things.Inventory is empty");
         }
         items.remove(i);
     }
