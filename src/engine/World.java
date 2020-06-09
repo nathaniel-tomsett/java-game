@@ -81,6 +81,10 @@ public class World extends Thread {
         handler.start();
     }
 
+    public void removePlayer(String userId) {
+        playersHash.remove(userId);
+    }
+
     public Player getPlayer(String userId) {
         return playersHash.get(userId);
     }
