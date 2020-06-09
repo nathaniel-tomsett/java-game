@@ -72,16 +72,16 @@ public class UserConnections {
             boolean foundNPC = false;
 
             while (!passwordOk) {
-                stream.printToUser("what is the password");
+                stream.printToUser("What is the password?");
                 passGuess = stream.readFromUser();
-                if (passGuess.equals(password)) {
-                    stream.printToUser("thats correct");
+                if (passGuess != null && passGuess.equals(password)) {
+                    stream.printToUser("That's correct");
                     passwordOk = true;
                 } else {
-                    stream.printToUser("thats incorrect");
+                    stream.printToUser("That's incorrect");
                     guesses += 1;
                     if (guesses == 3){
-                        stream.printToUser("youve guessed incorrectly too many times");
+                        stream.printToUser("You've guessed incorrectly too many times");
                         stream.killStream();
                         break;
                     }
