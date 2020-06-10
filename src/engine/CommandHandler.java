@@ -43,33 +43,24 @@ public class CommandHandler extends Thread {
     }
 
 
-    //TODO: make a class
-    public void whenWriteStringUsingBufferedWritter_thenCorrect() {
-        try {
-            File fileName = new File("fileWriter.txt");
-            String str = "hello " + userId;
-            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-            writer.write(str);
-
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
     public void doUserCommand(String input) {
         boolean npcsShouldMove = true;
         boolean shouldPrintCurrentRoomAfterMove = false;
+
+        auditFile file = new auditFile();
+        file.writeLogLine(input);
+
 
         String currentRoom = world.getPlayer(userId).getCurrentRoomID();
 
         int command = commandTranslator.getCommand(input);
         //here to see every time an input is entered that have been entered
         if (command == CommandTranslator.MOVE) {
+
             boolean roomValid = false;
             String directionName = commandTranslator.getDirectionName(input);
             int directionValue = commandTranslator.getEndMovementArg(directionName);
+
             List<Room> roomOB = getRoomDirection(directionValue);
             userStream.printToUser("You can move to these rooms:");
             List<String> roomNameList = new ArrayList<>();
