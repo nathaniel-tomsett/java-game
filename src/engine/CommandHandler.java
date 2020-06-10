@@ -36,6 +36,7 @@ public class CommandHandler extends Thread {
             userStream.printToUserSameLine("Input> ", TextColours.RED);
             String input = userStream.readFromUser();
             if (input == null) {
+                world.removePlayer(userId);
                 break;
             }
             doUserCommand(input);
