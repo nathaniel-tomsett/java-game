@@ -49,7 +49,7 @@ public class CommandHandler extends Thread {
         boolean shouldPrintCurrentRoomAfterMove = false;
 
         auditFile file = new auditFile();
-        file.writeLogLine(input);
+        file.writeLogLine(input, userId);
 
 
         String currentRoom = world.getPlayer(userId).getCurrentRoomID();

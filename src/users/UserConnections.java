@@ -119,6 +119,7 @@ public class UserConnections {
                 }
 
                 nameOk = true;
+                stream.setUserId(username);
             } else {
                 break;
             }

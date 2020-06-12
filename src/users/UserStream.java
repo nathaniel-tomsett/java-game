@@ -1,5 +1,6 @@
 package users;
 
+import entities.auditFile;
 import users.UserConnections;
 import util.TextColours;
 
@@ -13,17 +14,20 @@ public class UserStream {
     private boolean network;
     private PrintWriter out;
     private BufferedReader in;
+    private String userId;
 
     public void initForConsole() {
         network = false;
         out = new PrintWriter(System.out);
         in =  new BufferedReader(new InputStreamReader(System.in));
+
     }
 
     public void initForNetwork(Socket clientSocket) throws IOException {
         network = true;
         out = new PrintWriter(clientSocket.getOutputStream());
         in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+
     }
 
     public String readFromUser() {
@@ -39,18 +43,22 @@ public class UserStream {
     public void printToUser(String message) {
         printToUser(message, TextColours.RESET);
     }
-    //here
+
 
     public void printToUserSameLine(String message) {
         printToUserSameLine(message, TextColours.RESET);
     }
 
     public void printToUserSameLine(String message, String colour) {
+        auditFile file = new auditFile();
+        file.writeLogLine(message, userId);
         out.print(colour + message + TextColours.RESET);
         out.flush();
     }
 
     public void printToUser(String message, String colour) {
+        auditFile file = new auditFile();
+        file.writeLogLine(message, userId);
         out.print(colour + message + TextColours.RESET+ "\n\r");
         out.flush();
     }
@@ -63,6 +71,9 @@ public class UserStream {
         catch(IOException e){
             e.printStackTrace();
         }
+    }
+        public void setUserId (String Id){
+            userId = Id;
     }
 }
 
