@@ -66,7 +66,7 @@ public class UserConnections {
         String passGuess = "";
         String password = "fred";
         int guesses = 0;
-        boolean passwordOk = false;
+        boolean passwordOk = true;
 
         while (!nameOk){
             boolean foundNPC = false;

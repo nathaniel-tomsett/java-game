@@ -31,7 +31,7 @@ public class CommandTranslator {
             return MOVE;
         } else if (input.startsWith("p ") || input.startsWith("pickup ")) {
             return PICKUP;
-        } else if (input.startsWith("d")|| input.startsWith("drop ")) {
+        } else if (input.startsWith("d ")|| input.startsWith("drop ")) {
             return DROP;
         } else if (input.equalsIgnoreCase("l") || input.equalsIgnoreCase("look")) {
             return LOOK;
@@ -41,7 +41,7 @@ public class CommandTranslator {
             return USE;
         } else if (input.startsWith("t ")|| input.startsWith("talk to ")) {
             return TALK;
-        }  else if (input.startsWith("h")|| input.startsWith("help")) {
+        }  else if (input.equalsIgnoreCase("h")|| input.startsWith("help")) {
         return HELP;
         }  else if (input.startsWith("a")|| input.startsWith("about")) {
         return ABOUT;
@@ -104,6 +104,9 @@ public class CommandTranslator {
     public String getItemTopickup2(String input) {
 
         int firstSpace = input.indexOf(" ");
+        if (input.substring(firstSpace) == ""){
+            return null;
+    }
         String thing = input.substring(firstSpace);
         return thing.trim();
     }

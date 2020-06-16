@@ -45,6 +45,7 @@ public class UserStream {
     }
 
 
+
     public void printToUserSameLine(String message) {
         printToUserSameLine(message, TextColours.RESET);
     }

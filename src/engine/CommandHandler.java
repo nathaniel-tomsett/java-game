@@ -161,6 +161,8 @@ public class CommandHandler extends Thread {
         } else if (command == CommandTranslator.INVENTORY) {
             Inventory inv = world.getPlayer(userId).getInventory();
             List<Item> Items = inv.getItems();
+            int PlayerHp = world.getPlayer(userId).getHP();
+            System.out.println("HP: " + PlayerHp);
             userStream.printToUser("Inventory: ");
 
             for (Item i : Items) {
@@ -253,10 +255,10 @@ public class CommandHandler extends Thread {
             userStream.printToUser("pickup (insert item name here) to pickup an item" );
             userStream.printToUser("drop (insert item name here) to drop an item" );
             userStream.printToUser("talk to (insert things.NPC name here) to talk to an things.NPC " );
-            userStream.printToUser("inv to look at your inventory" );
+            userStream.printToUser("inv to look at your inventory and HPf" );
             userStream.printToUser("use (insert item name here) on (insert name of thing you'd like to use item on here) to use an item" );
             userStream.printToUser("about to see credits of this game" );
-            userStream.printToUser("all of the above excluding inv can be shortened to their first letter e.g (m newport road or p house key)" );
+            userStream.printToUser("all of the above excluding inv can be shortened to their first letter e.g (m east or p house key)" );
             userStream.printToUser("have fun!!!" );
         }
         else if (command == commandTranslator.ABOUT) {

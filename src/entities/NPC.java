@@ -9,11 +9,13 @@ public class NPC {
     private int moveChance;
     private String currentRoomID;
     private List<String> dialog;
+    private int health;
 
     public String getId(){return id;}
     public String getName() {return name;}
     public String getCurrentRoomID() {return currentRoomID;}
     public void setCurrentRoomID(String roomID) { this.currentRoomID = roomID; }
+    public int getHP() {return health;}
 
      public boolean shouldMove (){
         Random rand = new Random();
