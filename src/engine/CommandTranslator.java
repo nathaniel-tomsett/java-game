@@ -12,6 +12,7 @@ public class CommandTranslator {
     public static final int TALK = 7;
     public static final int HELP = 8;
     public static final int ABOUT = 9;
+    public static final int ATTACK= 10;
 
 
     // Movement directions
@@ -43,9 +44,11 @@ public class CommandTranslator {
             return TALK;
         }  else if (input.equalsIgnoreCase("h")|| input.startsWith("help")) {
         return HELP;
-        }  else if (input.startsWith("a")|| input.startsWith("about")) {
+        }  else if (input.startsWith("abt")|| input.startsWith("about")) {
         return ABOUT;
-        } else {
+        } else if (input.startsWith("atk ")|| input.startsWith("attack ")) {
+             return ATTACK;
+         } else {
             return ERROR;
         }
     }

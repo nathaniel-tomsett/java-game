@@ -162,7 +162,7 @@ public class CommandHandler extends Thread {
             Inventory inv = world.getPlayer(userId).getInventory();
             List<Item> Items = inv.getItems();
             int PlayerHp = world.getPlayer(userId).getHP();
-            System.out.println("HP: " + PlayerHp);
+            userStream.printToUser("HP: " + PlayerHp);
             userStream.printToUser("Inventory: ");
 
             for (Item i : Items) {
@@ -247,7 +247,14 @@ public class CommandHandler extends Thread {
 
 
 
-        }else if (command == commandTranslator.HELP) {
+        }
+        else if (command == CommandTranslator.ATTACK) {
+            attack attack = new attack(world);
+            attack.attack(input);
+        }
+
+
+        else if (command == commandTranslator.HELP) {
             //TODO: update for latest commands
 
             userStream.printToUser("move (direction on compass) move to that place then once it asks for input again type one of the street names the console just showed you");

@@ -26,6 +26,7 @@ public class Player {
         return userId;
     }
     public int getHP() {return health;}
+    public void setHP(int h) { health = h;}
     public Inventory getInventory() { return inventory; }
     public UserStream getUserStream() { return userStream; }
 
