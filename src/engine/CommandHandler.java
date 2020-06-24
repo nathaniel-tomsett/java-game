@@ -33,7 +33,7 @@ public class CommandHandler extends Thread {
     public void run() {
         printCurrentRoom();
         while (true) {
-            userStream.printToUserSameLine("Input> ", TextColours.RED);
+            userStream.printToUser("Input> ", TextColours.RED);
             String input = userStream.readFromUser();
             if (input == null) {
                 world.removePlayer(userId);
@@ -75,7 +75,7 @@ public class CommandHandler extends Thread {
             }
             else {
                 userStream.printToUser("Where would you like to go?");
-                userStream.printToUserSameLine("Input> ", TextColours.RED);
+                userStream.printToUser("Input> ", TextColours.RED);
                 String newinput  = userStream.readFromUser();
                 for (String i : roomNameList){
                     if (i.equalsIgnoreCase(newinput)){
