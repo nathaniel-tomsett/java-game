@@ -249,7 +249,9 @@ public class CommandHandler extends Thread {
 
         }
         else if (command == CommandTranslator.ATTACK) {
-            attack attack = new attack(world);
+            Player me = world.getPlayer(userId);
+
+            attack attack = new attack(world, me);
             attack.attack(input);
         }
 
