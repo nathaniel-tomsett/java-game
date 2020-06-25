@@ -67,7 +67,7 @@ public class UserConnections {
         String password = "fred";
         int guesses = 0;
         boolean passwordOk = true;
-
+        boolean godmode = false;
         while (!nameOk){
             boolean foundNPC = false;
 
@@ -87,6 +87,7 @@ public class UserConnections {
                     }
                 }
             }
+
 
             if (passwordOk) {
                 stream.printToUser("What is your name?");
@@ -117,6 +118,9 @@ public class UserConnections {
                     stream.printToUser("username is taken");
                     continue;
                 }
+                if (username.equals("fred")){
+                     godmode = true;
+                }
 
                 nameOk = true;
                 stream.setUserId(username);
@@ -126,7 +130,9 @@ public class UserConnections {
         }
         if (!username.isEmpty()) {
             String playerName = username;
-            world.addNewPlayer(playerName, new Player(playerName, stream));
+            Player newPlayer = new Player(playerName, stream);
+            newPlayer.setgodmode(godmode);
+            world.addNewPlayer(playerName, newPlayer);
         }
     }
 }

@@ -9,9 +9,12 @@ public class Player {
     private String currentRoomID;
     private UserStream userStream;
     private int health;
+    public boolean godmode;
+
     public String getCurrentRoomID() {return currentRoomID;}
     public void setCurrentRoomID(String roomID) { this.currentRoomID = roomID; }
-
+    public void setgodmode (boolean godTrue){ this.godmode = godTrue;}
+    public boolean getgodemode (){return godmode;}
     public Player(String name, UserStream userStream) {
         Random rand = new Random();
         int randBaseHP = rand.nextInt(15);
