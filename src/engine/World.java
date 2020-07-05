@@ -85,6 +85,15 @@ public class World extends Thread {
         playersHash.remove(userId);
     }
 
+    public void addNewNPC (int userId, NPC npc){
+        npcList.add(userId, npc);
+
+    }
+    public void removeNpc(NPC toRemove) {
+        npcList.remove(toRemove);
+    }
+
+
     public Player getPlayer(String userId) {
         return playersHash.get(userId);
     }
@@ -104,7 +113,7 @@ public class World extends Thread {
     private void loadTestWorld() {
         ResourceReader resourceReader = new ResourceReader();
         roomList = resourceReader.loadRoomsFromResources();
-        npcList = resourceReader.loadNPCs();
+        npcList = new LinkedList<>(resourceReader.loadNPCs());
     }
 
     public List<Room> getRooms() {

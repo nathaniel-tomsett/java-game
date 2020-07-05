@@ -1,21 +1,49 @@
 package entities;
 
+import users.UserStream;
+
 import java.util.List;
 import java.util.Random;
 
 public class NPC {
+    Random rand = new Random();
+    int randBaseHP = rand.nextInt(15);
+
+
+
+
     private String id;
     private String name;
     private int moveChance;
     private String currentRoomID;
     private List<String> dialog;
-    private int health;
+    private int HP;
 
-    public String getId(){return id;}
-    public String getName() {return name;}
-    public String getCurrentRoomID() {return currentRoomID;}
-    public void setCurrentRoomID(String roomID) { this.currentRoomID = roomID; }
-    public int getHP() {return health;}
+
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCurrentRoomID() {
+        return currentRoomID;
+    }
+
+    public void setCurrentRoomID(String roomID) {
+        this.currentRoomID = roomID;
+    }
+
+    public int getHP() {
+        return HP;
+    }
+
+    public void setHP(int h) {
+        HP = h;
+    }
 
      public boolean shouldMove (){
         Random rand = new Random();
@@ -29,10 +57,14 @@ public class NPC {
         }
      }
 
-    NPC(String i, String n, int m) {
-        id = i;
-        name = n;
-        moveChance = m ;
+    NPC(String i, String n, int m, String c) {
+        this.id = i;
+        this.name = n;
+        this.moveChance = m ;
+        this.currentRoomID = c ;
+        Random rand = new Random();
+        int randBaseHP = rand.nextInt(15);
+        this.HP = randBaseHP +5;
     }
 
     public String getRandomDialog() {
@@ -41,4 +73,5 @@ public class NPC {
         return dialog.get(selection);
     }
 
-}
+    }
+

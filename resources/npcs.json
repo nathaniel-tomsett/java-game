@@ -4,6 +4,7 @@
     "name" :  "Fraser" ,
     "moveChance" :  0,
     "currentRoomID" : "2",
+    "HP" : 20,
     "dialog" : [
       "I'm hungry...",
       "Have you seen my headphones, I can't find them",
@@ -16,6 +17,7 @@
     "name" :  "Bella" ,
     "moveChance" :  20,
     "currentRoomID" : "2",
+    "HP" : 15,
     "dialog" : [
       "You are a silly sausage",
       "Your piano playing was very nice",
@@ -27,6 +29,7 @@
     "name" :  "Mabel" ,
     "moveChance" :  80,
     "currentRoomID" : "2",
+    "HP" : 999999999,
     "dialog" : [
       "Barrrrrk!",
       "Woof",
