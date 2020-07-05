@@ -6,12 +6,6 @@ import java.util.List;
 import java.util.Random;
 
 public class NPC {
-    Random rand = new Random();
-    int randBaseHP = rand.nextInt(15);
-
-
-
-
     private String id;
     private String name;
     private int moveChance;
@@ -62,9 +56,7 @@ public class NPC {
         this.name = n;
         this.moveChance = m ;
         this.currentRoomID = c ;
-        Random rand = new Random();
-        int randBaseHP = rand.nextInt(15);
-        this.HP = randBaseHP +5;
+
     }
 
     public String getRandomDialog() {

@@ -33,13 +33,11 @@ public class attack {
                     TargetHP -= 3;
                     TargetObj.setHP(TargetHP);
 
-                    //TODO: set health back in NPC
-
                     if (TargetHP <= 0) {
                         userStream.printToUser(Target + " has died");
                         String TargetId = TargetObj.getId();
                         world.removeNpc(TargetObj);
-                        break;
+
                     }break;
                 }
             }
