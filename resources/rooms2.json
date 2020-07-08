@@ -3,7 +3,9 @@
     "id" : "1",
     "name" : "Entrance",
     "items" : [
-      {"id" :  "1", "name" :  "House Key", "type" : "3" }
+      {"id" :  "1", "name" :  "House Key", "type" : "3", "dmg" : 10},
+      { "id" :  "1", "name" :  "Swordy McSwordface", "type" : "1", "dmg" : 6 },
+      { "id" :  "2", "name" :  "Matilda", "type" : "2", "dmg" : 2}
     ],
     "doors" : [
       { "id" :  "1", "direction" :  "4", "destinationRoomId" :  "2", "locked" : false},
@@ -17,8 +19,8 @@
     "id" : "2",
     "name" : "Living Room",
     "items" : [
-      {"id" :  "2", "name" :  "tv remote", "type" : "4" },
-      { "id" :  "3", "name" :  "book-1", "type" : "4" }
+      {"id" :  "2", "name" :  "tv remote", "type" : "4", "dmg" : 2},
+      { "id" :  "3", "name" :  "book-1", "type" : "4", "dmg" : 2}
     ],
     "doors" : [
       { "id" :  "3", "direction" :  "2", "destinationRoomId" :  "1", "locked" : false}
@@ -57,8 +59,8 @@
     "id" : "5",
     "name" : "Kitchen",
     "items" : [
-      {"id" :  "4", "name" :  "Backdoor Key", "type" : "3" },
-      { "id" :  "5", "name" :  "Bike Shed Key", "type" : "3" }
+      {"id" :  "4", "name" :  "Backdoor Key", "type" : "3","dmg" : 10 },
+      { "id" :  "5", "name" :  "Bike Shed Key", "type" : "3","dmg" : 10}
     ],
     "doors" : [
       { "id" :  "8", "direction" :  "4", "destinationRoomId" :  "6", "locked" : false},

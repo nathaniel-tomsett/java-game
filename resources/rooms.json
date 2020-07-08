@@ -3,8 +3,8 @@
     "id" : "1",
     "name" : "Dining Room",
     "items" : [
-      { "id" :  "1", "name" :  "Swordy McSwordface", "type" : "1" },
-      { "id" :  "2", "name" :  "Matilda", "type" : "2" }
+      { "id" :  "1", "name" :  "Swordy McSwordface", "type" : "1", "dmg" : 6 },
+      { "id" :  "2", "name" :  "Matilda", "type" : "2", "dmg" : 2}
     ],
     "doors" : [
       { "id" :  "1", "direction" :  "2", "destinationRoomId" :  "3", "locked" : true , "key" : "key"},
@@ -17,7 +17,7 @@
     "id" : "2",
     "name" : "Living Room",
     "items" : [
-      { "id" :  "3", "name" :  "Key", "type" : "3" }
+      { "id" :  "3", "name" :  "Key", "type" : "3", "dmg" : 10 }
     ],
     "doors" : [
       { "id" :  "4", "direction" :  "1", "destinationRoomId" :  "1", "locked" : false}

@@ -31,12 +31,22 @@ public class Inventory {
         items.remove(i);
     }
     public boolean doesexistByName(String itemName){
-        for (Item i : items ){
-            if (i.getName().equalsIgnoreCase(itemName)){
-                return true;
+            for (Item i : items ){
+                if (i.getName().equalsIgnoreCase(itemName)){
+                    return true;
+                }
             }
-        }
-        return false;
+            return false;
 
     }
+    public Item getItem(String itemName){
+        for (Item i : items ){
+            if (i.getName().equalsIgnoreCase(itemName)){
+                return i;
+            }
+        }
+        return null;
+
+    }
+
 }

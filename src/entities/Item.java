@@ -10,11 +10,13 @@ public class Item {
     private String id;
     private String name;
     private int type;
+    private int dmg;
 
-    Item(String i, String n, int t) {
+    Item(String i, String n, int t, int dm) {
         id = i;
         name = n;
         type = t;
+        dmg = dm;
     }
 
     public String getId() {
@@ -28,5 +30,6 @@ public class Item {
     public int getType() {
         return type;
     }
+    public int getDmg(){return dmg;}
 
 }
