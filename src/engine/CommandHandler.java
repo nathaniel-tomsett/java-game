@@ -196,8 +196,7 @@ public class CommandHandler extends Thread {
                         Door d2 = getDoor(d.getDestinationRoomId(), flipDirection(d.getDirection()));
                         if (d2 != null && d2.tryUnlock(itemName)) {
                             userStream.printToUser("the door opens");
-                        } else {
-                            userStream.printToUser("error, check key settings for doors");
+                        } else {userStream.printToUser("error, check key settings for doors");
                         }
                     } else {
                         userStream.printToUser("the item was innefective");
@@ -206,7 +205,23 @@ public class CommandHandler extends Thread {
                     userStream.printToUser("this item is not in your inventory");
                 }
             } else {
-                userStream.printToUser("thats invalid");
+              String itemName = commandTranslator.getItemTopickup2(input);
+                if (world.getPlayer(userId).getInventory().doesexistByName(itemName)){
+                 Item item = getItemFromInv(itemName);
+                 if (item.getHeal()){
+                     int playerHp = world.getPlayer(userId).getHP();
+                     Player player = world.getPlayer(userId);
+                     playerHp += item.getDmg();
+                     player.setHP(playerHp);
+                     userStream.printToUser("you healed for " + item.getDmg()+" HP");
+                     removeItemFromInv(itemName);
+                 }else{
+                     userStream.printToUser("this cant heal you.");
+                 }
+
+                }else{
+                    userStream.printToUser("that item isn't in your inv");
+                }
             }
         } else if (command == commandTranslator.TALK) {
             String NpcName = commandTranslator.getItemToPickup(input);
