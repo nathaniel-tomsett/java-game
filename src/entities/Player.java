@@ -9,6 +9,7 @@ public class Player {
     private String currentRoomID;
     private UserStream userStream;
     private int health;
+    private int maxHp;
     public boolean godmode;
 
     public String getCurrentRoomID() {return currentRoomID;}
@@ -23,6 +24,7 @@ public class Player {
         this.currentRoomID = "1";
         this.userStream = userStream;
         this.health = randBaseHP + 5;
+        this.maxHp = this.health;
     }
 
     public String getUserId() {
@@ -32,5 +34,7 @@ public class Player {
     public void setHP(int h) { health = h;}
     public Inventory getInventory() { return inventory; }
     public UserStream getUserStream() { return userStream; }
+    public int getMaxHp() {return maxHp;}
+    public void setMaxHp(int mh) {maxHp = mh;}
 
 }

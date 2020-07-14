@@ -162,7 +162,8 @@ public class CommandHandler extends Thread {
             Inventory inv = world.getPlayer(userId).getInventory();
             List<Item> Items = inv.getItems();
             int PlayerHp = world.getPlayer(userId).getHP();
-            userStream.printToUser("HP: " + PlayerHp);
+            int maxPlayerHp = world.getPlayer(userId).getMaxHp();
+            userStream.printToUser("HP: " + PlayerHp + "/" + maxPlayerHp);
             userStream.printToUser("Inventory: ");
 
             for (Item i : Items) {
@@ -210,8 +211,12 @@ public class CommandHandler extends Thread {
                  Item item = getItemFromInv(itemName);
                  if (item.getHeal()){
                      int playerHp = world.getPlayer(userId).getHP();
+                     int maxHp = world.getPlayer(userId).getMaxHp();
                      Player player = world.getPlayer(userId);
                      playerHp += item.getDmg();
+                     if (playerHp > maxHp){
+                         playerHp = maxHp;
+                     }
                      player.setHP(playerHp);
                      userStream.printToUser("you healed for " + item.getDmg()+" HP");
                      removeItemFromInv(itemName);
