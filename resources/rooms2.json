@@ -9,7 +9,7 @@
         "canHeal": false},
       { "id" :  "3", "name" :  "Matilda", "type" : "2", "dmg" : 2,
         "canHeal": false},
-      { "id" :  "4", "name" :  "Medkit", "type" : "4", "dmg" : 5,
+      { "id" :  "4", "name" :  "Medkit", "type" : "5", "dmg" : 5,
         "canHeal": true
       }
     ],

@@ -3,9 +3,11 @@ package entities;
 public class Item {
 
     public static final int WEAPON = 1;
-    public static final int ANIMAL = 2;
+    public static final int EFFECT = 2;
     public static final int KEY = 3;
     public static final int OTHER = 4;
+    public static final int HEAL = 5;
+
 
     private String id;
     private String name;

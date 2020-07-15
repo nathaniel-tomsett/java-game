@@ -128,16 +128,16 @@ public class CommandTranslator {
 
     public String[] getitemandoorstring_new(String input) {
         // turn input into two strings
-        int onIndex = input.indexOf("on");
+        int onIndex = input.indexOf(" on ");
         if (onIndex == -1){
             return null;
         }
         String doorIndex = input.substring(onIndex);
-        int SpaceIndex = doorIndex.indexOf(" ");
+        int SpaceIndex = doorIndex.indexOf(" on ");
         if (SpaceIndex == -1) {
             return null;
         }
-        String subDoorIndex = doorIndex.substring(SpaceIndex).trim();
+        String subDoorIndex = doorIndex.substring(4).trim();
 
         int UseIndex = input.indexOf(" ");
         String itemIndex = input.substring(UseIndex, onIndex).trim();
