@@ -1,11 +1,10 @@
 package entities;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import engine.World;
 import users.UserStream;
-import util.TextColours;
 
 import java.util.List;
+import java.util.Random;
 
 public class attack {
     private World world;
@@ -52,35 +51,29 @@ public class attack {
             }
         } else {
             boolean targetGod = targetObj.getgodemode();
-            if (targetGod = true) {
+            if (targetGod) {
                 userStream.printToUser("your attack failed you hurt fred's feelings you shall now die");
                 userStream.killStream();
                 world.removePlayer(userId);
             }
             int targetHp = targetObj.getHP();
-            if (getItemAtkString(input).equals(null)) {
+            if (getItemAtkString(input) == null) {
                 targetHp -= 3;
                 userStream.printToUser("attack successful");
                 targetObj.setHP(targetHp);
             } else {
                 xtraDmg(input);
-                targetHp -=  xtraDmg(input);
+                targetHp -= xtraDmg(input);
+                Item item = getItemAtkString(input);
                 userStream.printToUser("attack successful");
                 targetObj.setHP(targetHp);
+                if (item.getBleed()) {
+                    bleed(targetObj);
+                }
             }
             if (targetHp <= 0) {
-                if (targetObj.equals((userId))) {
-                    userStream.printToUser("you just killed yourself well done heres a gold sticker");
-                }
-                userStream.printToUser(Target + " has died");
-                UserStream targetUserStream = targetObj.getUserStream();
-                targetUserStream.printToUser("you have died at the hands of " + userId);
-                String targetUserId = targetObj.getUserId();
-                world.removePlayer(targetUserId);
-                targetUserStream.killStream();
+                killUserOff(targetObj);
             } else {
-                targetObj.setHP(targetHp);
-                userStream.printToUser(Target + " successful attack");
                 UserStream targetUserStream = targetObj.getUserStream();
                 targetUserStream.printToUser("you have been attacked by " + userId);
             }
@@ -89,48 +82,88 @@ public class attack {
 
     }
 
+    public void killUserOff(Player targetPlayer) {
+        if (targetPlayer.getUserId().equals((userId))) {
+            userStream.printToUser("you just killed yourself well done here's a gold sticker");
+        }
+        userStream.printToUser(targetPlayer.getUserId() + " has died");
+        UserStream targetUserStream = targetPlayer.getUserStream();
+        targetUserStream.printToUser("you have died at the hands of " + userId);
+        String targetUserId = targetPlayer.getUserId();
+        world.removePlayer(targetUserId);
+        targetUserStream.killStream();
+    }
 
+    public String getTarget(String input){
 
-        public String getTarget(String input){
+        int firstSpace = input.indexOf(" ");
+        int secondSpace = input.indexOf(" ", firstSpace+1);
+        if (secondSpace == -1) {
+            String target = input.substring(firstSpace);
+            return target.trim();
+        } else {
+            String target = input.substring(firstSpace, secondSpace);
+            return target.trim();
+        }
+    }
 
-            int firstSpace = input.indexOf(" ");
-            int secondSpace = input.indexOf(" ", firstSpace+1);
-            if (secondSpace == -1) {
-                String target = input.substring(firstSpace);
-                return target.trim();
-            } else {
-                String target = input.substring(firstSpace, secondSpace);
-                return target.trim();
-            }
+    public Item getItemAtkString(String input) {
+        // turn input into two strings
+        int withIndex = input.indexOf("with");
+        if (withIndex == -1) {
+            return null;
+        }
+        String itemIndex = input.substring(withIndex);
+        int SpaceIndex = itemIndex.indexOf(" ");
+        if (SpaceIndex == -1) {
+            return null;
         }
 
-
-        public Item getItemAtkString(String input) {
-            // turn input into two strings
-            int withIndex = input.indexOf("with");
-            if (withIndex == -1) {
-                return null;
-            }
-            String itemIndex = input.substring(withIndex);
-            int SpaceIndex = itemIndex.indexOf(" ");
-            if (SpaceIndex == -1) {
-                return null;
-            }
-
-            String subItemIndex = itemIndex.substring(SpaceIndex).trim();
-            if (world.getPlayer(userId).getInventory().doesexistByName(subItemIndex)) {
-                Item item = world.getPlayer(userId).getInventory().getItem(subItemIndex);
-                return item;
-            }else{
-                return null;
-            }
+        String subItemIndex = itemIndex.substring(SpaceIndex).trim();
+        if (world.getPlayer(userId).getInventory().doesexistByName(subItemIndex)) {
+            Item item = world.getPlayer(userId).getInventory().getItem(subItemIndex);
+            return item;
+        }else{
+            return null;
         }
+    }
 
     public int xtraDmg(String input) {
         Item item = getItemAtkString(input);
         int dmgMod = item.getDmg();
 
         return dmgMod;
+    }
+
+    public void bleed(Player target) {
+        new Thread() {
+            public void run() {
+                boolean jimbob = true;
+                while(jimbob)
+                {
+                    Random rand = new Random();
+                    int randend = rand.nextInt(10);
+                    int hp = target.getHP();
+                    hp -= 1;
+                    target.setHP(hp);
+                    if (hp <= 0) {
+                        killUserOff(target);
+                        jimbob = false;
+                    } else {
+                        target.getUserStream().printToUser("you are bleeding find a medkit");
+                        if (randend == 1) {
+                            jimbob = false;
+                            UserStream targuserstream = target.getUserStream();
+                            targuserstream.printToUser("you are no longer bleeding you have survived");
+                        }
+                        try {
+                            Thread.sleep(4000);
+                        } catch (InterruptedException e) {
+                        }
+                    }
+                }
+            }
+        }.start();
     }
 }
 

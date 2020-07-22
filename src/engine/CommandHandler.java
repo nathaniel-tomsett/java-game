@@ -33,7 +33,7 @@ public class CommandHandler extends Thread {
     public void run() {
         printCurrentRoom();
         while (true) {
-            userStream.printToUser("Input> ", TextColours.RED);
+            //userStream.printToUser("Input> ", TextColours.RED);
             String input = userStream.readFromUser();
             if (input == null) {
                 world.removePlayer(userId);
@@ -75,7 +75,7 @@ public class CommandHandler extends Thread {
             }
             else {
                 userStream.printToUser("Where would you like to go?");
-                userStream.printToUser("Input> ", TextColours.RED);
+                //userStream.printToUser("Input> ", TextColours.RED);
                 String newinput  = userStream.readFromUser();
                 for (String i : roomNameList){
                     if (i.equalsIgnoreCase(newinput)){
@@ -230,6 +230,7 @@ public class CommandHandler extends Thread {
                         }
                         break;
                     case Item.HEAL:
+                        //TODO: make healing end effects
                         if (itemToUse.getHeal()){
                             int playerHp = world.getPlayer(userId).getHP();
                             int maxHp = world.getPlayer(userId).getMaxHp();
@@ -254,7 +255,7 @@ public class CommandHandler extends Thread {
             NPC n = getNPCFromRoom(NpcName, currentRoom);
             if (n != null) {
                 String Dialogue = n.getRandomDialog();
-                userStream.printToUser(n.getName() + " says: " + Dialogue, TextColours.GREEN);
+                userStream.printToUser(n.getName() + " says: " + Dialogue, TextColours.RED);
             } else {
               Player p = getPlayerFromRoom(NpcName, currentRoom);
               Player  playerName = world.getPlayer(NpcName);
@@ -267,9 +268,12 @@ public class CommandHandler extends Thread {
                             String userType = userStream.readFromUser();
                             if (userType.equalsIgnoreCase("/end")) {
                                 end = true;
+                                userStream.printToUser("disconnected from " + playerName.getUserId());
+                                playerName.getUserStream().printToUser("disconnected from " + userId, TextColours.RED);
+                            } else {
+                                String userTypeFrom = ("message from " + userId + ": " + userType);
+                                playerName.getUserStream().printToUser(userTypeFrom, TextColours.RED);
                             }
-                            String userTypeFrom = ("\nmessage from " + userId + ":" + userType);
-                            playerName.getUserStream().printToUser(userTypeFrom);
                         }
                     }
                     else{

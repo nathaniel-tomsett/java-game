@@ -37,7 +37,7 @@ public class UserStream {
     }
 
     public void printToUser(String message) {
-        printToUser(message, TextColours.RESET);
+        printToUser(message, TextColours.PURPLE);
     }
 
     public void printToUser(String message, String colour) {

@@ -124,6 +124,16 @@ public class UserConnections {
 
                 nameOk = true;
                 stream.setUserId(username);
+                try {
+                    stream.printToUser("Registering player...");
+                    Thread.sleep(1000);
+                    stream.printToUser("Building the world...");
+                    Thread.sleep(1000);
+                    stream.printToUser("Entering the game...");
+                    Thread.sleep(1000);
+                    stream.printToUser("");
+                } catch (InterruptedException e) {
+                }
             } else {
                 break;
             }
