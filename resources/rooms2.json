@@ -10,8 +10,9 @@
       { "id" :  "3", "name" :  "Matilda", "type" : "2", "dmg" : 2,
         "canBleed": true},
       { "id" :  "4", "name" :  "Medkit", "type" : "5", "dmg" : 5,
-        "canHeal": true
-      }
+        "canHeal": true},
+      { "id" :  "5", "name" :  "Glass", "type" : "2", "dmg" : 4,
+        "canBreak": true}
     ],
     "doors" : [
       { "id" :  "1", "direction" :  "4", "destinationRoomId" :  "2", "locked" : false},

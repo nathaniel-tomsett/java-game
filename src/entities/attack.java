@@ -61,7 +61,7 @@ public class attack {
                 targetHp -= 3;
                 userStream.printToUser("attack successful");
                 targetObj.setHP(targetHp);
-            } else {
+            } else if (getItemAtkString(input).getBleed()){
                 xtraDmg(input);
                 targetHp -= xtraDmg(input);
                 Item item = getItemAtkString(input);
@@ -71,6 +71,16 @@ public class attack {
                     bleed(targetObj);
                 }
             }
+                else {
+                    xtraDmg(input);
+                    targetHp -= xtraDmg(input);
+                    Item item = getItemAtkString(input);
+                    userStream.printToUser("attack successful");
+                    targetObj.setHP(targetHp);
+                    if (item.getBreak()) {
+                        Break(item, targetObj);
+                    }
+                }
             if (targetHp <= 0) {
                 killUserOff(targetObj);
             } else {
@@ -157,13 +167,28 @@ public class attack {
                             targuserstream.printToUser("you are no longer bleeding you have survived");
                         }
                         try {
-                            Thread.sleep(4000);
+                            Thread.sleep(10000);
                         } catch (InterruptedException e) {
                         }
                     }
                 }
             }
         }.start();
+    }
+    public void Break(Item item, Player target){
+        Random rand = new Random();
+        int randbreak = rand.nextInt(1);
+        if (randbreak == 0){
+            String itemname = item.getName();
+            String itemcomp = "atk jim with "+ itemname;
+            int targetHP = target.getHP();
+            targetHP -= xtraDmg(itemcomp);
+            target.setHP(targetHP);
+            Inventory playerInv = world.getPlayer(userId).getInventory();
+            playerInv.removeItem(item);
+            bleed(target);
+            userStream.printToUser("the glass shatters over "+ target.getUserId()+"'s head");
+        }
     }
 }
 

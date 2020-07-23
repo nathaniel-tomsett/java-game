@@ -15,14 +15,16 @@ public class Item {
     private int dmg;
     private boolean canHeal;
     private boolean canBleed;
+    private boolean canBreak;
 
-    Item(String i, String n, int t, int dm, boolean cH, boolean cB) {
+    Item(String i, String n, int t, int dm, boolean cH, boolean cBl, boolean cBr) {
         id = i;
         name = n;
         type = t;
         dmg = dm;
         canHeal = cH;
-        canBleed = cB;
+        canBleed = cBl;
+        canBreak = cBr;
     }
 
     public String getId() {
@@ -39,4 +41,5 @@ public class Item {
     public int getDmg(){return dmg;}
     public  boolean getHeal(){return canHeal;}
     public boolean getBleed(){return canBleed;}
+    public boolean getBreak(){return canBreak;}
 }

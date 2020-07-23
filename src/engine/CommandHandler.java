@@ -209,6 +209,9 @@ public class CommandHandler extends Thread {
                         userStream.printToUser("the item was innefective");
                         break;
                     case Item.EFFECT:
+       //                 if (item.canBreak){
+
+                    //    }
                         //TODO
                         userStream.printToUser("work in progress");
                         break;
