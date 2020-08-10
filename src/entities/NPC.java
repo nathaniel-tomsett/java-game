@@ -9,6 +9,9 @@ public class NPC {
     private String id;
     private String name;
     private int moveChance;
+    private int AtkChance;
+    private int AtkDmg;
+    private int AtkChanceMult;
     private String currentRoomID;
     private List<String> dialog;
     private int HP;
@@ -31,13 +34,18 @@ public class NPC {
         this.currentRoomID = roomID;
     }
 
-    public int getHP() {
-        return HP;
-    }
+    public int getHP() { return HP; }
 
     public void setHP(int h) {
         HP = h;
     }
+
+    public int getAtkChance() { return AtkChance; }
+    public void setAtkChance(int AC){AtkChance = AC;}
+    public int getAtkDmg(){return AtkDmg;}
+    public void setAtkDmg(int AD){AtkDmg = AD;}
+    public int getAtkChanceMult(){return AtkChanceMult;}
+    public void setAtkChanceMult(int ACM){AtkChanceMult = ACM ;}
 
      public boolean shouldMove (){
         Random rand = new Random();
@@ -51,18 +59,24 @@ public class NPC {
         }
      }
 
-    NPC(String i, String n, int m, String c) {
+    NPC(String i, String n, int m, String c,int AC,int AD,int ACM) {
         this.id = i;
         this.name = n;
         this.moveChance = m ;
         this.currentRoomID = c ;
-
+        this.AtkChance = AC;
+        this.AtkDmg = AD;
+        this.AtkChanceMult = ACM;
     }
 
     public String getRandomDialog() {
         Random r = new Random();
         int selection = r.nextInt(dialog.size());
         return dialog.get(selection);
+    }
+
+    public void NPCAtk(NPC npc,Player Target){
+
     }
 
     }

@@ -11,11 +11,17 @@ public class Player {
     private int health;
     private int maxHp;
     public boolean godmode;
+    public boolean isPar;
+
 
     public String getCurrentRoomID() {return currentRoomID;}
     public void setCurrentRoomID(String roomID) { this.currentRoomID = roomID; }
     public void setgodmode (boolean godTrue){ this.godmode = godTrue;}
     public boolean getgodemode (){return godmode;}
+    public void setIsPar (boolean canPar){this.isPar = canPar;}
+    public boolean getIsPar () {return isPar;}
+
+
     public Player(String name, UserStream userStream) {
         Random rand = new Random();
         int randBaseHP = rand.nextInt(15);

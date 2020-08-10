@@ -70,6 +70,14 @@ public class attack {
                 if (item.getBleed()) {
                     bleed(targetObj);
                 }
+            }else if (getItemAtkString(input).getPar()){
+                xtraDmg(input);
+                targetHp -= xtraDmg(input);
+                Item item = getItemAtkString(input);
+                userStream.printToUser("attack successful");
+                targetObj.setHP(targetHp);
+                Paralysis(item,targetObj);
+
             }
                 else {
                     xtraDmg(input);
@@ -188,6 +196,14 @@ public class attack {
             playerInv.removeItem(item);
             bleed(target);
             userStream.printToUser("the glass shatters over "+ target.getUserId()+"'s head");
+        }
+    }
+
+    public void Paralysis(Item item, Player Target){
+        boolean canPar = item.getPar();
+        if (canPar){
+            Target.getUserStream().printToUser("you have been paralysed you can no longer move or do anything enjoy");
+            Target.setIsPar(canPar);
         }
     }
 }

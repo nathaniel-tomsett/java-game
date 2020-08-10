@@ -56,7 +56,14 @@ public class CommandHandler extends Thread {
 
         int command = commandTranslator.getCommand(input);
         //here to see every time an input is entered that have been entered
-        if (command == CommandTranslator.MOVE) {
+
+
+
+        if(world.getPlayer(userId).isPar){
+            userStream.printToUser("*youre mind tells you you are paralysed and all stuggle is in vain*");
+
+        }
+        else if (command == CommandTranslator.MOVE) {
 
             boolean roomValid = false;
             String directionName = commandTranslator.getDirectionName(input);

@@ -16,8 +16,9 @@ public class Item {
     private boolean canHeal;
     private boolean canBleed;
     private boolean canBreak;
+    private boolean canPar;
 
-    Item(String i, String n, int t, int dm, boolean cH, boolean cBl, boolean cBr) {
+    Item(String i, String n, int t, int dm, boolean cH, boolean cBl, boolean cBr, boolean cP) {
         id = i;
         name = n;
         type = t;
@@ -25,6 +26,7 @@ public class Item {
         canHeal = cH;
         canBleed = cBl;
         canBreak = cBr;
+        canPar = cP;
     }
 
     public String getId() {
@@ -42,4 +44,5 @@ public class Item {
     public  boolean getHeal(){return canHeal;}
     public boolean getBleed(){return canBleed;}
     public boolean getBreak(){return canBreak;}
+    public boolean getPar(){return canPar;}
 }
