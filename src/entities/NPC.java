@@ -75,7 +75,14 @@ public class NPC {
         return dialog.get(selection);
     }
 
-    public void NPCAtk(NPC npc,Player Target){
+    public void NPCAtk(Player Target){
+       Random rand = new Random();
+       int randint = rand.nextInt(100);
+       if (randint >= AtkChance){
+        int targetHp =  Target.getHP();
+        targetHp -= AtkDmg;
+        Target.setHP(targetHp);
+       }
 
     }
 

@@ -97,6 +97,7 @@ public class CommandHandler extends Thread {
                                     world.getPlayer(userId).setCurrentRoomID(DestRoom.getId());
                                     roomValid = true;
                                     shouldPrintCurrentRoomAfterMove = true;
+                                    //NAT
                                 } else {
                                     userStream.printToUser("the door is locked");
                                 }
