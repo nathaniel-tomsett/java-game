@@ -1,5 +1,6 @@
 package entities;
 
+import engine.CommandHandler;
 import engine.World;
 import users.UserStream;
 
@@ -17,11 +18,12 @@ public class attack {
         this.userId = p.getUserId();
     }
 
-    public void attack(String input) {
+    public void attack(Room room, String input) {
         String Target = getTarget(input);
         Player targetObj = world.getPlayer(Target);
 
         if (targetObj == null) {
+            // Human attacking NPC
             List<NPC> targetList = world.getNPCList();
             for (NPC n : targetList) {
                 String TargetName = n.getName();
@@ -44,7 +46,15 @@ public class attack {
                     if (TargetHP <= 0) {
                         userStream.printToUser(Target + " has died");
                         String TargetId = npc.getId();
+                        List<Item> npcItems = npc.getitems();
+
+                        for (Item i : npcItems){
+                           List<Item> items =room.getItems();
+                           items.add(i);
+                        }
                         world.removeNpc(npc);
+
+
                     }
                     break;
                 }

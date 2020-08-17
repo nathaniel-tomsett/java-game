@@ -16,6 +16,7 @@ public class NPC {
     private String currentRoomID;
     private List<String> dialog;
     private int HP;
+    private List<Item> items;
 
 
     public String getId() {
@@ -65,6 +66,8 @@ public class NPC {
     public void setAtkChanceMult(int ACM) {
         AtkChanceMult = ACM;
     }
+
+    public List<Item> getitems(){return items;}
 
     public boolean shouldMove() {
         Random rand = new Random();

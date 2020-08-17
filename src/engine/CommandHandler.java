@@ -311,9 +311,10 @@ public class CommandHandler extends Thread {
         }
         else if (command == CommandTranslator.ATTACK) {
             Player me = world.getPlayer(userId);
+            Room r = getRoom(currentRoom);
 
             attack attack = new attack(world, me);
-            attack.attack(input);
+            attack.attack(r, input);
         }
 
 
