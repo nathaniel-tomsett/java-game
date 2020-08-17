@@ -17,7 +17,6 @@ public class NPC {
     private int HP;
 
 
-
     public String getId() {
         return id;
     }
@@ -34,36 +33,54 @@ public class NPC {
         this.currentRoomID = roomID;
     }
 
-    public int getHP() { return HP; }
+    public int getHP() {
+        return HP;
+    }
 
     public void setHP(int h) {
         HP = h;
     }
 
-    public int getAtkChance() { return AtkChance; }
-    public void setAtkChance(int AC){AtkChance = AC;}
-    public int getAtkDmg(){return AtkDmg;}
-    public void setAtkDmg(int AD){AtkDmg = AD;}
-    public int getAtkChanceMult(){return AtkChanceMult;}
-    public void setAtkChanceMult(int ACM){AtkChanceMult = ACM ;}
+    public int getAtkChance() {
+        return AtkChance;
+    }
 
-     public boolean shouldMove (){
+    public void setAtkChance(int AC) {
+        AtkChance = AC;
+    }
+
+    public int getAtkDmg() {
+        return AtkDmg;
+    }
+
+    public void setAtkDmg(int AD) {
+        AtkDmg = AD;
+    }
+
+    public int getAtkChanceMult() {
+        return AtkChanceMult;
+    }
+
+    public void setAtkChanceMult(int ACM) {
+        AtkChanceMult = ACM;
+    }
+
+    public boolean shouldMove() {
         Random rand = new Random();
         int randInt = rand.nextInt(99);
-        if (randInt <= moveChance){
+        if (randInt <= moveChance) {
             return true;
 
-        }
-        else {
+        } else {
             return false;
         }
-     }
+    }
 
-    NPC(String i, String n, int m, String c,int AC,int AD,int ACM) {
+    NPC(String i, String n, int m, String c, int AC, int AD, int ACM) {
         this.id = i;
         this.name = n;
-        this.moveChance = m ;
-        this.currentRoomID = c ;
+        this.moveChance = m;
+        this.currentRoomID = c;
         this.AtkChance = AC;
         this.AtkDmg = AD;
         this.AtkChanceMult = ACM;
@@ -75,16 +92,27 @@ public class NPC {
         return dialog.get(selection);
     }
 
-    public void NPCAtk(Player Target){
-       Random rand = new Random();
-       int randint = rand.nextInt(100);
-       if (randint >= AtkChance){
-        int targetHp =  Target.getHP();
-        targetHp -= AtkDmg;
-        Target.setHP(targetHp);
-       }
-
+    public void NPCAtk(Player Target) {
+        Random rand = new Random();
+        int randint = rand.nextInt(100);
+        if (randint <= AtkChance) {
+            int targetHp = Target.getHP();
+            targetHp -= AtkDmg;
+            Target.setHP(targetHp);
+            Target.getUserStream().printToUser("You were hit by " + name);
+        }
     }
 
+    public void agrNPCAtk(Player Target) {
+        Random agrrand = new Random();
+        int agrrandint = agrrand.nextInt(100);
+        int agrAtkChance = AtkChance * AtkChanceMult;
+        if (agrrandint <= agrAtkChance) {
+            int targetHp = Target.getHP();
+            targetHp -= AtkDmg;
+            Target.setHP(targetHp);
+            Target.getUserStream().printToUser("You were hit by " + name);
+        }
     }
+}
 

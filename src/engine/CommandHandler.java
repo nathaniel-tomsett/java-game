@@ -97,7 +97,14 @@ public class CommandHandler extends Thread {
                                     world.getPlayer(userId).setCurrentRoomID(DestRoom.getId());
                                     roomValid = true;
                                     shouldPrintCurrentRoomAfterMove = true;
-                                    //NAT
+
+                                    List<NPC> npcList = getNPCsInRoom(DestRoom.getId());
+                                    if (npcList != null && !npcList.isEmpty()) {
+                                        for (NPC n : npcList) {
+                                            n.NPCAtk(world.getPlayer(userId));
+                                        }
+                                    }
+
                                 } else {
                                     userStream.printToUser("the door is locked");
                                 }

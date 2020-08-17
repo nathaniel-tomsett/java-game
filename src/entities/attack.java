@@ -27,22 +27,24 @@ public class attack {
                 String TargetName = n.getName();
 
                 if (TargetName.equalsIgnoreCase(Target)) {
-                    NPC TargetObj = n;
-                    int TargetHP = TargetObj.getHP();
+                    NPC npc = n;
+                    int TargetHP = npc.getHP();
                     if (getItemAtkString(input) == null) {
                         TargetHP -= 3;
-                        TargetObj.setHP(TargetHP);
+                        npc.setHP(TargetHP);
                         userStream.printToUser("attack successful");
+                        npc.agrNPCAtk(world.getPlayer(userId));
                     } else {
                         TargetHP -= xtraDmg(input);
-                        TargetObj.setHP(TargetHP);
+                        npc.setHP(TargetHP);
                         userStream.printToUser("attack successful");
+                        npc.agrNPCAtk(world.getPlayer(userId));
                     }
 
                     if (TargetHP <= 0) {
                         userStream.printToUser(Target + " has died");
-                        String TargetId = TargetObj.getId();
-                        world.removeNpc(TargetObj);
+                        String TargetId = npc.getId();
+                        world.removeNpc(npc);
 
                     }
                     break;
