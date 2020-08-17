@@ -33,19 +33,18 @@ public class attack {
                         TargetHP -= 3;
                         npc.setHP(TargetHP);
                         userStream.printToUser("attack successful");
-                        npc.agrNPCAtk(world.getPlayer(userId));
+                        npc.agrNPCAtk(world, world.getPlayer(userId));
                     } else {
                         TargetHP -= xtraDmg(input);
                         npc.setHP(TargetHP);
                         userStream.printToUser("attack successful");
-                        npc.agrNPCAtk(world.getPlayer(userId));
+                        npc.agrNPCAtk(world, world.getPlayer(userId));
                     }
 
                     if (TargetHP <= 0) {
                         userStream.printToUser(Target + " has died");
                         String TargetId = npc.getId();
                         world.removeNpc(npc);
-
                     }
                     break;
                 }
@@ -55,8 +54,7 @@ public class attack {
             boolean targetGod = targetObj.getgodemode();
             if (targetGod) {
                 userStream.printToUser("your attack failed you hurt fred's feelings you shall now die");
-                userStream.killStream();
-                world.removePlayer(userId);
+                world.removePlayerFromGame(userId);
             }
             int targetHp = targetObj.getHP();
             if (getItemAtkString(input) == null) {
@@ -110,8 +108,7 @@ public class attack {
         UserStream targetUserStream = targetPlayer.getUserStream();
         targetUserStream.printToUser("you have died at the hands of " + userId);
         String targetUserId = targetPlayer.getUserId();
-        world.removePlayer(targetUserId);
-        targetUserStream.killStream();
+        world.removePlayerFromGame(targetUserId);
     }
 
     public String getTarget(String input){

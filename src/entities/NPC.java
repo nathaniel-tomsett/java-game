@@ -1,5 +1,6 @@
 package entities;
 
+import engine.World;
 import users.UserStream;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public class NPC {
     private int moveChance;
     private int AtkChance;
     private int AtkDmg;
-    private int AtkChanceMult;
+    private double AtkChanceMult;
     private String currentRoomID;
     private List<String> dialog;
     private int HP;
@@ -57,7 +58,7 @@ public class NPC {
         AtkDmg = AD;
     }
 
-    public int getAtkChanceMult() {
+    public double getAtkChanceMult() {
         return AtkChanceMult;
     }
 
@@ -76,7 +77,7 @@ public class NPC {
         }
     }
 
-    NPC(String i, String n, int m, String c, int AC, int AD, int ACM) {
+    NPC(String i, String n, int m, String c, int AC, int AD, double ACM) {
         this.id = i;
         this.name = n;
         this.moveChance = m;
@@ -92,7 +93,7 @@ public class NPC {
         return dialog.get(selection);
     }
 
-    public void NPCAtk(Player Target) {
+    public void NPCAtk(World world, Player Target) {
         Random rand = new Random();
         int randint = rand.nextInt(100);
         if (randint <= AtkChance) {
@@ -100,18 +101,26 @@ public class NPC {
             targetHp -= AtkDmg;
             Target.setHP(targetHp);
             Target.getUserStream().printToUser("You were hit by " + name);
+            if (targetHp <=0) {
+                Target.getUserStream().printToUser("You have died, bad luck!");
+                world.removePlayerFromGame(Target.getUserId());
+            }
         }
     }
 
-    public void agrNPCAtk(Player Target) {
+    public void agrNPCAtk(World world, Player Target) {
         Random agrrand = new Random();
         int agrrandint = agrrand.nextInt(100);
-        int agrAtkChance = AtkChance * AtkChanceMult;
+        double agrAtkChance = AtkChance * AtkChanceMult;
         if (agrrandint <= agrAtkChance) {
             int targetHp = Target.getHP();
             targetHp -= AtkDmg;
             Target.setHP(targetHp);
             Target.getUserStream().printToUser("You were hit by " + name);
+            if (targetHp <=0) {
+                Target.getUserStream().printToUser("You have died, bad luck!");
+                world.removePlayerFromGame(Target.getUserId());
+            }
         }
     }
 }

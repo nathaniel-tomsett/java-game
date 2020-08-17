@@ -36,7 +36,7 @@ public class CommandHandler extends Thread {
             //userStream.printToUser("Input> ", TextColours.RED);
             String input = userStream.readFromUser();
             if (input == null) {
-                world.removePlayer(userId);
+                world.removePlayerFromGame(userId);
                 break;
             }
             doUserCommand(input);
@@ -101,7 +101,7 @@ public class CommandHandler extends Thread {
                                     List<NPC> npcList = getNPCsInRoom(DestRoom.getId());
                                     if (npcList != null && !npcList.isEmpty()) {
                                         for (NPC n : npcList) {
-                                            n.NPCAtk(world.getPlayer(userId));
+                                            n.NPCAtk(world, world.getPlayer(userId));
                                         }
                                     }
 
@@ -377,8 +377,11 @@ public class CommandHandler extends Thread {
     }
 
     private void printCurrentRoom() {
-        String currentRoom = world.getPlayer(userId).getCurrentRoomID();
-        userStream.printToUser("Currently in room: " + getRoom(currentRoom).getName());
+        Player player = world.getPlayer(userId);
+        if (player != null) {
+            String currentRoom = world.getPlayer(userId).getCurrentRoomID();
+            userStream.printToUser("Currently in room: " + getRoom(currentRoom).getName());
+        }
     }
 
     private Room getRoom(String id) {

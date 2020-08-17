@@ -81,7 +81,11 @@ public class World extends Thread {
         handler.start();
     }
 
-    public void removePlayer(String userId) {
+    public void removePlayerFromGame(String userId) {
+        Player removing = playersHash.get(userId);
+        if (removing != null) {
+            removing.getUserStream().killStream();
+        }
         playersHash.remove(userId);
     }
 

@@ -7,7 +7,7 @@
     "HP" : 20,
     "AtkChance": 70,
     "AtkDmg": 5,
-    "AtkChancemult": 1.1,
+    "AtkChanceMult": 1.1,
     "dialog" : [
       "I'm hungry...",
       "Have you seen my headphones, I can't find them",
@@ -23,7 +23,7 @@
     "HP" : 15,
     "AtkChance": 10,
     "AtkDmg": 1,
-    "AtkChancemult": 9,
+    "AtkChanceMult": 9,
     "dialog" : [
       "You are a silly sausage",
       "Your piano playing was very nice",
@@ -38,7 +38,7 @@
     "HP" : 999999999,
     "AtkChance": 99,
     "AtkDmg": 500,
-    "AtkChancemult": 1,
+    "AtkChanceMult": 1,
     "dialog" : [
       "Barrrrrk!",
       "Woof",
