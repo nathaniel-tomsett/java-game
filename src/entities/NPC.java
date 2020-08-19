@@ -1,8 +1,14 @@
 package entities;
 
+
 import engine.World;
+
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
+import sun.plugin.javascript.navig.Array;
+
 import users.UserStream;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -67,7 +73,9 @@ public class NPC {
         AtkChanceMult = ACM;
     }
 
-    public List<Item> getitems(){return items;}
+
+    public List<Item> getItems(){return items;}
+
 
     public boolean shouldMove() {
         Random rand = new Random();
@@ -95,5 +103,8 @@ public class NPC {
         int selection = r.nextInt(dialog.size());
         return dialog.get(selection);
     }
+
+
+
 }
 

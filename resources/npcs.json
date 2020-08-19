@@ -4,7 +4,7 @@
     "name": "Fraser",
     "moveChance": 0,
     "currentRoomID": "2",
-    "HP": 3,
+    "HP": 15,
     "AtkChance": 70,
     "AtkDmg": 5,
     "AtkChanceMult": 1.1,

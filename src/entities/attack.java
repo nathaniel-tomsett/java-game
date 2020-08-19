@@ -46,7 +46,7 @@ public class attack {
                     if (TargetHP <= 0) {
                         userStream.printToUser(Target + " has died");
                         String TargetId = npc.getId();
-                        List<Item> npcItems = npc.getitems();
+                        List<Item> npcItems = npc.getItems();
 
                         for (Item i : npcItems){
                            List<Item> items =room.getItems();
@@ -105,6 +105,7 @@ public class attack {
                 UserStream targetUserStream = targetObj.getUserStream();
                 targetUserStream.printToUser("you have been attacked by " + userId);
             }
+
 
         }
 
@@ -192,6 +193,7 @@ public class attack {
             }
         }.start();
     }
+
     public void Break(Item item, Player target){
         Random rand = new Random();
         int randbreak = rand.nextInt(1);
@@ -220,6 +222,9 @@ public class attack {
         Random rand = new Random();
         int randint = rand.nextInt(100);
         if (randint <= npc.getAtkChance()) {
+            if( NPCHasItem (Target,npc)){
+                return;
+            }
             int targetHp = Target.getHP();
             targetHp -= npc.getAtkDmg();
             Target.setHP(targetHp);
@@ -236,6 +241,9 @@ public class attack {
         int agrrandint = agrrand.nextInt(100);
         double agrAtkChance = npc.getAtkChance() * npc.getAtkChanceMult();
         if (agrrandint <= agrAtkChance) {
+            if( NPCHasItem (Target,npc)){
+                return;
+            }
             int targetHp = Target.getHP();
             targetHp -= npc.getAtkDmg();
             Target.setHP(targetHp);
@@ -244,6 +252,33 @@ public class attack {
                 Target.getUserStream().printToUser("You have died, bad luck!");
                 world.removePlayerFromGame(Target.getUserId());
             }
+        }
+    }
+    public boolean NPCHasItem (Player Target,NPC npc){
+        List<Item> itemsList = npc.getItems();
+        if (itemsList != null && !itemsList.isEmpty()){
+            Item atkItem = itemsList.get(0);
+            int atkItemDmg  = atkItem.getDmg();
+            int TargetHP = Target.getHP();
+            TargetHP -= atkItemDmg;
+            Target.setHP(TargetHP);
+            Target.getUserStream().printToUser("You were hit by " + npc.getName() + " with the " + atkItem.getName());
+            if (atkItem.getBleed()){
+                bleed(Target);
+
+
+            }
+            if (atkItem.getPar()){
+                Paralysis(atkItem,Target);
+            }
+            if (atkItem.getBreak()){
+                Break(atkItem,Target);
+
+
+            }
+            return true;
+        }else{
+            return false;
         }
     }
 
