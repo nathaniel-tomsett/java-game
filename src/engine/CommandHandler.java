@@ -101,7 +101,8 @@ public class CommandHandler extends Thread {
                                     List<NPC> npcList = getNPCsInRoom(DestRoom.getId());
                                     if (npcList != null && !npcList.isEmpty()) {
                                         for (NPC n : npcList) {
-                                            n.NPCAtk(world, world.getPlayer(userId));
+                                            attack a = new attack(world, world.getPlayer(userId));
+                                            a.NPCAtk(world, world.getPlayer(userId), n);
                                         }
                                     }
 

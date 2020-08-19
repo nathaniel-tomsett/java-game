@@ -95,36 +95,5 @@ public class NPC {
         int selection = r.nextInt(dialog.size());
         return dialog.get(selection);
     }
-
-    public void NPCAtk(World world, Player Target) {
-        Random rand = new Random();
-        int randint = rand.nextInt(100);
-        if (randint <= AtkChance) {
-            int targetHp = Target.getHP();
-            targetHp -= AtkDmg;
-            Target.setHP(targetHp);
-            Target.getUserStream().printToUser("You were hit by " + name);
-            if (targetHp <=0) {
-                Target.getUserStream().printToUser("You have died, bad luck!");
-                world.removePlayerFromGame(Target.getUserId());
-            }
-        }
-    }
-
-    public void agrNPCAtk(World world, Player Target) {
-        Random agrrand = new Random();
-        int agrrandint = agrrand.nextInt(100);
-        double agrAtkChance = AtkChance * AtkChanceMult;
-        if (agrrandint <= agrAtkChance) {
-            int targetHp = Target.getHP();
-            targetHp -= AtkDmg;
-            Target.setHP(targetHp);
-            Target.getUserStream().printToUser("You were hit by " + name);
-            if (targetHp <=0) {
-                Target.getUserStream().printToUser("You have died, bad luck!");
-                world.removePlayerFromGame(Target.getUserId());
-            }
-        }
-    }
 }
 

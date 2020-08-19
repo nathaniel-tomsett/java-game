@@ -35,12 +35,12 @@ public class attack {
                         TargetHP -= 3;
                         npc.setHP(TargetHP);
                         userStream.printToUser("attack successful");
-                        npc.agrNPCAtk(world, world.getPlayer(userId));
+                        agrNPCAtk(world, world.getPlayer(userId), npc);
                     } else {
                         TargetHP -= xtraDmg(input);
                         npc.setHP(TargetHP);
                         userStream.printToUser("attack successful");
-                        npc.agrNPCAtk(world, world.getPlayer(userId));
+                        agrNPCAtk(world, world.getPlayer(userId), npc);
                     }
 
                     if (TargetHP <= 0) {
@@ -215,5 +215,37 @@ public class attack {
             Target.setIsPar(canPar);
         }
     }
+
+    public void NPCAtk(World world, Player Target, NPC npc) {
+        Random rand = new Random();
+        int randint = rand.nextInt(100);
+        if (randint <= npc.getAtkChance()) {
+            int targetHp = Target.getHP();
+            targetHp -= npc.getAtkDmg();
+            Target.setHP(targetHp);
+            Target.getUserStream().printToUser("You were hit by " + npc.getName());
+            if (targetHp <=0) {
+                Target.getUserStream().printToUser("You have died, bad luck!");
+                world.removePlayerFromGame(Target.getUserId());
+            }
+        }
+    }
+
+    public void agrNPCAtk(World world, Player Target, NPC npc) {
+        Random agrrand = new Random();
+        int agrrandint = agrrand.nextInt(100);
+        double agrAtkChance = npc.getAtkChance() * npc.getAtkChanceMult();
+        if (agrrandint <= agrAtkChance) {
+            int targetHp = Target.getHP();
+            targetHp -= npc.getAtkDmg();
+            Target.setHP(targetHp);
+            Target.getUserStream().printToUser("You were hit by " + npc.getName());
+            if (targetHp <=0) {
+                Target.getUserStream().printToUser("You have died, bad luck!");
+                world.removePlayerFromGame(Target.getUserId());
+            }
+        }
+    }
+
 }
 
