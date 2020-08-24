@@ -138,7 +138,7 @@ public class UserConnections {
                 break;
             }
         }
-        if (!username.isEmpty()) {
+        if (username != null && !username.isEmpty()) {
             String playerName = username;
             Player newPlayer = new Player(playerName, stream);
             newPlayer.setgodmode(godmode);
