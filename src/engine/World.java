@@ -102,7 +102,19 @@ public class World extends Thread {
         return playersHash.get(userId);
     }
 
-    public List<Player> getListOfPlayersInRoom(String roomId){
+    public void dumpPlayersHash(String userId) {
+        Set<String>   playersKey = playersHash.keySet();
+        for (String p : playersKey){
+            Player player = playersHash.get(p);
+            new entities.auditFile().writeLogLine(
+                    "Player name:" + player.getUserId() + " room: " + player.getCurrentRoomID(), userId);
+        }
+    }
+
+    public List<Player> getListOfPlayersInRoom(String roomId, String forUserId){
+        new entities.auditFile().writeLogLine("Getting list of players in room", forUserId);
+        dumpPlayersHash(forUserId);
+
         List<Player> playerList = new ArrayList<>();
       Set<String>   playersKey = playersHash.keySet();
       for (String p : playersKey){

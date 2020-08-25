@@ -538,7 +538,7 @@ public class CommandHandler extends Thread {
     }
     private List<Player> getplayersInRoom(String roomID) {
         List<Player> retplayerList = new ArrayList<>();
-        List<Player> playerList = world.getListOfPlayersInRoom(roomID);
+        List<Player> playerList = world.getListOfPlayersInRoom(roomID, userId);
         for (Player p : playerList) {
             if (p.getCurrentRoomID().equals(roomID)) {
                 retplayerList.add(p);
@@ -558,7 +558,7 @@ public class CommandHandler extends Thread {
     }
 
     private Player getPlayerFromRoom(String PlayerName, String roomID) {
-        List<Player> PlayerList = world.getListOfPlayersInRoom(roomID);
+        List<Player> PlayerList = world.getListOfPlayersInRoom(roomID, userId);
         for (Player p : PlayerList) {
             if (p.getCurrentRoomID().equals(roomID) && PlayerName.equalsIgnoreCase(p.getUserId())) {
                 return p;
