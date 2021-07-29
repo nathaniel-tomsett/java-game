@@ -6,7 +6,10 @@ import entities.Player;
 import users.UserStream;
 
 import java.io.*;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class auditFile {
     private World world;
@@ -16,8 +19,12 @@ public class auditFile {
 
     public void writeLogLine(String line, String userId) {
             try {
+                LocalDateTime now = LocalDateTime.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:ms");
+                String formatted = now.format(formatter);
+
                 File fileName = new File(LocalDate.now().toString());
-                String toWrite =  userId + ": " + line;
+                String toWrite =  formatted + " -- " + userId + " -- " + line;
                 BufferedWriter writer = new BufferedWriter(new FileWriter(fileName , true));
                 writer.write(toWrite);
                 writer.write("\n");

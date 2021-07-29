@@ -22,13 +22,20 @@ public class attack {
         String Target = getTarget(input);
         Player targetObj = world.getPlayer(Target);
 
+        new auditFile().writeLogLine("attacking target=" + Target + " obj=" + targetObj, userId);
+        world.dumpPlayersHash(userId);
+
         if (targetObj == null) {
+            boolean npcFound = false;
+
+            new auditFile().writeLogLine("attacking NPC", userId);
             // Human attacking NPC
             List<NPC> targetList = world.getNPCList();
             for (NPC n : targetList) {
                 String TargetName = n.getName();
 
                 if (TargetName.equalsIgnoreCase(Target)) {
+                    npcFound = true;
                     NPC npc = n;
                     int TargetHP = npc.getHP();
                     if (getItemAtkString(input) == null) {
@@ -58,9 +65,13 @@ public class attack {
                     }
                     break;
                 }
-
+            }
+            if (!npcFound) {
+                userStream.printToUser("could not find a player of that name");
             }
         } else {
+            new auditFile().writeLogLine("attacking player", userId);
+
             boolean targetGod = targetObj.getgodemode();
             if (targetGod) {
                 userStream.printToUser("your attack failed you hurt fred's feelings you shall now die");

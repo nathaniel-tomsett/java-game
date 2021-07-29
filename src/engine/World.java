@@ -9,6 +9,7 @@ import util.ResourceReader;
 
 import java.util.*;
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class World extends Thread {
 
@@ -19,7 +20,7 @@ public class World extends Thread {
     private List<NPC> npcList;
 
     // Hash of players in the map
-    private Map<String, Player> playersHash = new HashMap<>();
+    private ConcurrentHashMap<String, Player> playersHash = new ConcurrentHashMap<>();
 
     public World() {
         this.roomList = new ArrayList<>();
@@ -102,7 +103,19 @@ public class World extends Thread {
         return playersHash.get(userId);
     }
 
-    public List<Player> getListOfPlayersInRoom(String roomId){
+    public void dumpPlayersHash(String userId) {
+        Set<String>   playersKey = playersHash.keySet();
+        for (String p : playersKey){
+            Player player = playersHash.get(p);
+            new entities.auditFile().writeLogLine(
+                    "Player name:" + player.getUserId() + " room: " + player.getCurrentRoomID(), userId);
+        }
+    }
+
+    public List<Player> getListOfPlayersInRoom(String roomId, String forUserId){
+        new entities.auditFile().writeLogLine("Getting list of players in the room", forUserId);
+        dumpPlayersHash(forUserId);
+
         List<Player> playerList = new ArrayList<>();
       Set<String>   playersKey = playersHash.keySet();
       for (String p : playersKey){
