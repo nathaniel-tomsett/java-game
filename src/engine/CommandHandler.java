@@ -2,25 +2,25 @@ package engine;
 
 
 import entities.*;
+import org.w3c.dom.css.Counter;
 import users.UserStream;
 import util.TextColours;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 
 import java.io.File;  // Import the File class
 import java.io.IOException;
 
+// stuff being used within commandHandler
 public class CommandHandler extends Thread {
     private World world;
     private String userId;
     private UserStream userStream;
     private CommandTranslator commandTranslator;
     private String lastRoom;
-
+//stuf held within commandHandler
     public CommandHandler(World world, Player player) {
         this.world = world;
         this.userId = player.getUserId();
@@ -43,7 +43,7 @@ public class CommandHandler extends Thread {
         }
     }
 
-
+//takes an input then finds which command has been inputted and acts upon it (could this be done more efficiently)?
     public void doUserCommand(String input) {
         boolean npcsShouldMove = true;
         boolean shouldPrintCurrentRoomAfterMove = false;
@@ -55,12 +55,10 @@ public class CommandHandler extends Thread {
         String currentRoom = world.getPlayer(userId).getCurrentRoomID();
 
         int command = commandTranslator.getCommand(input);
-        //here to see every time an input is entered that have been entered
 
 
-
-        if(world.getPlayer(userId).isPar){
-            userStream.printToUser("*youre mind tells you you are paralysed and all stuggle is in vain*");
+        if(world.getPlayer(userId).isPar) {
+            userStream.printToUser("*youre mind tells you you are paralysed and all struggle is in vain*");
 
         }
         else if (command == CommandTranslator.MOVE) {
@@ -72,21 +70,108 @@ public class CommandHandler extends Thread {
             List<Room> roomOB = getRoomDirection(directionValue);
             userStream.printToUser("You can move to these rooms:");
             List<String> roomNameList = new ArrayList<>();
+            Map<String, String> roomIndexToId = new HashMap<>();
+            int Counter = 1;
             for (Room i: roomOB){
                 String roomName2 = i.getName();
                 roomNameList.add(roomName2);
-                userStream.printToUser("    " + roomName2);
+                userStream.printToUser(Counter + ".  " + roomName2);
+                roomIndexToId.put(String.valueOf(Counter), i.getId());
+                Counter++;
             }
             if (roomNameList.isEmpty()){
                 userStream.printToUser("there are no rooms in this direction");
             }
             else {
-                userStream.printToUser("Where would you like to go?");
+                int userChoice = Integer.valueOf(userStream.readFromUser());
+                String destinationRoomId = roomIndexToId.get(String.valueOf(userChoice));
+                Room destinationRoom = getRoom(destinationRoomId);
+
+                if (destinationRoom != null) {
+                    Room ro = getRoom(currentRoom);
+                    List<Door> doorlist = ro.getDoors();
+                    for (Door d : doorlist) {
+                        String DID = d.getDestinationRoomId();
+                        Room potentialDestRoom = getRoom(DID);
+                        if (potentialDestRoom != null && destinationRoom.getId() == potentialDestRoom.getId()) {
+                            if (!d.getlocked()) {
+                                world.getPlayer(userId).setCurrentRoomID(destinationRoom.getId());
+                                roomValid = true;
+                                shouldPrintCurrentRoomAfterMove = true;
+
+                                List<NPC> npcList = getNPCsInRoom(destinationRoom.getId());
+                                if (npcList != null && !npcList.isEmpty()) {
+                                    for (NPC n : npcList) {
+                                        attack a = new attack(world, world.getPlayer(userId));
+                                        a.NPCAtk(world, world.getPlayer(userId), n);
+                                    }
+                                }
+                            } else {
+                                userStream.printToUser("the door is locked");
+                            }
+                        }
+                        else if (!roomValid) {
+                            userStream.printToUser("the room doesnt exist");
+                        }
+
+                    }
+                }
+                else if (!roomValid) {
+                    userStream.printToUser("the room doesnt exist");
+                }
+            }
+
+                /*int p = 0;
+                for (Room i: roomOB){
+                    int num = i.getCounter();
+                    int[] CounterArr = new int[10];
+                    CounterArr[p] = num;
+                    String newinput  = userStream.readFromUser();
+                    int count = Integer.parseInt(newinput);
+                    p++;
+                    for (int c: CounterArr){
+                        if (count == CounterArr[c]){
+                            Room ro = getRoom(currentRoom);
+                            List<Door> doorlist =ro.getDoors();
+                            for (Door d : doorlist){
+                                String DID = d.getDestinationRoomId();
+                                Room DestRoom = getRoom(DID);
+                                if( DestRoom != null && count == DestRoom.getCounter()){
+                                    if (!d.getlocked()){
+                                        world.getPlayer(userId).setCurrentRoomID(DestRoom.getId());
+                                        roomValid = true;
+                                        shouldPrintCurrentRoomAfterMove = true;
+                                        for (Room q: roomOB){
+                                            q.clearcounter();
+                                        }
+
+                                        List<NPC> npcList = getNPCsInRoom(DestRoom.getId());
+                                        if (npcList != null && !npcList.isEmpty()) {
+                                            for (NPC n : npcList) {
+                                                attack a = new attack(world, world.getPlayer(userId));
+                                                a.NPCAtk(world, world.getPlayer(userId), n);
+                                            }
+                                        }
+                                    }else {
+                                        userStream.printToUser("the door is locked");
+                                    }
+                                }
+                            }if (!roomValid) {
+                                userStream.printToUser("the room doesnt exist");
+                            }
+                        }
+                        if(!roomValid){
+                            userStream.printToUser("that room doesnt exist");
+                        }
+                    }
+                }*/
+
+
+/*                userStream.printToUser("Where would you like to go?");
                 //userStream.printToUser("Input> ", TextColours.RED);
                 String newinput  = userStream.readFromUser();
                 for (String i : roomNameList){
                     if (i.equalsIgnoreCase(newinput)){
-
                         Room r = getRoom(currentRoom);
                         List<Door> doorList = r.getDoors();
                         for (Door d : doorList) {
@@ -110,8 +195,7 @@ public class CommandHandler extends Thread {
                                     userStream.printToUser("the door is locked");
                                 }
                             }
-                        }
-                        if (!roomValid) {
+                        }if (!roomValid) {
                             userStream.printToUser("the room doesnt exist");
                         }
                     }
@@ -119,7 +203,9 @@ public class CommandHandler extends Thread {
                         userStream.printToUser("the room doesnt exist");
                     }
                 }
-            }
+            }*/
+
+
         } else if (command == CommandTranslator.LOOK) {
             Room r = getRoom(currentRoom);
 
@@ -336,7 +422,7 @@ public class CommandHandler extends Thread {
         else if (command == commandTranslator.ABOUT) {
             userStream.printToUser("an untitled game");
             userStream.printToUser("that is still unfinished and in progress" );
-            userStream.printToUser("coded by Nathaniel and Fraser" );
+            userStream.printToUser("coded by Nathaniel Tomsett" );
             userStream.printToUser("\nthanks for playing " );
         }
         else {
@@ -424,7 +510,7 @@ public class CommandHandler extends Thread {
         return null;
     }
 
-
+// why is this not being used is it unnecessary should it be deleted?
     private Item removeItemFromRoomById(String itemId) {
         Room r = getRoom(getCurrentRoomID());
         List<Item> itemList = r.getItems();
