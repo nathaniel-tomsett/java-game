@@ -1,0 +1,25 @@
+Need closer inspection but is every parsing subroutine needed, or can these be condensed and simplified?
+
+Remove item from room by ID is never used, why?
+
+Should all actions like attack be outsourced to their own class func?
+
+DOORS ARE CONFUSING
+
+Change Ideas
+- Battle system redesign
+- Stats
+- Bug check
+- Clean up
+- Puzzles
+- More interaction ops
+- Dialogue
+- If 1 opt of move auto move
+- shortened names for input
+- improve audit logger
+
+Review with Fraser
+- sockets
+- threads
+- polymorphism
+- questions
