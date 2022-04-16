@@ -7,6 +7,7 @@ import entities.Room;
 import users.UserConnections;
 import util.ResourceReader;
 
+import java.sql.SQLException;
 import java.util.*;
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
@@ -141,7 +142,7 @@ public class World extends Thread {
         return npcList;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         World world = new World();
         boolean consoleOff = args.length > 0 && args[0].equalsIgnoreCase("consoleOff");
         UserConnections userIO = new UserConnections(world, consoleOff);
