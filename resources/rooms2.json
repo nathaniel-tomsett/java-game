@@ -9,7 +9,7 @@
         "canPar": true},
       { "id" :  "3", "name" :  "Matilda", "type" : "2", "dmg" : 2,
         "canBleed": true},
-      { "id" :  "4", "name" :  "Medkit", "type" : "5", "dmg" : 5,
+      { "id" :  "4", "name" :  "MedKit", "type" : "5", "dmg" : 5,
         "canHeal": true},
       { "id" :  "5", "name" :  "Glass", "type" : "2", "dmg" : 4,
         "canBreak": true}
@@ -46,7 +46,7 @@
       { "id" :  "6", "direction" :  "3",  "destinationRoomId" :  "1", "locked" : false}
 
     ],
-    "description" : "A conjoining short hallway with dog toys and boxs full of mysterious things that seem to be just out of reach"
+    "description" : "A conjoining short hallway with dog toys and boxes full of mysterious things that seem to be just out of reach"
   },
 
 
@@ -87,7 +87,7 @@
       { "id" :  "12", "direction" :  "2",  "destinationRoomId" :  "5", "locked" : false}
 
     ],
-    "description" : "The porch a curious small piece of land i dont quite understand seems to be of use for storing shoes and adding quite useful second bathroom to the house"
+    "description" : "The porch a curious small piece of land i don't quite understand seems to be of use for storing shoes and adding quite useful second bathroom to the house"
   },
 
 
@@ -216,7 +216,7 @@
       { "id" :  "27", "direction" :  "1", "destinationRoomId" :  "14", "locked" : false},
       {"id" :  "28", "direction" :  "4", "destinationRoomId" :  "17", "locked" : false}
     ],
-    "description" : "oh wowee will the hallways ever end venture forth to uncover this great mystery"
+    "description" : "oh Wowee will the hallways ever end venture forth to uncover this great mystery"
   },
 
 
@@ -227,7 +227,7 @@
     "doors" : [
       { "id" :  "29", "direction" :  "2", "destinationRoomId" :  "16", "locked" : false}
     ],
-    "description" : "the glorious room of myself this is your living space just a regular space a child sits on the bed. looking at his phone.Ok thats enough looking at my room get out of here"
+    "description" : "the glorious room of myself this is your living space just a regular space a child sits on the bed. looking at his phone.Ok that's enough looking at my room get out of here"
   },
 
 
@@ -238,7 +238,7 @@
     "doors" : [
       { "id" :  "30", "direction" :  "6", "destinationRoomId" :  "17", "locked" : false}
     ],
-    "description" : "while walking up the flight of stairs you fret that there may be the existence of more hallways and the detremental effects this could cause to you. you even think of going back and leaving if you havent seen it then it cant exist but no you venture forth towards glory you fight and once you enter the final room of this house you are relieved to find there is no hallways to be seen you may rest here. finally at peace"
+    "description" : "while walking up the flight of stairs you fret that there may be the existence of more hallways and the detrimental effects this could cause to you. you even think of going back and leaving if you haven't seen it then it cant exist but no you venture forth towards glory you fight and once you enter the final room of this house you are relieved to find there is no hallways to be seen you may rest here. finally at peace"
   },
 
 
@@ -319,7 +319,7 @@
     ],
     "description" : "this is the road your house lays upon "
   },
-  //unfinished
+
   {
     "id" : "26",
     "name" : "Royal George Road",
@@ -332,7 +332,7 @@
     ],
     "description" : "this is the road your house lays upon "
   },
-  //unfinished
+
   {
     "id" : "24",
     "name" : "West Street",
@@ -357,7 +357,7 @@
     ],
     "description" : "this is the road your house lays upon "
   },
-  //unfinished
+
   {
     "id" : "28",
     "name" : "Western Road",
@@ -374,7 +374,7 @@
     ],
     "description" : "this is the road your house lays upon "
   },
-  //unfinished
+
   {
     "id" : "29",
     "name" : "St Mary Road",
@@ -400,7 +400,7 @@
     ],
     "description" : "this is the road your house lays upon "
   },
-  //unfinished
+
   {
     "id" : "31",
     "name" : "Fairfield Rec",

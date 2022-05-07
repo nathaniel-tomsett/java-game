@@ -7,6 +7,13 @@ import users.UserStream;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * NPC = Non-Playable Character , PC = Playable Character
+ * a class used to handle all attacks and attack effects (there's a lot to do here)
+ * this deals with PCs attacking PCs or NPCs
+ * also NPCs attacking PCs
+ * however NPCs will never attack NPCs
+ */
 public class attack {
     private World world;
     UserStream userStream;
@@ -21,15 +28,14 @@ public class attack {
     public void attack(Room room, String input) {
         String Target = getTarget(input);
         Player targetObj = world.getPlayer(Target);
-
-        new auditFile().writeLogLine("attacking target=" + Target + " obj=" + targetObj, userId);
         world.dumpPlayersHash(userId);
 
         if (targetObj == null) {
             boolean npcFound = false;
-
+/**
+ * PC attacking NPC
+ */
             new auditFile().writeLogLine("attacking NPC", userId);
-            // Human attacking NPC
             List<NPC> targetList = world.getNPCList();
             for (NPC n : targetList) {
                 String TargetName = n.getName();
@@ -38,18 +44,31 @@ public class attack {
                     npcFound = true;
                     NPC npc = n;
                     int TargetHP = npc.getHP();
+                    /**
+                     * attacking without weapon
+                     */
                     if (getItemAtkString(input) == null) {
                         TargetHP -= 3;
                         npc.setHP(TargetHP);
                         userStream.printToUser("attack successful");
                         agrNPCAtk(world, world.getPlayer(userId), npc);
-                    } else {
-                        TargetHP -= xtraDmg(input);
+                    }
+                    /**
+                     * attacking with weapon
+                     */
+
+                    else {
+                        Item item = getItemAtkString(input);
+                        TargetHP -= itemDmg(input);
                         npc.setHP(TargetHP);
                         userStream.printToUser("attack successful");
                         agrNPCAtk(world, world.getPlayer(userId), npc);
                     }
-
+/**
+ * a check for npc death
+ * if this happens all their items drop in the current room
+ * then they are removed from the world
+ */
                     if (TargetHP <= 0) {
                         userStream.printToUser(Target + " has died");
                         String TargetId = npc.getId();
@@ -70,46 +89,48 @@ public class attack {
                 userStream.printToUser("could not find a player of that name");
             }
         } else {
-            new auditFile().writeLogLine("attacking player", userId);
-
+            new auditFile().writeLogLine("attacking player" + targetObj, userId);
+/**
+ * checks if you attacked god
+ * if you did that's very bad. You die
+ */
             boolean targetGod = targetObj.getgodemode();
             if (targetGod) {
                 userStream.printToUser("your attack failed you hurt fred's feelings you shall now die");
                 world.removePlayerFromGame(userId);
             }
+            /**
+             * PC attacking PC
+             */
             int targetHp = targetObj.getHP();
             if (getItemAtkString(input) == null) {
                 targetHp -= 3;
                 userStream.printToUser("attack successful");
                 targetObj.setHP(targetHp);
-            } else if (getItemAtkString(input).getBleed()){
-                xtraDmg(input);
-                targetHp -= xtraDmg(input);
+            }
+            /**
+             * attacking with weapon
+             * also weapon effects bleed, paralysis and break
+             * bleed - you take small damage at intervals until you die or find and use a medkit
+             * paralysis - you cannot move for a set amount of time
+             * break - destroys the item and causes bleed effect
+             */
+            else {
+                itemDmg(input);
+                targetHp -= itemDmg(input);
                 Item item = getItemAtkString(input);
                 userStream.printToUser("attack successful");
                 targetObj.setHP(targetHp);
                 if (item.getBleed()) {
                     bleed(targetObj);
                 }
-            }else if (getItemAtkString(input).getPar()){
-                xtraDmg(input);
-                targetHp -= xtraDmg(input);
-                Item item = getItemAtkString(input);
-                userStream.printToUser("attack successful");
-                targetObj.setHP(targetHp);
-                Paralysis(item,targetObj);
-
-            }
-                else {
-                    xtraDmg(input);
-                    targetHp -= xtraDmg(input);
-                    Item item = getItemAtkString(input);
-                    userStream.printToUser("attack successful");
-                    targetObj.setHP(targetHp);
-                    if (item.getBreak()) {
-                        Break(item, targetObj);
-                    }
+                if (item.getPar()) {
+                    Paralysis(item, targetObj);
                 }
+                if (item.getBreak()) {
+                    Break(item, targetObj);
+                }
+            }
             if (targetHp <= 0) {
                 killUserOff(targetObj);
             } else {
@@ -122,17 +143,29 @@ public class attack {
 
     }
 
+    /**
+     * removes player from game and checks if you killed yourself
+     * then outputs a death message
+     * @param targetPlayer
+     */
     public void killUserOff(Player targetPlayer) {
         if (targetPlayer.getUserId().equals((userId))) {
             userStream.printToUser("you just killed yourself well done here's a gold sticker");
         }
-        userStream.printToUser(targetPlayer.getUserId() + " has died");
-        UserStream targetUserStream = targetPlayer.getUserStream();
-        targetUserStream.printToUser("you have died at the hands of " + userId);
+        else {
+            userStream.printToUser(targetPlayer.getUserId() + " has died");
+            UserStream targetUserStream = targetPlayer.getUserStream();
+            targetUserStream.printToUser("you have died at the hands of " + userId);
+        }
         String targetUserId = targetPlayer.getUserId();
         world.removePlayerFromGame(targetUserId);
     }
 
+    /**
+     * a parser to get the target the user has inputted on its own in a variable
+     * @param input the input a user has just written into the command line
+     * @return the target that the user wishes to target
+     */
     public String getTarget(String input){
 
         int firstSpace = input.indexOf(" ");
@@ -146,6 +179,11 @@ public class attack {
         }
     }
 
+    /**
+     * a parser to get the item that a user wants to use on its own in a variable
+     * @param input the input a user has just written into the command line
+     * @return the item a user wishes to use
+     */
     public Item getItemAtkString(String input) {
         // turn input into two strings
         int withIndex = input.indexOf("with");
@@ -159,7 +197,7 @@ public class attack {
         }
 
         String subItemIndex = itemIndex.substring(SpaceIndex).trim();
-        if (world.getPlayer(userId).getInventory().doesexistByName(subItemIndex)) {
+        if (world.getPlayer(userId).getInventory().doesExistByName(subItemIndex)) {
             Item item = world.getPlayer(userId).getInventory().getItem(subItemIndex);
             return item;
         }else{
@@ -167,7 +205,7 @@ public class attack {
         }
     }
 
-    public int xtraDmg(String input) {
+    public int itemDmg(String input) {
         Item item = getItemAtkString(input);
         int dmgMod = item.getDmg();
 
@@ -177,23 +215,23 @@ public class attack {
     public void bleed(Player target) {
         new Thread() {
             public void run() {
-                boolean jimbob = true;
-                while(jimbob)
+                boolean bleeding = true;
+                while(bleeding)
                 {
                     Random rand = new Random();
-                    int randend = rand.nextInt(10);
+                    int randEnd = rand.nextInt(10);
                     int hp = target.getHP();
                     hp -= 1;
                     target.setHP(hp);
                     if (hp <= 0) {
                         killUserOff(target);
-                        jimbob = false;
+                        bleeding = false;
                     } else {
-                        target.getUserStream().printToUser("you are bleeding find a medkit");
-                        if (randend == 1) {
-                            jimbob = false;
-                            UserStream targuserstream = target.getUserStream();
-                            targuserstream.printToUser("you are no longer bleeding you have survived");
+                        target.getUserStream().printToUser("you are bleeding find a medKit");
+                        if (randEnd == 1) {
+                            bleeding = false;
+                            UserStream tUserStream = target.getUserStream();
+                            tUserStream.printToUser("you are no longer bleeding you have survived");
                         }
                         try {
                             Thread.sleep(10000);
@@ -207,12 +245,12 @@ public class attack {
 
     public void Break(Item item, Player target){
         Random rand = new Random();
-        int randbreak = rand.nextInt(1);
-        if (randbreak == 0){
-            String itemname = item.getName();
-            String itemcomp = "atk jim with "+ itemname;
+        int randBreak = rand.nextInt(1);
+        if (randBreak == 0){
+            String itemName = item.getName();
+            String itemComp = "atk jim with "+ itemName;
             int targetHP = target.getHP();
-            targetHP -= xtraDmg(itemcomp);
+            targetHP -= itemDmg(itemComp);
             target.setHP(targetHP);
             Inventory playerInv = world.getPlayer(userId).getInventory();
             playerInv.removeItem(item);
@@ -229,10 +267,15 @@ public class attack {
         }
     }
 
+    /**
+     * NPCs Attacking PCs
+     * @param Target the PC being targetted by the attack
+     * @param npc the NPC that is attacking
+     */
     public void NPCAtk(World world, Player Target, NPC npc) {
         Random rand = new Random();
-        int randint = rand.nextInt(100);
-        if (randint <= npc.getAtkChance()) {
+        int randInt = rand.nextInt(100);
+        if (randInt <= npc.getAtkChance()) {
             if( NPCHasItem (Target,npc)){
                 return;
             }
@@ -247,11 +290,18 @@ public class attack {
         }
     }
 
+    /**
+     * aggravating an NPC
+     * this causes the NPC to increase in likelihood to attack
+     * then immediately rolls for a chance to attack straight away
+     * @param Target the PC being targetted by the attack
+     * @param npc the NPC that is attacking
+     */
     public void agrNPCAtk(World world, Player Target, NPC npc) {
-        Random agrrand = new Random();
-        int agrrandint = agrrand.nextInt(100);
+        Random agrRand = new Random();
+        int agrRandInt = agrRand.nextInt(100);
         double agrAtkChance = npc.getAtkChance() * npc.getAtkChanceMult();
-        if (agrrandint <= agrAtkChance) {
+        if (agrRandInt <= agrAtkChance) {
             if( NPCHasItem (Target,npc)){
                 return;
             }
@@ -265,6 +315,13 @@ public class attack {
             }
         }
     }
+
+    /**
+     * an NPC but this is used when the NPC has a weapon in their inventory
+     * @param Target the PC being targetted by the attack
+     * @param npc the NPC that is attacking
+     * @return true or false to say whether the NPC still needs to atk or not
+     */
     public boolean NPCHasItem (Player Target,NPC npc){
         List<Item> itemsList = npc.getItems();
         if (itemsList != null && !itemsList.isEmpty()){

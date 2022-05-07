@@ -71,7 +71,7 @@ public class CommandTranslator {
         }
     }
 
-    public String getdirectionstring(int input) {
+    public String getDirectionString(int input) {
         if (input == NORTH) {
             return "north";
         } else if (input == EAST) {
@@ -104,7 +104,7 @@ public class CommandTranslator {
         String thing = input.substring(firstSpace);
         return thing.trim();
     }
-    public String getItemTopickup2(String input) {
+    public String getItemToPickup2(String input) {
 
         int firstSpace = input.indexOf(" ");
         if (input.substring(firstSpace) == ""){
@@ -114,7 +114,7 @@ public class CommandTranslator {
         return thing.trim();
     }
 
-    public String[] getitemandoorstring(String input) {
+    public String[] getItemAndDoorString(String input) {
         String[] strings = input.split(" ");
         if (strings.length >= 4) {
             String[] newArray = new String[2];
@@ -126,7 +126,7 @@ public class CommandTranslator {
         }
     }
 
-    public String[] getitemandoorstring_new(String input) {
+    public String[] getItemAndDoorString_new(String input) {
         // turn input into two strings
         int onIndex = input.indexOf(" on ");
         if (onIndex == -1){

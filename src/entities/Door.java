@@ -1,7 +1,15 @@
 package entities;
 
 public class Door {
-
+    /**
+     * Door - a connection between two rooms
+     * used to allow movement between rooms
+     * this allows me to have two rooms to the east of Room1
+     * and allows for me to more easily have more complex interesting maps
+     * since for example
+     * I can have locked doors
+     * or one way doors
+     */
     private String id;
     private int direction;
     private String destinationRoomId;

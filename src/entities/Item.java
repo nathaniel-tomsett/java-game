@@ -1,6 +1,10 @@
 package entities;
 
 public class Item {
+    /**
+     * Item - this is a class for creating Item objects stores all their relevant info
+     * like the name, extra damage they do or any special effects it may have
+     */
 
     public static final int WEAPON = 1;
     public static final int EFFECT = 2;

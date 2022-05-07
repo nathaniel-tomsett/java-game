@@ -3,6 +3,9 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Room - represents a Room in the game that players, NPCs and items can be in
+ */
 public class Room{
 
     private String id;
@@ -12,18 +15,6 @@ public class Room{
     private List<Item> items = new ArrayList<>();
     private List<Door> doors = new ArrayList<>();
 
-//    things.Room(String i, String n, String d) {
-//        id = i;
-//        name = n;
-//        items = new ArrayList<>();
-//        doors = new ArrayList<>();
-//        description = d;
-//        npcs = new ArrayList<>();
-//    }
-
-    public void setItems(List<Item> i) {
-        items = i;
-    }
 
     public List<Item> getItems() {
         return items;
@@ -33,24 +24,12 @@ public class Room{
         return doors;
     }
 
-    public String getDestination(int direction) {
-        for (Door e : doors) {
-            if (direction == e.getDirection()) {
-                return e.getDestinationRoomId();
-            }
-        }
-        return "";
-    }
-
-    public void setExit(List<Door> i) {
-        doors = i;
-    }
     public String getId() {
         return id;
     }
 
     public String getName() { return name;}
-        public String getDescription () { return description;}
+    public String getDescription () { return description;}
 
 
 }

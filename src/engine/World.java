@@ -4,7 +4,7 @@ import entities.Door;
 import entities.NPC;
 import entities.Player;
 import entities.Room;
-import users.UserConnections;
+import users.userConnections;
 import util.ResourceReader;
 
 import java.sql.SQLException;
@@ -46,7 +46,7 @@ public class World extends Thread {
 
             for (NPC n : pncList) {
 
-                // should this things.NPC move right now?
+                // should this thing.NPC move right now?
                 if (n.shouldMove()) {
                     //System.out.println("----->" + n.getName() + " will move");
 
@@ -145,7 +145,7 @@ public class World extends Thread {
     public static void main(String[] args) throws SQLException {
         World world = new World();
         boolean consoleOff = args.length > 0 && args[0].equalsIgnoreCase("consoleOff");
-        UserConnections userIO = new UserConnections(world, consoleOff);
+        userConnections userIO = new userConnections(world, consoleOff);
         userIO.startListeningForUsers();
     }
 }

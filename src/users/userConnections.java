@@ -1,22 +1,21 @@
 package users;
 
 import DB.DBAccess;
-import engine.CommandHandler;
 import engine.World;
 import entities.NPC;
 import entities.Player;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.ServerSocket;
-import java.net.Socket;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class UserConnections {
+/**
+ * userConnections - this class is to deal with connections being made
+ * that can then be handed over to userStream once those users are on their own thread
+ */
+public class userConnections {
 
     private World world;
 
@@ -26,7 +25,7 @@ public class UserConnections {
 
     private DB.DBAccess dbAccess;
 
-    public UserConnections(World world, boolean consoleOff) throws SQLException {
+    public userConnections(World world, boolean consoleOff) throws SQLException {
         this.world = world;
         this.consoleOff = consoleOff;
         this.dbAccess = new DBAccess();
@@ -70,7 +69,7 @@ public class UserConnections {
 
         boolean nameOk = false;
         String username = "";
-        boolean godmode = false;
+        boolean godMode = false;
         while (!nameOk){
             boolean foundNPC = false;
 
@@ -103,7 +102,7 @@ public class UserConnections {
                 continue;
             }
             if (username.equals("fred")){
-                 godmode = true;
+                 godMode = true;
             }
             if (dbAccess.isUserExisting(username)){
                 stream.printToUser("What is your password?");
@@ -112,7 +111,7 @@ public class UserConnections {
                    stream.printToUser("password correct!");
                }
                else{
-                   stream.printToUser("thats incorrect");
+                   stream.printToUser("that's incorrect");
                    continue;
                }
             }
@@ -137,7 +136,7 @@ public class UserConnections {
         if (username != null && !username.isEmpty()) {
             String playerName = username;
             Player newPlayer = new Player(playerName, stream);
-            newPlayer.setgodmode(godmode);
+            newPlayer.setgodmode(godMode);
             world.addNewPlayer(playerName, newPlayer);
         }
     }

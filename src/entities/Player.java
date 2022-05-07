@@ -2,6 +2,11 @@ package entities;
 
 import users.UserStream;
 import java.util.Random;
+
+/**
+ * Player - a class to create Player objects that stores all relevant info about the player
+ * like name and Health and their current location
+ */
 public class Player {
 
     private String userId;
@@ -13,11 +18,12 @@ public class Player {
     public boolean godmode;
     public boolean isPar;
 
-
-    public String getCurrentRoomID() {return currentRoomID;}
     public void setCurrentRoomID(String roomID) { this.currentRoomID = roomID; }
+    public String getCurrentRoomID() {return currentRoomID;}
+
     public void setgodmode (boolean godTrue){ this.godmode = godTrue;}
     public boolean getgodemode (){return godmode;}
+
     public void setIsPar (boolean canPar){this.isPar = canPar;}
     public boolean getIsPar () {return isPar;}
 

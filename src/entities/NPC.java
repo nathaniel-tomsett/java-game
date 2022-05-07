@@ -3,6 +3,13 @@ package entities;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * NPC - a class for creating non playable characters this is mainly just trying to emulate a player
+ * but it plays the game by itself
+ * mainly ive done this through lots of random chance for it to do certain things
+ * but these chances can be affected
+ * by things like being attacked or a player entering the same room as them
+ */
 public class NPC {
     private String id;
     private String name;
@@ -67,7 +74,11 @@ public class NPC {
 
     public List<Item> getItems(){return items;}
 
-
+    /**
+     * random chance of the NPCs moving to different rooms
+     * each NPC has a unique moveChance
+     * @return boolean whether it will move or not
+     */
     public boolean shouldMove() {
         Random rand = new Random();
         int randInt = rand.nextInt(99);
@@ -89,6 +100,12 @@ public class NPC {
         this.AtkChanceMult = ACM;
     }
 
+    /**
+     * you can talk to the NPCs
+     * like all RPGs ive added some set dialogs that is unique to each NPC
+     * when you talk to an NPC it will randomly print one of its set lines to the player talking to it
+     * @return the dialog to be printed to the user
+     */
     public String getRandomDialog() {
         Random r = new Random();
         int selection = r.nextInt(dialog.size());
