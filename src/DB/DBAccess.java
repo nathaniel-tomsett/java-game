@@ -10,7 +10,7 @@ public class DBAccess {
 
     private static final String url = "jdbc:postgresql://db2.cmbaezw9qx2t.eu-west-2.rds.amazonaws.com/game";
     private static final String user = "postgres";
-    private static final String password = "pg1jlm1X.";
+    private static final String password = "pg1jlm1X."; //redacted
 
     private static final String createTable = "CREATE TABLE If NOT EXISTS Users (ID SERIAL PRIMARY KEY, Username varchar(50) NOT NULL, Password varchar(200) NOT NULL);" ;
     private static final String lookupUser = "SELECT * FROM Users WHERE Username = ?";

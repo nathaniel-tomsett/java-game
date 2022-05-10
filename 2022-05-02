@@ -1,0 +1,325 @@
+2022-05-02 16:39:35:3935 -- null -- What is your name?
+2022-05-02 16:39:37:3937 -- null -- What is your password?
+2022-05-02 16:39:39:3939 -- n -- Registering player...
+2022-05-02 16:39:40:3940 -- n -- Building the world...
+2022-05-02 16:39:41:3941 -- n -- Entering the game...
+2022-05-02 16:39:42:3942 -- n -- 
+2022-05-02 16:39:42:3942 -- n -- Currently in room: Entrance
+2022-05-02 16:39:49:3949 -- n -- l
+2022-05-02 16:39:49:3949 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-02 16:39:49:3949 -- n -- Exits: 
+2022-05-02 16:39:49:3949 -- n --     west - Living Room
+2022-05-02 16:39:49:3949 -- n --     north - Floor 1 Hallway
+2022-05-02 16:39:49:3949 -- n --     up - Floor 2 Landing
+2022-05-02 16:39:49:3949 -- n --     south - Newport Road
+2022-05-02 16:39:49:3949 -- n -- Items: 
+2022-05-02 16:39:49:3949 -- n --     House Key
+2022-05-02 16:39:49:3949 -- n --     Swordy McSwordface
+2022-05-02 16:39:49:3949 -- n --     Matilda
+2022-05-02 16:39:49:3949 -- n --     Medkit
+2022-05-02 16:39:49:3949 -- n --     Glass
+2022-05-02 16:39:49:3949 -- n -- Characters in the room:
+2022-05-02 16:39:49:3949 -- n --     Mabel
+2022-05-02 16:39:49:3949 -- n -- Getting list of players in the room
+2022-05-02 16:39:49:3949 -- n -- Player name:n room: 1
+2022-05-02 16:39:49:3949 -- n -- Players in the room:
+2022-05-02 18:29:11:2911 -- null -- What is your name?
+2022-05-02 18:29:12:2912 -- null -- What is your password?
+2022-05-02 18:29:12:2912 -- null -- password correct!
+2022-05-02 18:29:12:2912 -- n -- Registering player...
+2022-05-02 18:29:13:2913 -- n -- Building the world...
+2022-05-02 18:29:14:2914 -- n -- Entering the game...
+2022-05-02 18:29:15:2915 -- n -- 
+2022-05-02 18:29:15:2915 -- n -- Currently in room: Entrance
+2022-05-02 18:29:22:2922 -- n -- l
+2022-05-02 18:29:22:2922 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-02 18:29:22:2922 -- n -- Exits: 
+2022-05-02 18:29:22:2922 -- n --     west - Living Room
+2022-05-02 18:29:22:2922 -- n --     north - Floor 1 Hallway
+2022-05-02 18:29:22:2922 -- n --     up - Floor 2 Landing
+2022-05-02 18:29:22:2922 -- n --     south - Newport Road
+2022-05-02 18:29:22:2922 -- n -- Items: 
+2022-05-02 18:29:22:2922 -- n --     House Key
+2022-05-02 18:29:22:2922 -- n --     Swordy McSwordface
+2022-05-02 18:29:22:2922 -- n --     Matilda
+2022-05-02 18:29:22:2922 -- n --     Medkit
+2022-05-02 18:29:22:2922 -- n --     Glass
+2022-05-02 18:29:22:2922 -- n -- Characters in the room:
+2022-05-02 18:29:22:2922 -- n --     Bella
+2022-05-02 18:29:22:2922 -- n -- Getting list of players in the room
+2022-05-02 18:29:22:2922 -- n -- Player name:n room: 1
+2022-05-02 18:29:22:2922 -- n -- Players in the room:
+2022-05-02 18:29:28:2928 -- n -- attack bella with matilda
+2022-05-02 18:29:28:2928 -- n -- attacking target=bella obj=null
+2022-05-02 18:29:28:2928 -- n -- Player name:n room: 1
+2022-05-02 18:29:28:2928 -- n -- attacking NPC
+2022-05-02 18:29:28:2928 -- n -- attack successful
+2022-05-02 18:29:28:2928 -- n -- You were hit by Bella with the Needle
+2022-05-02 18:29:28:2928 -- n -- bella has died
+2022-05-02 18:29:28:2928 -- n -- you are bleeding find a medkit
+2022-05-02 18:29:38:2938 -- n -- you are bleeding find a medkit
+2022-05-02 18:29:48:2948 -- n -- you are bleeding find a medkit
+2022-05-02 18:29:56:2956 -- n -- atk
+2022-05-02 18:29:56:2956 -- n -- I'm sorry, I don't recognise that
+2022-05-02 18:29:58:2958 -- n -- you are bleeding find a medkit
+2022-05-02 18:30:01:301 -- n -- attack
+2022-05-02 18:30:01:301 -- n -- I'm sorry, I don't recognise that
+2022-05-02 18:30:04:304 -- n -- attack bella
+2022-05-02 18:30:04:304 -- n -- attacking target=bella obj=null
+2022-05-02 18:30:04:304 -- n -- Player name:n room: 1
+2022-05-02 18:30:04:304 -- n -- attacking NPC
+2022-05-02 18:30:04:304 -- n -- could not find a player of that name
+2022-05-02 18:30:08:308 -- n -- you are bleeding find a medkit
+2022-05-02 18:30:17:3017 -- n -- attack bella with matilda
+2022-05-02 18:30:17:3017 -- n -- attacking target=bella obj=null
+2022-05-02 18:30:17:3017 -- n -- Player name:n room: 1
+2022-05-02 18:30:17:3017 -- n -- attacking NPC
+2022-05-02 18:30:17:3017 -- n -- could not find a player of that name
+2022-05-02 18:30:18:3018 -- n -- inv
+2022-05-02 18:30:18:3018 -- n -- HP: 11/18
+2022-05-02 18:30:18:3018 -- n -- Inventory: 
+2022-05-02 18:30:18:3018 -- n -- You're inventory is empty
+2022-05-02 18:30:18:3018 -- n -- you are bleeding find a medkit
+2022-05-02 19:04:05:45 -- null -- What is your name?
+2022-05-02 19:04:06:46 -- null -- What is your password?
+2022-05-02 19:04:07:47 -- null -- password correct!
+2022-05-02 19:04:07:47 -- n -- Registering player...
+2022-05-02 19:04:08:48 -- n -- Building the world...
+2022-05-02 19:04:09:49 -- n -- Entering the game...
+2022-05-02 19:04:10:410 -- n -- 
+2022-05-02 19:04:10:410 -- n -- Currently in room: Entrance
+2022-05-02 19:04:16:416 -- n -- m
+2022-05-02 19:04:16:416 -- n -- I'm sorry, I don't recognise that
+2022-05-02 19:04:18:418 -- n -- m east
+2022-05-02 19:04:18:418 -- n -- You can move to these rooms:
+2022-05-02 19:04:18:418 -- n -- there are no rooms in this direction
+2022-05-02 19:04:22:422 -- n -- m w
+2022-05-02 19:04:22:422 -- n -- You can move to these rooms:
+2022-05-02 19:04:22:422 -- n -- there are no rooms in this direction
+2022-05-02 19:04:24:424 -- n -- m n
+2022-05-02 19:04:24:424 -- n -- You can move to these rooms:
+2022-05-02 19:04:24:424 -- n -- there are no rooms in this direction
+2022-05-02 19:04:26:426 -- n -- m s
+2022-05-02 19:04:26:426 -- n -- You can move to these rooms:
+2022-05-02 19:04:26:426 -- n -- there are no rooms in this direction
+2022-05-02 19:04:29:429 -- n -- m south
+2022-05-02 19:04:29:429 -- n -- You can move to these rooms:
+2022-05-02 19:04:29:429 -- n -- 1.  Newport Road
+2022-05-02 19:04:32:432 -- n -- the room doesnt exist
+2022-05-02 19:04:32:432 -- n -- the room doesnt exist
+2022-05-02 19:04:32:432 -- n -- the room doesnt exist
+2022-05-02 19:04:32:432 -- n -- the door is locked
+2022-05-02 19:04:37:437 -- n -- m n
+2022-05-02 19:04:37:437 -- n -- You can move to these rooms:
+2022-05-02 19:04:37:437 -- n -- there are no rooms in this direction
+2022-05-02 19:04:40:440 -- n -- m north
+2022-05-02 19:04:40:440 -- n -- You can move to these rooms:
+2022-05-02 19:04:40:440 -- n -- 1.  Floor 1 Hallway
+2022-05-02 19:04:42:442 -- n -- the room doesnt exist
+2022-05-02 19:04:42:442 -- n -- Currently in room: Floor 1 Hallway
+2022-05-02 19:53:13:5313 -- null -- What is your name?
+2022-05-02 19:53:16:5316 -- null -- What is your password?
+2022-05-02 19:53:17:5317 -- null -- password correct!
+2022-05-02 19:53:17:5317 -- n -- Registering player...
+2022-05-02 19:53:18:5318 -- n -- Building the world...
+2022-05-02 19:53:19:5319 -- n -- Entering the game...
+2022-05-02 19:53:20:5320 -- n -- 
+2022-05-02 19:53:20:5320 -- n -- Currently in room: Entrance
+2022-05-02 19:53:22:5322 -- n -- l
+2022-05-02 19:53:22:5322 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-02 19:53:22:5322 -- n -- Exits: 
+2022-05-02 19:53:22:5322 -- n --     west - Living Room
+2022-05-02 19:53:22:5322 -- n --     north - Floor 1 Hallway
+2022-05-02 19:53:22:5322 -- n --     up - Floor 2 Landing
+2022-05-02 19:53:22:5322 -- n --     south - Newport Road
+2022-05-02 19:53:22:5322 -- n -- Items: 
+2022-05-02 19:53:22:5322 -- n --     House Key
+2022-05-02 19:53:22:5322 -- n --     Swordy McSwordface
+2022-05-02 19:53:22:5322 -- n --     Matilda
+2022-05-02 19:53:22:5322 -- n --     Medkit
+2022-05-02 19:53:22:5322 -- n --     Glass
+2022-05-02 19:53:22:5322 -- n -- Characters in the room:
+2022-05-02 19:53:22:5322 -- n --     Bella
+2022-05-02 19:53:22:5322 -- n -- Getting list of players in the room
+2022-05-02 19:53:22:5322 -- n -- Player name:n room: 1
+2022-05-02 19:53:22:5322 -- n -- Players in the room:
+2022-05-02 19:53:30:5330 -- n -- p medkit
+2022-05-02 19:53:30:5330 -- n -- Added Medkit to your inventory
+2022-05-02 19:53:34:5334 -- n -- p matilda
+2022-05-02 19:53:34:5334 -- n -- Added Matilda to your inventory
+2022-05-02 19:53:40:5340 -- n -- attack bella with matilda
+2022-05-02 19:53:40:5340 -- n -- attacking target=bella obj=null
+2022-05-02 19:53:40:5340 -- n -- Player name:n room: 1
+2022-05-02 19:53:40:5340 -- n -- attacking NPC
+2022-05-02 19:53:40:5340 -- n -- attack successful
+2022-05-02 19:53:40:5340 -- n -- You were hit by Bella with the Needle
+2022-05-02 19:53:40:5340 -- n -- you are bleeding find a medKit
+2022-05-02 19:53:48:5348 -- n -- use medkit
+2022-05-02 19:53:48:5348 -- n -- you healed for 5 HP
+2022-05-02 19:53:50:5350 -- n -- you are bleeding find a medKit
+2022-05-02 19:54:00:540 -- n -- you are bleeding find a medKit
+2022-05-02 19:54:10:5410 -- n -- you are bleeding find a medKit
+2022-05-02 19:54:20:5420 -- n -- you are bleeding find a medKit
+2022-05-02 19:54:30:5430 -- n -- you are bleeding find a medKit
+2022-05-02 19:54:39:5439 -- n -- attack bella with Matilda
+2022-05-02 19:54:39:5439 -- n -- attacking target=bella obj=null
+2022-05-02 19:54:39:5439 -- n -- Player name:n room: 1
+2022-05-02 19:54:39:5439 -- n -- attacking NPC
+2022-05-02 19:54:39:5439 -- n -- attack successful
+2022-05-02 19:54:39:5439 -- n -- You were hit by Bella with the Needle
+2022-05-02 19:54:39:5439 -- n -- bella has died
+2022-05-02 19:54:39:5439 -- n -- you just killed yourself well done here's a gold sticker
+2022-05-02 19:54:39:5439 -- n -- n has died
+2022-05-02 19:54:39:5439 -- n -- you have died at the hands of n
+2022-05-02 19:54:40:5440 -- n -- you just killed yourself well done here's a gold sticker
+2022-05-02 19:54:40:5440 -- n -- n has died
+2022-05-02 19:54:40:5440 -- n -- you have died at the hands of n
+2022-05-02 20:10:23:1023 -- null -- What is your name?
+2022-05-02 20:10:24:1024 -- null -- What is your password?
+2022-05-02 20:10:25:1025 -- null -- password correct!
+2022-05-02 20:10:25:1025 -- n -- Registering player...
+2022-05-02 20:10:26:1026 -- n -- Building the world...
+2022-05-02 20:10:27:1027 -- n -- Entering the game...
+2022-05-02 20:10:28:1028 -- n -- 
+2022-05-02 20:10:28:1028 -- n -- Currently in room: Entrance
+2022-05-02 20:10:29:1029 -- n -- h
+2022-05-02 20:10:29:1029 -- n -- move (direction on compass) move to that place then once it asks for input again type one of the street names the console just showed you
+2022-05-02 20:10:29:1029 -- n -- look to see your current surroundings and where you can go
+2022-05-02 20:10:29:1029 -- n -- pickup (insert item name here) to pickup an item
+2022-05-02 20:10:29:1029 -- n -- drop (insert item name here) to drop an item
+2022-05-02 20:10:29:1029 -- n -- talk to (insert things.NPC name here) to talk to an things.NPC 
+2022-05-02 20:10:29:1029 -- n -- inv to look at your inventory and HPf
+2022-05-02 20:10:29:1029 -- n -- use (insert item name here) on (insert name of thing you'd like to use item on here) to use an item
+2022-05-02 20:10:29:1029 -- n -- about to see credits of this game
+2022-05-02 20:10:29:1029 -- n -- all of the above excluding inv can be shortened to their first letter e.g (m east or p house key)
+2022-05-02 20:10:29:1029 -- n -- have fun!!!
+2022-05-02 20:11:22:1122 -- n -- attack
+2022-05-02 20:11:22:1122 -- n -- I'm sorry, I don't recognise that
+2022-05-02 20:11:28:1128 -- n -- attack x
+2022-05-02 20:11:28:1128 -- n -- attacking target=x obj=null
+2022-05-02 20:11:28:1128 -- n -- Player name:n room: 1
+2022-05-02 20:11:28:1128 -- n -- attacking NPC
+2022-05-02 20:11:28:1128 -- n -- could not find a player of that name
+2022-05-02 20:11:42:1142 -- n -- bella
+2022-05-02 20:11:42:1142 -- n -- I'm sorry, I don't recognise that
+2022-05-02 20:11:44:1144 -- n -- inv
+2022-05-02 20:11:44:1144 -- n -- HP: 17/17
+2022-05-02 20:11:44:1144 -- n -- Inventory: 
+2022-05-02 20:11:44:1144 -- n -- You're inventory is empty
+2022-05-02 20:11:58:1158 -- n -- l
+2022-05-02 20:11:58:1158 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-02 20:11:58:1158 -- n -- Exits: 
+2022-05-02 20:11:58:1158 -- n --     west - Living Room
+2022-05-02 20:11:58:1158 -- n --     north - Floor 1 Hallway
+2022-05-02 20:11:58:1158 -- n --     up - Floor 2 Landing
+2022-05-02 20:11:58:1158 -- n --     south - Newport Road
+2022-05-02 20:11:58:1158 -- n -- Items: 
+2022-05-02 20:11:58:1158 -- n --     House Key
+2022-05-02 20:11:58:1158 -- n --     Swordy McSwordface
+2022-05-02 20:11:58:1158 -- n --     Matilda
+2022-05-02 20:11:58:1158 -- n --     Medkit
+2022-05-02 20:11:58:1158 -- n --     Glass
+2022-05-02 20:11:58:1158 -- n -- Getting list of players in the room
+2022-05-02 20:11:58:1158 -- n -- Player name:n room: 1
+2022-05-02 20:11:58:1158 -- n -- Players in the room:
+2022-05-02 20:12:02:122 -- n -- p house key
+2022-05-02 20:12:02:122 -- n -- Added House Key to your inventory
+2022-05-02 20:12:08:128 -- n -- a bella
+2022-05-02 20:12:08:128 -- n -- I'm sorry, I don't recognise that
+2022-05-02 20:12:11:1211 -- n -- atk bella
+2022-05-02 20:12:11:1211 -- n -- attacking target=bella obj=null
+2022-05-02 20:12:11:1211 -- n -- Player name:n room: 1
+2022-05-02 20:12:11:1211 -- n -- attacking NPC
+2022-05-02 20:12:11:1211 -- n -- attack successful
+2022-05-02 20:12:11:1211 -- n -- You were hit by Bella with the Needle
+2022-05-02 20:12:11:1211 -- n -- bella has died
+2022-05-02 20:12:11:1211 -- n -- you are bleeding find a medKit
+2022-05-02 20:12:17:1217 -- n -- m west
+2022-05-02 20:12:17:1217 -- n -- You can move to these rooms:
+2022-05-02 20:12:17:1217 -- n -- 1.  Living Room
+2022-05-02 20:12:19:1219 -- n -- Currently in room: Living Room
+2022-05-02 20:12:20:1220 -- n -- l
+2022-05-02 20:12:20:1220 -- n -- A clean white room with a purple sofa to your left and a brown one to your right around the room there are cabinets holding an array of books
+2022-05-02 20:12:20:1220 -- n -- Exits: 
+2022-05-02 20:12:20:1220 -- n --     east - Entrance
+2022-05-02 20:12:20:1220 -- n -- Items: 
+2022-05-02 20:12:20:1220 -- n --     tv remote
+2022-05-02 20:12:20:1220 -- n --     book-1
+2022-05-02 20:12:20:1220 -- n -- Characters in the room:
+2022-05-02 20:12:20:1220 -- n --     Fraser
+2022-05-02 20:12:20:1220 -- n -- Getting list of players in the room
+2022-05-02 20:12:20:1220 -- n -- Player name:n room: 2
+2022-05-02 20:12:20:1220 -- n -- Players in the room:
+2022-05-02 20:12:21:1221 -- n -- you are bleeding find a medKit
+2022-05-02 20:12:29:1229 -- n -- atk fraser with house key
+2022-05-02 20:12:29:1229 -- n -- attacking target=fraser obj=null
+2022-05-02 20:12:29:1229 -- n -- Player name:n room: 2
+2022-05-02 20:12:29:1229 -- n -- attacking NPC
+2022-05-02 20:12:29:1229 -- n -- attack successful
+2022-05-02 20:12:31:1231 -- n -- you are bleeding find a medKit
+2022-05-02 20:12:41:1241 -- n -- you are bleeding find a medKit
+2022-05-02 20:15:21:1521 -- null -- What is your name?
+2022-05-02 20:15:28:1528 -- null -- What is your password?
+2022-05-02 20:15:34:1534 -- null -- What is your name?
+2022-05-02 20:15:45:1545 -- null -- What is your password?
+2022-05-02 20:15:46:1546 -- null -- password correct!
+2022-05-02 20:15:46:1546 -- n -- Registering player...
+2022-05-02 20:15:47:1547 -- n -- Building the world...
+2022-05-02 20:15:48:1548 -- n -- Entering the game...
+2022-05-02 20:15:49:1549 -- n -- 
+2022-05-02 20:15:49:1549 -- n -- Currently in room: Entrance
+2022-05-02 20:16:15:1615 -- n -- atk bella
+2022-05-02 20:16:15:1615 -- n -- attacking target=bella obj=null
+2022-05-02 20:16:15:1615 -- n -- Player name:n room: 1
+2022-05-02 20:16:15:1615 -- n -- attacking NPC
+2022-05-02 20:16:15:1615 -- n -- attack successful
+2022-05-02 20:16:15:1615 -- n -- bella has died
+2022-05-02 20:16:58:1658 -- null -- What is your name?
+2022-05-02 20:17:01:171 -- null -- What is your password?
+2022-05-02 20:17:02:172 -- null -- password correct!
+2022-05-02 20:17:02:172 -- n -- Registering player...
+2022-05-02 20:17:03:173 -- n -- Building the world...
+2022-05-02 20:17:04:174 -- n -- Entering the game...
+2022-05-02 20:17:05:175 -- n -- 
+2022-05-02 20:17:05:175 -- n -- Currently in room: Entrance
+2022-05-02 20:17:18:1718 -- n -- atk bella
+2022-05-02 20:17:26:1726 -- n -- attacking target=bella obj=null
+2022-05-02 20:17:26:1726 -- n -- Player name:n room: 1
+2022-05-02 20:17:26:1726 -- n -- attacking NPC
+2022-05-02 20:17:26:1726 -- n -- attack successful
+2022-05-02 20:17:26:1726 -- n -- You were hit by Bella with the Needle
+2022-05-02 20:17:26:1726 -- n -- you are bleeding find a medKit
+2022-05-02 20:17:26:1726 -- n -- bella has died
+2022-05-02 20:17:31:1731 -- null -- What is your name?
+2022-05-02 20:17:33:1733 -- null -- What is your password?
+2022-05-02 20:17:33:1733 -- null -- password correct!
+2022-05-02 20:17:33:1733 -- n -- Registering player...
+2022-05-02 20:17:34:1734 -- n -- Building the world...
+2022-05-02 20:17:35:1735 -- n -- Entering the game...
+2022-05-02 20:17:36:1736 -- n -- 
+2022-05-02 20:17:36:1736 -- n -- Currently in room: Entrance
+2022-05-02 20:17:39:1739 -- n -- atk bella
+2022-05-02 20:26:24:2624 -- n -- attacking target=bella obj=null
+2022-05-02 20:26:24:2624 -- n -- Player name:n room: 1
+2022-05-02 20:26:24:2624 -- n -- attacking NPC
+2022-05-02 20:26:24:2624 -- n -- attack successful
+2022-05-02 20:26:24:2624 -- n -- You were hit by Bella with the Needle
+2022-05-02 20:26:24:2624 -- n -- you are bleeding find a medKit
+2022-05-02 20:26:24:2624 -- n -- bella has died
+2022-05-02 20:26:41:2641 -- null -- What is your name?
+2022-05-02 20:26:47:2647 -- null -- What is your password?
+2022-05-02 20:26:47:2647 -- null -- password correct!
+2022-05-02 20:26:47:2647 -- n -- Registering player...
+2022-05-02 20:26:48:2648 -- n -- Building the world...
+2022-05-02 20:26:49:2649 -- n -- Entering the game...
+2022-05-02 20:26:50:2650 -- n -- 
+2022-05-02 20:26:50:2650 -- n -- Currently in room: Entrance
+2022-05-02 20:26:57:2657 -- n -- p matilda
+2022-05-02 20:26:57:2657 -- n -- Added Matilda to your inventory
+2022-05-02 20:27:05:275 -- n -- atk bella with matilda
+2022-05-02 20:27:09:279 -- n -- Player name:n room: 1
+2022-05-02 20:27:10:2710 -- n -- attacking NPC
+2022-05-02 20:27:28:2728 -- n -- attack successful
+2022-05-02 20:27:29:2729 -- n -- You were hit by Bella with the Needle
+2022-05-02 20:27:29:2729 -- n -- you are bleeding find a medKit
+2022-05-02 20:27:34:2734 -- n -- you are no longer bleeding you have survived

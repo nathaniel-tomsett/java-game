@@ -14,7 +14,6 @@ public class CommandTranslator {
     public static final int ABOUT = 9;
     public static final int ATTACK= 10;
 
-
     // Movement directions
     public static final int NORTH = 1;
     public static final int EAST = 2;
@@ -88,6 +87,22 @@ public class CommandTranslator {
             return "error";
         }
     }
+    public int flipDirection (int direction) {
+        if (direction == NORTH) {
+            return SOUTH;
+        } else if (direction == SOUTH) {
+            return NORTH;
+        } else if (direction == EAST) {
+            return WEST;
+        } else if (direction == WEST) {
+            return EAST;
+        } else if (direction == UP) {
+            return DOWN;
+        } else if (direction == DOWN) {
+            return UP;
+        }
+        return ERROR;
+    }
 
     public String getItemString(String input) {
         String[] strings = input.split(" ");
@@ -114,7 +129,7 @@ public class CommandTranslator {
         return thing.trim();
     }
 
-    public String[] getItemAndDoorString(String input) {
+    public String[] getItemAndDoorString_old(String input) {
         String[] strings = input.split(" ");
         if (strings.length >= 4) {
             String[] newArray = new String[2];
@@ -126,7 +141,7 @@ public class CommandTranslator {
         }
     }
 
-    public String[] getItemAndDoorString_new(String input) {
+    public String[] getItemAndDoorString(String input) {
         // turn input into two strings
         int onIndex = input.indexOf(" on ");
         if (onIndex == -1){

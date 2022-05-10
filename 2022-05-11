@@ -1,0 +1,58 @@
+2022-05-11 00:26:52:2652 -- null -- What is your name?
+2022-05-11 00:26:59:2659 -- null -- What is your password?
+2022-05-11 00:26:59:2659 -- null -- password correct!
+2022-05-11 00:26:59:2659 -- n -- Registering player...
+2022-05-11 00:27:00:270 -- n -- Building the world...
+2022-05-11 00:27:01:271 -- n -- Entering the game...
+2022-05-11 00:27:02:272 -- n -- 
+2022-05-11 00:27:02:272 -- n -- Currently in room: Entrance
+2022-05-11 00:27:04:274 -- n -- l
+2022-05-11 00:27:04:274 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 00:27:04:274 -- n -- Exits: 
+2022-05-11 00:27:04:274 -- n --     west - Living Room
+2022-05-11 00:27:04:274 -- n --     north - Floor 1 Hallway
+2022-05-11 00:27:04:274 -- n --     up - Floor 2 Landing
+2022-05-11 00:27:04:274 -- n --     south - Newport Road
+2022-05-11 00:27:04:274 -- n -- Items: 
+2022-05-11 00:27:04:274 -- n --     House Key
+2022-05-11 00:27:04:274 -- n --     Swordy McSwordface
+2022-05-11 00:27:04:274 -- n --     Matilda
+2022-05-11 00:27:04:274 -- n --     MedKit
+2022-05-11 00:27:04:274 -- n --     Glass
+2022-05-11 00:27:04:274 -- n -- Getting list of players in the room
+2022-05-11 00:27:04:274 -- n -- Player name:n room: 1
+2022-05-11 00:27:04:274 -- n -- Players in the room:
+2022-05-11 00:27:15:2715 -- n -- pickup swordy mcswordface
+2022-05-11 00:27:15:2715 -- n -- Added Swordy McSwordface to your inventory
+2022-05-11 00:27:33:2733 -- n -- attack n with swordy mcswordface
+2022-05-11 00:27:33:2733 -- n -- Player name:n room: 1
+2022-05-11 00:27:33:2733 -- n -- attacking playerentities.Player@6668d464
+2022-05-11 00:27:33:2733 -- n -- attack successful
+2022-05-11 00:27:33:2733 -- n -- you have been paralysed you can no longer move or do anything enjoy
+2022-05-11 00:27:33:2733 -- n -- you have been attacked by n
+2022-05-11 00:28:01:281 -- n -- p
+2022-05-11 00:28:01:281 -- n -- *your mind tells you you are paralysed and all struggle is in vain*
+2022-05-11 00:28:09:289 -- null -- What is your name?
+2022-05-11 00:28:15:2815 -- null -- What is your password?
+2022-05-11 00:28:15:2815 -- null -- password correct!
+2022-05-11 00:28:15:2815 -- n -- Registering player...
+2022-05-11 00:28:16:2816 -- n -- Building the world...
+2022-05-11 00:28:17:2817 -- n -- Entering the game...
+2022-05-11 00:28:18:2818 -- n -- 
+2022-05-11 00:28:18:2818 -- n -- Currently in room: Entrance
+2022-05-11 00:28:24:2824 -- n -- pickup glass
+2022-05-11 00:28:24:2824 -- n -- Added Glass to your inventory
+2022-05-11 00:28:34:2834 -- n -- attack n with glass
+2022-05-11 00:28:34:2834 -- n -- Player name:n room: 1
+2022-05-11 00:28:34:2834 -- n -- attacking playerentities.Player@6668d464
+2022-05-11 00:28:34:2834 -- n -- attack successful
+2022-05-11 00:28:34:2834 -- n -- the glass shatters over n's head
+2022-05-11 00:28:34:2834 -- n -- you are bleeding find a medKit
+2022-05-11 00:28:34:2834 -- n -- you have been attacked by n
+2022-05-11 00:28:38:2838 -- n -- inv
+2022-05-11 00:28:38:2838 -- n -- HP: 3/12
+2022-05-11 00:28:38:2838 -- n -- Inventory: 
+2022-05-11 00:28:38:2838 -- n -- You're inventory is empty
+2022-05-11 00:28:44:2844 -- n -- you are bleeding find a medKit
+2022-05-11 00:28:54:2854 -- n -- you are bleeding find a medKit
+2022-05-11 00:28:54:2854 -- n -- you are no longer bleeding you have survived

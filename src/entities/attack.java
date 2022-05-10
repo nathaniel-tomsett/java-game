@@ -122,7 +122,7 @@ public class attack {
                 userStream.printToUser("attack successful");
                 targetObj.setHP(targetHp);
                 if (item.getBleed()) {
-                    bleed(targetObj);
+                    Bleed(targetObj);
                 }
                 if (item.getPar()) {
                     Paralysis(item, targetObj);
@@ -212,7 +212,7 @@ public class attack {
         return dmgMod;
     }
 
-    public void bleed(Player target) {
+    public void Bleed(Player target) {
         new Thread() {
             public void run() {
                 boolean bleeding = true;
@@ -254,7 +254,7 @@ public class attack {
             target.setHP(targetHP);
             Inventory playerInv = world.getPlayer(userId).getInventory();
             playerInv.removeItem(item);
-            bleed(target);
+            Bleed(target);
             userStream.printToUser("the glass shatters over "+ target.getUserId()+"'s head");
         }
     }
@@ -332,7 +332,7 @@ public class attack {
             Target.setHP(TargetHP);
             Target.getUserStream().printToUser("You were hit by " + npc.getName() + " with the " + atkItem.getName());
             if (atkItem.getBleed()){
-                bleed(Target);
+                Bleed(Target);
 
 
             }
