@@ -44,7 +44,7 @@ public class UserStream {
     }
 
     /**
-     * Prints something to the user
+     * Prints a message to the user
      * @param message the thing that is printed
      */
     public void printToUser(String message) {

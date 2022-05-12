@@ -29,11 +29,19 @@ public class CommandHandler extends Thread {
         this.lastRoom = "";
     }
 
+    /**
+     *this is the main gameplay loop
+     * the Player is told the room they are in
+     * given the ability to put an input
+     * and if they have disconnected removes them from the game
+     * the input is then ran through DoUserCommand (see below)
+     * this will then do whatever the Player inputted and loop again once done
+     * if the Player arent dead of course
+     */
     @Override
     public void run() {
         printCurrentRoom();
         while (true) {
-            //userStream.printToUser("Input> ", TextColours.RED);
             String input = userStream.readFromUser();
             if (input == null) {
                 world.removePlayerFromGame(userId);
@@ -43,7 +51,12 @@ public class CommandHandler extends Thread {
         }
     }
 
-//takes an input then finds which command has been inputted and acts upon it (could this be done more efficiently)?
+    /**
+     * takes an input then finds which Action has been inputted and acts upon it
+     * finding the correct case statement for the action that was inputted
+     * @param input a command inputted by the Player
+     */
+
     public void doUserCommand(String input) {
         boolean npcShouldMove = true;
         boolean shouldPrintCurrentRoomAfterMove = false;
@@ -96,8 +109,6 @@ public class CommandHandler extends Thread {
                 attack.attack(r, input);
                 break;
             case CommandTranslator.HELP:
-                //TODO: update for latest commands
-
                 userStream.printToUser("move (direction on compass) move to that place then once it asks for input again type one of the street names the console just showed you");
                 userStream.printToUser("look to see your current surroundings and where you can go");
                 userStream.printToUser("pickup (insert item name here) to pickup an item");
@@ -105,6 +116,8 @@ public class CommandHandler extends Thread {
                 userStream.printToUser("talk to (insert things.NPC name here) to talk to an things.NPC ");
                 userStream.printToUser("inv to look at your inventory and HPf");
                 userStream.printToUser("use (insert item name here) on (insert name of thing you'd like to use item on here) to use an item");
+                userStream.printToUser("Attack (insert NPC name here) with (insert Item name here) to attack a Npc/Player");
+                userStream.printToUser("for attacking you may attack with or without an item");
                 userStream.printToUser("about to see credits of this game");
                 userStream.printToUser("all of the above excluding inv can be shortened to their first letter e.g (m east or p house key)");
                 userStream.printToUser("have fun!!!");
@@ -116,7 +129,6 @@ public class CommandHandler extends Thread {
                 userStream.printToUser("\nthanks for playing ");
             default:
                 userStream.printToUser("I'm sorry, I don't recognise that");
-                npcShouldMove = false;
                 break;
 
         }
@@ -126,6 +138,14 @@ public class CommandHandler extends Thread {
     }
 }
 
+    /**
+     * this function is one of the most key in the game
+     * it allows the player to move in any of 6 directions
+     * it then finds all possible rooms in that direction that can directly be reached from Players current room
+     * and then lets choose which room to go to that is in that direction
+     * @param input this is the first input ("move (Direction)") used to figure out direction of travel
+     * @param currentRoom used to know which rooms that can possibly be moved to from the one currently occupied
+     */
     public void Movement(String input, String currentRoom) {
         boolean roomValid = false;
         String directionName = commandTranslator.getDirectionName(input);
@@ -189,6 +209,11 @@ public class CommandHandler extends Thread {
         }
     }
 
+    /**
+     * this function will give the player a short description about the room
+     * and what NPCS and ITEMS and Players are in it
+     * @param currentRoom used to deduce which room the player is looking at
+     */
     public void Looking(String currentRoom){
         Room r = getRoom(currentRoom);
 
@@ -231,11 +256,17 @@ public class CommandHandler extends Thread {
             }
         }
     }
+
+    /**
+     * this function lets the player pickup an item from the room
+     * and put it into the Players inventory
+     * @param input example ("pickup (Itemname)")
+     */
   public void PickUp(String input){
-        String itemName = commandTranslator.getItemToPickup2(input);
+        String itemName = commandTranslator.getItemToPickup(input);
         Item item = getItemFromRoomByName(itemName);
         if (item == null) {
-            userStream.printToUser("Pffff i don't know what you've done");
+            userStream.printToUser("item not found!");
         } else {
             Inventory inventory = world.getPlayer(userId).getInventory();
             if (inventory.addItem(item)) {
@@ -244,6 +275,11 @@ public class CommandHandler extends Thread {
             }
         }
     }
+
+    /**
+     *this function will show the player some information about themselves
+     * (e.g. health and ITEMS currently held)
+     */
    public void CheckInv(){
         Inventory inv = world.getPlayer(userId).getInventory();
         List<Item> Items = inv.getItems();
@@ -260,8 +296,14 @@ public class CommandHandler extends Thread {
         }
     }
 
+    /**
+     * this function lets the player drop an item from your inventory
+     * into the room you are currently in
+     * @param input example ("Drop (Itemname)")
+     * @param currentRoom used to know which room the item needs to be placed into when dropped
+     */
     public void DropItem(String input, String currentRoom){
-        String itemName = commandTranslator.getItemToPickup2(input);
+        String itemName = commandTranslator.getItemToPickup(input);
         Room r = getRoom(currentRoom);
         List<Item> itemList = r.getItems();
         Item fred = getItemFromInv(itemName);
@@ -274,6 +316,12 @@ public class CommandHandler extends Thread {
         }
     }
 
+    /**
+     * this function allows you to use an item
+     * this most commonly is a key on a door to unlock it
+     * @param input Use (itemName) [on (a thing)] <- this bit is not always neccessary
+     * @param currentRoom used to locate where the Player is to make sure the Player are physically able to perform the action the Player inputted
+     */
     public void UseItem(String input, String currentRoom){
 
         boolean hasOnSuffix = input.contains(" on ");
@@ -285,7 +333,7 @@ public class CommandHandler extends Thread {
             item = itemAndDoor[0];
             thing = itemAndDoor[1];
         } else {
-            item = commandTranslator.getItemToPickup2(input);
+            item = commandTranslator.getItemToPickup(input);
         }
 
         Item itemToUse = getItemFromInv(item);
@@ -343,6 +391,12 @@ public class CommandHandler extends Thread {
         }
     }
 
+    /**
+     * allows a Player to talk to another player if they are in the same room
+     * or allows a Player to recieve a random line of dialogue from an NPC if they are in the same room
+     * @param input  Talk to (Player/NPC name here)
+     * @param currentRoom used to find out if the target is in the same room as the player
+     */
     public void Talk(String input,String currentRoom){
 
         String NpcName = commandTranslator.getItemToPickup(input);
@@ -385,10 +439,13 @@ public class CommandHandler extends Thread {
     }
 
 
-
-
-
-
+    /**
+     * at this point i think enough parsers and getters and such have been shown
+     * so the rest of this will not be commented
+     * it is mostly parsers, getters, removes and Adds
+     * which have been displayed many times before
+     * nothing here is new so should be pretty easily understandable
+     */
 
 
 
@@ -437,23 +494,6 @@ public class CommandHandler extends Thread {
                 return i;
             }
 
-        }
-        return null;
-    }
-
-// why is this not being used is it unnecessary should it be deleted?
-    private Item removeItemFromRoomById(String itemId) {
-        Room r = getRoom(getCurrentRoomID());
-        List<Item> itemList = r.getItems();
-        Item toDelete = null;
-        for (Item i : itemList) {
-            if (i.getId().equals(itemId)) {
-                toDelete = i;
-                break;
-            }
-        }
-        if (toDelete != null) {
-            itemList.remove(toDelete);
         }
         return null;
     }

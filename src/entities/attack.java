@@ -150,7 +150,7 @@ public class attack {
      */
     public void killUserOff(Player targetPlayer) {
         if (targetPlayer.getUserId().equals((userId))) {
-            userStream.printToUser("you just killed yourself well done here's a gold sticker");
+            userStream.printToUser("you just died due to your own stupidity well done here's a gold sticker");
         }
         else {
             userStream.printToUser(targetPlayer.getUserId() + " has died");

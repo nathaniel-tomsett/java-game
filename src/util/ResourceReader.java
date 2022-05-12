@@ -11,7 +11,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ResourceReader {
-
+    /**
+     * these functions do similar things so condensed into one comment
+     * ResourceReader - reads a json file and interprets the formatted text into a list of rooms/NPCs
+     * this is then usable for the program so rooms and NPCs can actually be interacted with by Players
+     * @return List of either NPCs or Rooms
+     */
     public List<Room> loadRoomsFromResources() {
 
         // Load rooms...
@@ -32,6 +37,7 @@ public class ResourceReader {
         }
         return listOfRooms;
     }
+
 
     public List<NPC> loadNPCs() {
         List<NPC> listOfNPCs = new ArrayList<>();

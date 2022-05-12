@@ -56,3 +56,1120 @@
 2022-05-11 00:28:44:2844 -- n -- you are bleeding find a medKit
 2022-05-11 00:28:54:2854 -- n -- you are bleeding find a medKit
 2022-05-11 00:28:54:2854 -- n -- you are no longer bleeding you have survived
+2022-05-11 19:34:18:3418 -- null -- What is your name?
+2022-05-11 19:34:40:3440 -- null -- What is your name?
+2022-05-11 19:38:23:3823 -- null -- What is your name?
+2022-05-11 19:41:21:4121 -- null -- What is your name?
+2022-05-11 19:41:23:4123 -- null -- What is your password?
+2022-05-11 19:41:24:4124 -- null -- password correct!
+2022-05-11 19:41:24:4124 -- n -- Registering player...
+2022-05-11 19:41:25:4125 -- n -- Building the world...
+2022-05-11 19:41:26:4126 -- n -- Entering the game...
+2022-05-11 19:41:27:4127 -- n -- 
+2022-05-11 19:41:27:4127 -- n -- Currently in room: Entrance
+2022-05-11 19:41:34:4134 -- n -- move north
+2022-05-11 19:41:34:4134 -- n -- You can move to these rooms:
+2022-05-11 19:41:34:4134 -- n -- 1.  Floor 1 Hallway
+2022-05-11 19:41:35:4135 -- n -- Currently in room: Floor 1 Hallway
+2022-05-11 19:41:39:4139 -- n -- pickup 
+2022-05-11 19:41:39:4139 -- n -- Pffff i don't know what you've done
+2022-05-11 19:41:40:4140 -- n -- l
+2022-05-11 19:41:40:4140 -- n -- A conjoining short hallway with dog toys and boxes full of mysterious things that seem to be just out of reach
+2022-05-11 19:41:40:4140 -- n -- Exits: 
+2022-05-11 19:41:40:4140 -- n --     west - Dining Room
+2022-05-11 19:41:40:4140 -- n --     north - Kitchen
+2022-05-11 19:41:40:4140 -- n --     south - Entrance
+2022-05-11 19:41:40:4140 -- n -- Getting list of players in the room
+2022-05-11 19:41:40:4140 -- n -- Player name:n room: 3
+2022-05-11 19:41:40:4140 -- n -- Players in the room:
+2022-05-11 19:41:45:4145 -- n -- move south
+2022-05-11 19:41:45:4145 -- n -- You can move to these rooms:
+2022-05-11 19:41:45:4145 -- n -- 1.  Entrance
+2022-05-11 19:41:46:4146 -- n -- Currently in room: Entrance
+2022-05-11 19:41:49:4149 -- n -- pickup matilda
+2022-05-11 19:41:49:4149 -- n -- Added Matilda to your inventory
+2022-05-11 19:41:53:4153 -- n -- pickup key
+2022-05-11 19:41:53:4153 -- n -- Pffff i don't know what you've done
+2022-05-11 19:42:00:420 -- n -- attack bella with matilda
+2022-05-11 19:42:00:420 -- n -- Player name:n room: 1
+2022-05-11 19:42:00:420 -- n -- attacking NPC
+2022-05-11 19:42:00:420 -- n -- could not find a player of that name
+2022-05-11 19:42:14:4214 -- n -- l
+2022-05-11 19:42:14:4214 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 19:42:14:4214 -- n -- Exits: 
+2022-05-11 19:42:14:4214 -- n --     west - Living Room
+2022-05-11 19:42:14:4214 -- n --     north - Floor 1 Hallway
+2022-05-11 19:42:14:4214 -- n --     up - Floor 2 Landing
+2022-05-11 19:42:14:4214 -- n --     south - Newport Road
+2022-05-11 19:42:14:4214 -- n -- Items: 
+2022-05-11 19:42:14:4214 -- n --     House Key
+2022-05-11 19:42:14:4214 -- n --     Swordy McSwordface
+2022-05-11 19:42:14:4214 -- n --     MedKit
+2022-05-11 19:42:14:4214 -- n --     Glass
+2022-05-11 19:42:14:4214 -- n -- Getting list of players in the room
+2022-05-11 19:42:14:4214 -- n -- Player name:n room: 1
+2022-05-11 19:42:14:4214 -- n -- Players in the room:
+2022-05-11 19:42:31:4231 -- null -- What is your name?
+2022-05-11 19:42:33:4233 -- null -- What is your password?
+2022-05-11 19:42:33:4233 -- null -- password correct!
+2022-05-11 19:42:33:4233 -- n -- Registering player...
+2022-05-11 19:42:34:4234 -- n -- Building the world...
+2022-05-11 19:42:35:4235 -- n -- Entering the game...
+2022-05-11 19:42:36:4236 -- n -- 
+2022-05-11 19:42:36:4236 -- n -- Currently in room: Entrance
+2022-05-11 19:42:36:4236 -- n -- l
+2022-05-11 19:42:36:4236 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 19:42:36:4236 -- n -- Exits: 
+2022-05-11 19:42:36:4236 -- n --     west - Living Room
+2022-05-11 19:42:36:4236 -- n --     north - Floor 1 Hallway
+2022-05-11 19:42:36:4236 -- n --     up - Floor 2 Landing
+2022-05-11 19:42:36:4236 -- n --     south - Newport Road
+2022-05-11 19:42:36:4236 -- n -- Items: 
+2022-05-11 19:42:36:4236 -- n --     House Key
+2022-05-11 19:42:36:4236 -- n --     Swordy McSwordface
+2022-05-11 19:42:36:4236 -- n --     Matilda
+2022-05-11 19:42:36:4236 -- n --     MedKit
+2022-05-11 19:42:36:4236 -- n --     Glass
+2022-05-11 19:42:36:4236 -- n -- Getting list of players in the room
+2022-05-11 19:42:36:4236 -- n -- Player name:n room: 1
+2022-05-11 19:42:36:4236 -- n -- Players in the room:
+2022-05-11 19:42:57:4257 -- null -- What is your name?
+2022-05-11 19:43:01:431 -- null -- What is your password?
+2022-05-11 19:43:02:432 -- null -- password correct!
+2022-05-11 19:43:02:432 -- l -- Registering player...
+2022-05-11 19:43:03:433 -- l -- Building the world...
+2022-05-11 19:43:04:434 -- l -- Entering the game...
+2022-05-11 19:43:05:435 -- l -- 
+2022-05-11 19:43:05:435 -- l -- Currently in room: Entrance
+2022-05-11 19:43:06:436 -- l -- l
+2022-05-11 19:43:06:436 -- l -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 19:43:06:436 -- l -- Exits: 
+2022-05-11 19:43:06:436 -- l --     west - Living Room
+2022-05-11 19:43:06:436 -- l --     north - Floor 1 Hallway
+2022-05-11 19:43:06:436 -- l --     up - Floor 2 Landing
+2022-05-11 19:43:06:436 -- l --     south - Newport Road
+2022-05-11 19:43:06:436 -- l -- Items: 
+2022-05-11 19:43:06:436 -- l --     House Key
+2022-05-11 19:43:06:436 -- l --     Swordy McSwordface
+2022-05-11 19:43:06:436 -- l --     Matilda
+2022-05-11 19:43:06:436 -- l --     MedKit
+2022-05-11 19:43:06:436 -- l --     Glass
+2022-05-11 19:43:06:436 -- l -- Getting list of players in the room
+2022-05-11 19:43:06:436 -- l -- Player name:l room: 1
+2022-05-11 19:43:06:436 -- l -- Players in the room:
+2022-05-11 19:45:14:4514 -- null -- What is your name?
+2022-05-11 19:45:16:4516 -- null -- What is your password?
+2022-05-11 19:45:17:4517 -- null -- password correct!
+2022-05-11 19:45:17:4517 -- n -- Registering player...
+2022-05-11 19:45:18:4518 -- n -- Building the world...
+2022-05-11 19:45:19:4519 -- n -- Entering the game...
+2022-05-11 19:45:20:4520 -- n -- 
+2022-05-11 19:45:20:4520 -- n -- Currently in room: Entrance
+2022-05-11 19:45:21:4521 -- n -- l
+2022-05-11 19:45:21:4521 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 19:45:21:4521 -- n -- Exits: 
+2022-05-11 19:45:21:4521 -- n --     west - Living Room
+2022-05-11 19:45:21:4521 -- n --     north - Floor 1 Hallway
+2022-05-11 19:45:21:4521 -- n --     up - Floor 2 Landing
+2022-05-11 19:45:21:4521 -- n --     south - Newport Road
+2022-05-11 19:45:21:4521 -- n -- Items: 
+2022-05-11 19:45:21:4521 -- n --     House Key
+2022-05-11 19:45:21:4521 -- n --     Swordy McSwordface
+2022-05-11 19:45:21:4521 -- n --     Matilda
+2022-05-11 19:45:21:4521 -- n --     MedKit
+2022-05-11 19:45:21:4521 -- n --     Glass
+2022-05-11 19:45:21:4521 -- n -- Characters in the room:
+2022-05-11 19:45:21:4521 -- n --     Sarah
+2022-05-11 19:45:21:4521 -- n --     Mabel
+2022-05-11 19:45:21:4521 -- n -- Getting list of players in the room
+2022-05-11 19:45:21:4521 -- n -- Player name:n room: 1
+2022-05-11 19:45:21:4521 -- n -- Players in the room:
+2022-05-11 19:45:29:4529 -- n -- talk mabel
+2022-05-11 19:45:29:4529 -- n -- I'm sorry, I don't recognise that
+2022-05-11 19:45:35:4535 -- n -- talk to mabel
+2022-05-11 19:45:35:4535 -- n -- Getting list of players in the room
+2022-05-11 19:45:35:4535 -- n -- Player name:n room: 1
+2022-05-11 19:45:35:4535 -- n -- this persons not in the room with you
+2022-05-11 19:45:41:4541 -- n -- talk to sarah
+2022-05-11 19:45:41:4541 -- n -- Getting list of players in the room
+2022-05-11 19:45:41:4541 -- n -- Player name:n room: 1
+2022-05-11 19:45:41:4541 -- n -- this persons not in the room with you
+2022-05-11 19:45:42:4542 -- n -- l
+2022-05-11 19:45:42:4542 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 19:45:42:4542 -- n -- Exits: 
+2022-05-11 19:45:42:4542 -- n --     west - Living Room
+2022-05-11 19:45:42:4542 -- n --     north - Floor 1 Hallway
+2022-05-11 19:45:42:4542 -- n --     up - Floor 2 Landing
+2022-05-11 19:45:42:4542 -- n --     south - Newport Road
+2022-05-11 19:45:42:4542 -- n -- Items: 
+2022-05-11 19:45:42:4542 -- n --     House Key
+2022-05-11 19:45:42:4542 -- n --     Swordy McSwordface
+2022-05-11 19:45:42:4542 -- n --     Matilda
+2022-05-11 19:45:42:4542 -- n --     MedKit
+2022-05-11 19:45:42:4542 -- n --     Glass
+2022-05-11 19:45:42:4542 -- n -- Getting list of players in the room
+2022-05-11 19:45:42:4542 -- n -- Player name:n room: 1
+2022-05-11 19:45:42:4542 -- n -- Players in the room:
+2022-05-11 19:45:52:4552 -- n -- m west
+2022-05-11 19:45:52:4552 -- n -- You can move to these rooms:
+2022-05-11 19:45:52:4552 -- n -- 1.  Living Room
+2022-05-11 19:45:53:4553 -- n -- You were hit by James with the golf club
+2022-05-11 19:45:53:4553 -- n -- Currently in room: Living Room
+2022-05-11 19:45:54:4554 -- n -- l
+2022-05-11 19:45:54:4554 -- n -- A clean white room with a purple sofa to your left and a brown one to your right around the room there are cabinets holding an array of books
+2022-05-11 19:45:54:4554 -- n -- Exits: 
+2022-05-11 19:45:54:4554 -- n --     east - Entrance
+2022-05-11 19:45:54:4554 -- n -- Items: 
+2022-05-11 19:45:54:4554 -- n --     tv remote
+2022-05-11 19:45:54:4554 -- n --     book-1
+2022-05-11 19:45:54:4554 -- n -- Characters in the room:
+2022-05-11 19:45:54:4554 -- n --     James
+2022-05-11 19:45:54:4554 -- n -- Getting list of players in the room
+2022-05-11 19:45:54:4554 -- n -- Player name:n room: 2
+2022-05-11 19:45:54:4554 -- n -- Players in the room:
+2022-05-11 19:45:57:4557 -- n -- talk to james
+2022-05-11 19:45:57:4557 -- n -- Getting list of players in the room
+2022-05-11 19:45:57:4557 -- n -- Player name:n room: 2
+2022-05-11 19:45:57:4557 -- n -- this persons not in the room with you
+2022-05-11 19:45:59:4559 -- n -- l
+2022-05-11 19:45:59:4559 -- n -- A clean white room with a purple sofa to your left and a brown one to your right around the room there are cabinets holding an array of books
+2022-05-11 19:45:59:4559 -- n -- Exits: 
+2022-05-11 19:45:59:4559 -- n --     east - Entrance
+2022-05-11 19:45:59:4559 -- n -- Items: 
+2022-05-11 19:45:59:4559 -- n --     tv remote
+2022-05-11 19:45:59:4559 -- n --     book-1
+2022-05-11 19:45:59:4559 -- n -- Characters in the room:
+2022-05-11 19:45:59:4559 -- n --     James
+2022-05-11 19:45:59:4559 -- n -- Getting list of players in the room
+2022-05-11 19:45:59:4559 -- n -- Player name:n room: 2
+2022-05-11 19:45:59:4559 -- n -- Players in the room:
+2022-05-11 19:46:02:462 -- n -- talk to James
+2022-05-11 19:46:02:462 -- n -- Getting list of players in the room
+2022-05-11 19:46:02:462 -- n -- Player name:n room: 2
+2022-05-11 19:46:02:462 -- n -- this persons not in the room with you
+2022-05-11 19:46:04:464 -- n -- l
+2022-05-11 19:46:04:464 -- n -- A clean white room with a purple sofa to your left and a brown one to your right around the room there are cabinets holding an array of books
+2022-05-11 19:46:04:464 -- n -- Exits: 
+2022-05-11 19:46:04:464 -- n --     east - Entrance
+2022-05-11 19:46:04:464 -- n -- Items: 
+2022-05-11 19:46:04:464 -- n --     tv remote
+2022-05-11 19:46:04:464 -- n --     book-1
+2022-05-11 19:46:04:464 -- n -- Characters in the room:
+2022-05-11 19:46:04:464 -- n --     James
+2022-05-11 19:46:04:464 -- n -- Getting list of players in the room
+2022-05-11 19:46:04:464 -- n -- Player name:n room: 2
+2022-05-11 19:46:04:464 -- n -- Players in the room:
+2022-05-11 19:46:13:4613 -- n -- t james
+2022-05-11 19:46:13:4613 -- n -- James says: I'm hungry...
+2022-05-11 19:46:16:4616 -- n -- t james
+2022-05-11 19:46:16:4616 -- n -- James says: I like sausages
+2022-05-11 19:46:19:4619 -- n -- Talk james
+2022-05-11 19:46:19:4619 -- n -- I'm sorry, I don't recognise that
+2022-05-11 19:46:22:4622 -- n -- talk james
+2022-05-11 19:46:22:4622 -- n -- I'm sorry, I don't recognise that
+2022-05-11 21:17:41:1741 -- null -- What is your name?
+2022-05-11 21:17:43:1743 -- null -- What is your password?
+2022-05-11 21:17:44:1744 -- null -- password correct!
+2022-05-11 21:17:44:1744 -- n -- Registering player...
+2022-05-11 21:17:45:1745 -- n -- Building the world...
+2022-05-11 21:17:46:1746 -- n -- Entering the game...
+2022-05-11 21:17:47:1747 -- n -- 
+2022-05-11 21:17:47:1747 -- n -- Currently in room: Entrance
+2022-05-11 21:17:52:1752 -- n -- boop smush
+2022-05-11 21:17:52:1752 -- n -- I'm sorry, I don't recognise that
+2022-05-11 21:17:57:1757 -- n -- move smush
+2022-05-11 21:17:57:1757 -- n -- You can move to these rooms:
+2022-05-11 21:17:57:1757 -- n -- there are no rooms in this direction
+2022-05-11 21:17:57:1757 -- n -- Currently in room: Entrance
+2022-05-11 21:18:10:1810 -- n -- use smush
+2022-05-11 21:18:10:1810 -- n -- this item is not in your inventory
+2022-05-11 21:18:15:1815 -- n -- attack smush
+2022-05-11 21:18:15:1815 -- n -- Player name:n room: 1
+2022-05-11 21:18:15:1815 -- n -- attacking NPC
+2022-05-11 21:18:15:1815 -- n -- could not find a player of that name
+2022-05-11 21:18:21:1821 -- n -- pickup smush
+2022-05-11 21:18:21:1821 -- n -- Pffff i don't know what you've done
+2022-05-11 21:18:27:1827 -- n -- drop smush
+2022-05-11 21:18:27:1827 -- n -- you don't have that item at the moment
+2022-05-11 21:18:34:1834 -- n -- boop
+2022-05-11 21:18:34:1834 -- n -- I'm sorry, I don't recognise that
+2022-05-11 21:37:19:3719 -- null -- What is your name?
+2022-05-11 21:37:21:3721 -- null -- What is your password?
+2022-05-11 21:37:21:3721 -- null -- password correct!
+2022-05-11 21:37:21:3721 -- n -- Registering player...
+2022-05-11 21:37:22:3722 -- n -- Building the world...
+2022-05-11 21:37:23:3723 -- n -- Entering the game...
+2022-05-11 21:37:24:3724 -- n -- 
+2022-05-11 21:37:24:3724 -- n -- Currently in room: Entrance
+2022-05-11 21:37:27:3727 -- n -- p glass
+2022-05-11 21:37:27:3727 -- n -- Added Glass to your inventory
+2022-05-11 21:37:30:3730 -- n -- p medkit
+2022-05-11 21:37:30:3730 -- n -- Added MedKit to your inventory
+2022-05-11 21:37:35:3735 -- n -- attack n with glass
+2022-05-11 21:37:35:3735 -- n -- Player name:n room: 1
+2022-05-11 21:37:35:3735 -- n -- attacking playerentities.Player@3f4fb5f4
+2022-05-11 21:37:35:3735 -- n -- attack successful
+2022-05-11 21:37:35:3735 -- n -- the glass shatters over n's head
+2022-05-11 21:37:35:3735 -- n -- you are bleeding find a medKit
+2022-05-11 21:37:35:3735 -- n -- you have been attacked by n
+2022-05-11 21:37:39:3739 -- n -- use medkit
+2022-05-11 21:37:39:3739 -- n -- you healed for 5 HP
+2022-05-11 21:37:44:3744 -- n -- l
+2022-05-11 21:37:44:3744 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:37:44:3744 -- n -- Exits: 
+2022-05-11 21:37:44:3744 -- n --     west - Living Room
+2022-05-11 21:37:44:3744 -- n --     north - Floor 1 Hallway
+2022-05-11 21:37:44:3744 -- n --     up - Floor 2 Landing
+2022-05-11 21:37:44:3744 -- n --     south - Newport Road
+2022-05-11 21:37:44:3744 -- n -- Items: 
+2022-05-11 21:37:44:3744 -- n --     House Key
+2022-05-11 21:37:44:3744 -- n --     Swordy McSwordface
+2022-05-11 21:37:44:3744 -- n --     Matilda
+2022-05-11 21:37:44:3744 -- n -- Getting list of players in the room
+2022-05-11 21:37:44:3744 -- n -- Player name:n room: 1
+2022-05-11 21:37:44:3744 -- n -- Players in the room:
+2022-05-11 21:37:45:3745 -- n -- you are bleeding find a medKit
+2022-05-11 21:37:52:3752 -- n -- inv
+2022-05-11 21:37:52:3752 -- n -- HP: 7/12
+2022-05-11 21:37:52:3752 -- n -- Inventory: 
+2022-05-11 21:37:52:3752 -- n -- You're inventory is empty
+2022-05-11 21:37:55:3755 -- n -- you are bleeding find a medKit
+2022-05-11 21:37:59:3759 -- n -- inv
+2022-05-11 21:37:59:3759 -- n -- HP: 6/12
+2022-05-11 21:37:59:3759 -- n -- Inventory: 
+2022-05-11 21:37:59:3759 -- n -- You're inventory is empty
+2022-05-11 21:38:05:385 -- n -- you are bleeding find a medKit
+2022-05-11 21:38:15:3815 -- n -- you are bleeding find a medKit
+2022-05-11 21:38:25:3825 -- n -- you are bleeding find a medKit
+2022-05-11 21:38:35:3835 -- n -- you are bleeding find a medKit
+2022-05-11 21:38:45:3845 -- n -- you are bleeding find a medKit
+2022-05-11 21:38:56:3856 -- n -- you just killed yourself well done here's a gold sticker
+2022-05-11 21:45:09:459 -- null -- What is your name?
+2022-05-11 21:45:11:4511 -- null -- What is your password?
+2022-05-11 21:45:12:4512 -- null -- password correct!
+2022-05-11 21:45:12:4512 -- n -- Registering player...
+2022-05-11 21:45:13:4513 -- n -- Building the world...
+2022-05-11 21:45:14:4514 -- n -- Entering the game...
+2022-05-11 21:45:15:4515 -- n -- 
+2022-05-11 21:45:15:4515 -- n -- Currently in room: Entrance
+2022-05-11 21:45:21:4521 -- n -- m north
+2022-05-11 21:45:21:4521 -- n -- You can move to these rooms:
+2022-05-11 21:45:21:4521 -- n -- 1.  Floor 1 Hallway
+2022-05-11 21:45:22:4522 -- n -- the room doesn't exist
+2022-05-11 21:45:22:4522 -- n -- Currently in room: Entrance
+2022-05-11 21:49:39:4939 -- null -- What is your name?
+2022-05-11 21:49:40:4940 -- null -- What is your password?
+2022-05-11 21:49:42:4942 -- null -- password correct!
+2022-05-11 21:49:42:4942 -- n -- Registering player...
+2022-05-11 21:49:43:4943 -- n -- Building the world...
+2022-05-11 21:49:44:4944 -- n -- Entering the game...
+2022-05-11 21:49:45:4945 -- n -- 
+2022-05-11 21:49:45:4945 -- n -- Currently in room: Entrance
+2022-05-11 21:49:46:4946 -- n -- l
+2022-05-11 21:49:46:4946 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:49:46:4946 -- n -- Exits: 
+2022-05-11 21:49:46:4946 -- n --     west - Living Room
+2022-05-11 21:49:46:4946 -- n --     north - Floor 1 Hallway
+2022-05-11 21:49:46:4946 -- n --     up - Floor 2 Landing
+2022-05-11 21:49:46:4946 -- n --     south - Newport Road
+2022-05-11 21:49:46:4946 -- n -- Items: 
+2022-05-11 21:49:46:4946 -- n --     House Key
+2022-05-11 21:49:46:4946 -- n --     Swordy McSwordface
+2022-05-11 21:49:46:4946 -- n --     Matilda
+2022-05-11 21:49:46:4946 -- n --     MedKit
+2022-05-11 21:49:46:4946 -- n --     Glass
+2022-05-11 21:49:46:4946 -- n -- Characters in the room:
+2022-05-11 21:49:46:4946 -- n --     Mabel
+2022-05-11 21:49:46:4946 -- n -- Getting list of players in the room
+2022-05-11 21:49:46:4946 -- n -- Player name:n room: 1
+2022-05-11 21:49:46:4946 -- n -- Players in the room:
+2022-05-11 21:49:49:4949 -- n -- l
+2022-05-11 21:49:49:4949 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:49:49:4949 -- n -- Exits: 
+2022-05-11 21:49:49:4949 -- n --     west - Living Room
+2022-05-11 21:49:49:4949 -- n --     north - Floor 1 Hallway
+2022-05-11 21:49:49:4949 -- n --     up - Floor 2 Landing
+2022-05-11 21:49:49:4949 -- n --     south - Newport Road
+2022-05-11 21:49:49:4949 -- n -- Items: 
+2022-05-11 21:49:49:4949 -- n --     House Key
+2022-05-11 21:49:49:4949 -- n --     Swordy McSwordface
+2022-05-11 21:49:49:4949 -- n --     Matilda
+2022-05-11 21:49:49:4949 -- n --     MedKit
+2022-05-11 21:49:49:4949 -- n --     Glass
+2022-05-11 21:49:49:4949 -- n -- Characters in the room:
+2022-05-11 21:49:49:4949 -- n --     Mabel
+2022-05-11 21:49:49:4949 -- n -- Getting list of players in the room
+2022-05-11 21:49:49:4949 -- n -- Player name:n room: 1
+2022-05-11 21:49:49:4949 -- n -- Players in the room:
+2022-05-11 21:49:51:4951 -- n -- l
+2022-05-11 21:49:51:4951 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:49:51:4951 -- n -- Exits: 
+2022-05-11 21:49:51:4951 -- n --     west - Living Room
+2022-05-11 21:49:51:4951 -- n --     north - Floor 1 Hallway
+2022-05-11 21:49:51:4951 -- n --     up - Floor 2 Landing
+2022-05-11 21:49:51:4951 -- n --     south - Newport Road
+2022-05-11 21:49:51:4951 -- n -- Items: 
+2022-05-11 21:49:51:4951 -- n --     House Key
+2022-05-11 21:49:51:4951 -- n --     Swordy McSwordface
+2022-05-11 21:49:51:4951 -- n --     Matilda
+2022-05-11 21:49:51:4951 -- n --     MedKit
+2022-05-11 21:49:51:4951 -- n --     Glass
+2022-05-11 21:49:51:4951 -- n -- Characters in the room:
+2022-05-11 21:49:51:4951 -- n --     Mabel
+2022-05-11 21:49:51:4951 -- n -- Getting list of players in the room
+2022-05-11 21:49:51:4951 -- n -- Player name:n room: 1
+2022-05-11 21:49:51:4951 -- n -- Players in the room:
+2022-05-11 21:49:55:4955 -- n -- l
+2022-05-11 21:49:55:4955 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:49:55:4955 -- n -- Exits: 
+2022-05-11 21:49:55:4955 -- n --     west - Living Room
+2022-05-11 21:49:55:4955 -- n --     north - Floor 1 Hallway
+2022-05-11 21:49:55:4955 -- n --     up - Floor 2 Landing
+2022-05-11 21:49:55:4955 -- n --     south - Newport Road
+2022-05-11 21:49:55:4955 -- n -- Items: 
+2022-05-11 21:49:55:4955 -- n --     House Key
+2022-05-11 21:49:55:4955 -- n --     Swordy McSwordface
+2022-05-11 21:49:55:4955 -- n --     Matilda
+2022-05-11 21:49:55:4955 -- n --     MedKit
+2022-05-11 21:49:55:4955 -- n --     Glass
+2022-05-11 21:49:55:4955 -- n -- Characters in the room:
+2022-05-11 21:49:55:4955 -- n --     Mabel
+2022-05-11 21:49:55:4955 -- n -- Getting list of players in the room
+2022-05-11 21:49:55:4955 -- n -- Player name:n room: 1
+2022-05-11 21:49:55:4955 -- n -- Players in the room:
+2022-05-11 21:49:59:4959 -- n -- l
+2022-05-11 21:49:59:4959 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:49:59:4959 -- n -- Exits: 
+2022-05-11 21:49:59:4959 -- n --     west - Living Room
+2022-05-11 21:49:59:4959 -- n --     north - Floor 1 Hallway
+2022-05-11 21:49:59:4959 -- n --     up - Floor 2 Landing
+2022-05-11 21:49:59:4959 -- n --     south - Newport Road
+2022-05-11 21:49:59:4959 -- n -- Items: 
+2022-05-11 21:49:59:4959 -- n --     House Key
+2022-05-11 21:49:59:4959 -- n --     Swordy McSwordface
+2022-05-11 21:49:59:4959 -- n --     Matilda
+2022-05-11 21:49:59:4959 -- n --     MedKit
+2022-05-11 21:49:59:4959 -- n --     Glass
+2022-05-11 21:49:59:4959 -- n -- Characters in the room:
+2022-05-11 21:49:59:4959 -- n --     Sarah
+2022-05-11 21:49:59:4959 -- n -- Getting list of players in the room
+2022-05-11 21:49:59:4959 -- n -- Player name:n room: 1
+2022-05-11 21:49:59:4959 -- n -- Players in the room:
+2022-05-11 21:50:03:503 -- n -- m n
+2022-05-11 21:50:03:503 -- n -- You can move to these rooms:
+2022-05-11 21:50:03:503 -- n -- 1.  Floor 1 Hallway
+2022-05-11 21:50:04:504 -- n -- Currently in room: Floor 1 Hallway
+2022-05-11 21:50:06:506 -- n -- l
+2022-05-11 21:50:06:506 -- n -- A conjoining short hallway with dog toys and boxes full of mysterious things that seem to be just out of reach
+2022-05-11 21:50:06:506 -- n -- Exits: 
+2022-05-11 21:50:06:506 -- n --     west - Dining Room
+2022-05-11 21:50:06:506 -- n --     north - Kitchen
+2022-05-11 21:50:06:506 -- n --     south - Entrance
+2022-05-11 21:50:06:506 -- n -- Characters in the room:
+2022-05-11 21:50:06:506 -- n --     Mabel
+2022-05-11 21:50:06:506 -- n -- Getting list of players in the room
+2022-05-11 21:50:06:506 -- n -- Player name:n room: 3
+2022-05-11 21:50:06:506 -- n -- Players in the room:
+2022-05-11 21:51:24:5124 -- null -- What is your name?
+2022-05-11 21:51:33:5133 -- null -- What is your password?
+2022-05-11 21:51:35:5135 -- null -- password correct!
+2022-05-11 21:51:35:5135 -- n -- Registering player...
+2022-05-11 21:51:36:5136 -- n -- Building the world...
+2022-05-11 21:51:37:5137 -- n -- Entering the game...
+2022-05-11 21:51:38:5138 -- n -- 
+2022-05-11 21:51:38:5138 -- n -- Currently in room: Entrance
+2022-05-11 21:52:06:526 -- null -- What is your name?
+2022-05-11 21:52:08:528 -- null -- What is your password?
+2022-05-11 21:52:11:5211 -- null -- that's incorrect
+2022-05-11 21:52:11:5211 -- null -- What is your name?
+2022-05-11 21:52:31:5231 -- null -- What is your name?
+2022-05-11 21:52:35:5235 -- null -- What is your password?
+2022-05-11 21:52:37:5237 -- boop -- Registering player...
+2022-05-11 21:52:38:5238 -- boop -- Building the world...
+2022-05-11 21:52:39:5239 -- boop -- Entering the game...
+2022-05-11 21:52:40:5240 -- boop -- 
+2022-05-11 21:52:40:5240 -- boop -- Currently in room: Entrance
+2022-05-11 21:53:07:537 -- null -- What is your name?
+2022-05-11 21:53:11:5311 -- null -- What is your password?
+2022-05-11 21:53:11:5311 -- null -- password correct!
+2022-05-11 21:53:11:5311 -- n -- Registering player...
+2022-05-11 21:53:12:5312 -- n -- Building the world...
+2022-05-11 21:53:13:5313 -- n -- Entering the game...
+2022-05-11 21:53:14:5314 -- n -- 
+2022-05-11 21:53:14:5314 -- n -- Currently in room: Entrance
+2022-05-11 21:53:17:5317 -- boop -- l
+2022-05-11 21:53:17:5317 -- boop -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:53:17:5317 -- boop -- Exits: 
+2022-05-11 21:53:17:5317 -- boop --     west - Living Room
+2022-05-11 21:53:17:5317 -- boop --     north - Floor 1 Hallway
+2022-05-11 21:53:17:5317 -- boop --     up - Floor 2 Landing
+2022-05-11 21:53:17:5317 -- boop --     south - Newport Road
+2022-05-11 21:53:17:5317 -- boop -- Items: 
+2022-05-11 21:53:17:5317 -- boop --     House Key
+2022-05-11 21:53:17:5317 -- boop --     Swordy McSwordface
+2022-05-11 21:53:17:5317 -- boop --     Matilda
+2022-05-11 21:53:17:5317 -- boop --     MedKit
+2022-05-11 21:53:17:5317 -- boop --     Glass
+2022-05-11 21:53:17:5317 -- boop -- Characters in the room:
+2022-05-11 21:53:17:5317 -- boop --     Sarah
+2022-05-11 21:53:17:5317 -- boop --     Mabel
+2022-05-11 21:53:17:5317 -- boop -- Getting list of players in the room
+2022-05-11 21:53:17:5317 -- boop -- Player name:boop room: 1
+2022-05-11 21:53:17:5317 -- boop -- Player name:n room: 1
+2022-05-11 21:53:17:5317 -- boop -- Players in the room:
+2022-05-11 21:53:17:5317 -- boop --     n
+2022-05-11 21:53:20:5320 -- n -- l
+2022-05-11 21:53:20:5320 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:53:20:5320 -- n -- Exits: 
+2022-05-11 21:53:20:5320 -- n --     west - Living Room
+2022-05-11 21:53:20:5320 -- n --     north - Floor 1 Hallway
+2022-05-11 21:53:20:5320 -- n --     up - Floor 2 Landing
+2022-05-11 21:53:20:5320 -- n --     south - Newport Road
+2022-05-11 21:53:20:5320 -- n -- Items: 
+2022-05-11 21:53:20:5320 -- n --     House Key
+2022-05-11 21:53:20:5320 -- n --     Swordy McSwordface
+2022-05-11 21:53:20:5320 -- n --     Matilda
+2022-05-11 21:53:20:5320 -- n --     MedKit
+2022-05-11 21:53:20:5320 -- n --     Glass
+2022-05-11 21:53:20:5320 -- n -- Characters in the room:
+2022-05-11 21:53:20:5320 -- n --     Sarah
+2022-05-11 21:53:20:5320 -- n -- Getting list of players in the room
+2022-05-11 21:53:20:5320 -- n -- Player name:boop room: 1
+2022-05-11 21:53:20:5320 -- n -- Player name:n room: 1
+2022-05-11 21:53:20:5320 -- n -- Players in the room:
+2022-05-11 21:53:20:5320 -- n --     boop
+2022-05-11 21:53:54:5354 -- boop -- move s
+2022-05-11 21:53:54:5354 -- boop -- You can move to these rooms:
+2022-05-11 21:53:54:5354 -- boop -- 1.  Newport Road
+2022-05-11 21:53:57:5357 -- boop -- not a valid number
+2022-05-11 21:53:57:5357 -- boop -- Currently in room: Entrance
+2022-05-11 21:54:03:543 -- boop -- move east
+2022-05-11 21:54:03:543 -- boop -- You can move to these rooms:
+2022-05-11 21:54:03:543 -- boop -- there are no rooms in this direction
+2022-05-11 21:54:03:543 -- boop -- Currently in room: Entrance
+2022-05-11 21:54:08:548 -- boop -- 1
+2022-05-11 21:54:08:548 -- boop -- I'm sorry, I don't recognise that
+2022-05-11 21:54:29:5429 -- boop -- move north
+2022-05-11 21:54:29:5429 -- boop -- You can move to these rooms:
+2022-05-11 21:54:29:5429 -- boop -- 1.  Floor 1 Hallway
+2022-05-11 21:54:30:5430 -- boop -- Currently in room: Floor 1 Hallway
+2022-05-11 21:54:40:5440 -- boop -- l
+2022-05-11 21:54:40:5440 -- boop -- A conjoining short hallway with dog toys and boxes full of mysterious things that seem to be just out of reach
+2022-05-11 21:54:40:5440 -- boop -- Exits: 
+2022-05-11 21:54:40:5440 -- boop --     west - Dining Room
+2022-05-11 21:54:40:5440 -- boop --     north - Kitchen
+2022-05-11 21:54:40:5440 -- boop --     south - Entrance
+2022-05-11 21:54:40:5440 -- boop -- Getting list of players in the room
+2022-05-11 21:54:40:5440 -- boop -- Player name:boop room: 3
+2022-05-11 21:54:40:5440 -- boop -- Player name:n room: 1
+2022-05-11 21:54:40:5440 -- boop -- Players in the room:
+2022-05-11 21:54:47:5447 -- boop -- m s
+2022-05-11 21:54:47:5447 -- boop -- You can move to these rooms:
+2022-05-11 21:54:47:5447 -- boop -- 1.  Entrance
+2022-05-11 21:54:48:5448 -- boop -- Currently in room: Entrance
+2022-05-11 21:54:48:5448 -- boop -- l
+2022-05-11 21:54:48:5448 -- boop -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:54:48:5448 -- boop -- Exits: 
+2022-05-11 21:54:48:5448 -- boop --     west - Living Room
+2022-05-11 21:54:48:5448 -- boop --     north - Floor 1 Hallway
+2022-05-11 21:54:48:5448 -- boop --     up - Floor 2 Landing
+2022-05-11 21:54:48:5448 -- boop --     south - Newport Road
+2022-05-11 21:54:48:5448 -- boop -- Items: 
+2022-05-11 21:54:48:5448 -- boop --     House Key
+2022-05-11 21:54:48:5448 -- boop --     Swordy McSwordface
+2022-05-11 21:54:48:5448 -- boop --     Matilda
+2022-05-11 21:54:48:5448 -- boop --     MedKit
+2022-05-11 21:54:48:5448 -- boop --     Glass
+2022-05-11 21:54:48:5448 -- boop -- Getting list of players in the room
+2022-05-11 21:54:48:5448 -- boop -- Player name:boop room: 1
+2022-05-11 21:54:48:5448 -- boop -- Player name:n room: 1
+2022-05-11 21:54:48:5448 -- boop -- Players in the room:
+2022-05-11 21:54:48:5448 -- boop --     n
+2022-05-11 21:55:10:5510 -- boop -- attack n
+2022-05-11 21:55:10:5510 -- boop -- Player name:boop room: 1
+2022-05-11 21:55:10:5510 -- boop -- Player name:n room: 1
+2022-05-11 21:55:10:5510 -- boop -- attacking playerentities.Player@630d0775
+2022-05-11 21:55:10:5510 -- boop -- attack successful
+2022-05-11 21:55:10:5510 -- n -- you have been attacked by boop
+2022-05-11 21:55:14:5514 -- n -- inv
+2022-05-11 21:55:14:5514 -- n -- HP: 15/18
+2022-05-11 21:55:14:5514 -- n -- Inventory: 
+2022-05-11 21:55:14:5514 -- n -- You're inventory is empty
+2022-05-11 21:55:26:5526 -- boop -- p key
+2022-05-11 21:55:26:5526 -- boop -- item not found!
+2022-05-11 21:55:28:5528 -- boop -- l
+2022-05-11 21:55:28:5528 -- boop -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:55:28:5528 -- boop -- Exits: 
+2022-05-11 21:55:28:5528 -- boop --     west - Living Room
+2022-05-11 21:55:28:5528 -- boop --     north - Floor 1 Hallway
+2022-05-11 21:55:28:5528 -- boop --     up - Floor 2 Landing
+2022-05-11 21:55:28:5528 -- boop --     south - Newport Road
+2022-05-11 21:55:28:5528 -- boop -- Items: 
+2022-05-11 21:55:28:5528 -- boop --     House Key
+2022-05-11 21:55:28:5528 -- boop --     Swordy McSwordface
+2022-05-11 21:55:28:5528 -- boop --     Matilda
+2022-05-11 21:55:28:5528 -- boop --     MedKit
+2022-05-11 21:55:28:5528 -- boop --     Glass
+2022-05-11 21:55:28:5528 -- boop -- Getting list of players in the room
+2022-05-11 21:55:28:5528 -- boop -- Player name:boop room: 1
+2022-05-11 21:55:28:5528 -- boop -- Player name:n room: 1
+2022-05-11 21:55:28:5528 -- boop -- Players in the room:
+2022-05-11 21:55:28:5528 -- boop --     n
+2022-05-11 21:55:35:5535 -- boop -- p house key
+2022-05-11 21:55:35:5535 -- boop -- Added House Key to your inventory
+2022-05-11 21:55:47:5547 -- boop -- use house key on newport road
+2022-05-11 21:55:47:5547 -- boop -- the door opens
+2022-05-11 21:55:55:5555 -- boop -- move east
+2022-05-11 21:55:55:5555 -- boop -- You can move to these rooms:
+2022-05-11 21:55:55:5555 -- boop -- there are no rooms in this direction
+2022-05-11 21:55:55:5555 -- boop -- Currently in room: Entrance
+2022-05-11 21:55:59:5559 -- boop -- move south
+2022-05-11 21:55:59:5559 -- boop -- You can move to these rooms:
+2022-05-11 21:55:59:5559 -- boop -- 1.  Newport Road
+2022-05-11 21:56:01:561 -- boop -- Currently in room: Newport Road
+2022-05-11 21:56:09:569 -- null -- What is your name?
+2022-05-11 21:56:17:5617 -- null -- What is your password?
+2022-05-11 21:56:18:5618 -- null -- password correct!
+2022-05-11 21:56:18:5618 -- boop -- Registering player...
+2022-05-11 21:56:19:5619 -- boop -- Building the world...
+2022-05-11 21:56:20:5620 -- boop -- Entering the game...
+2022-05-11 21:56:21:5621 -- boop -- 
+2022-05-11 21:56:21:5621 -- boop -- Currently in room: Entrance
+2022-05-11 21:56:25:5625 -- boop -- move south
+2022-05-11 21:56:25:5625 -- boop -- You can move to these rooms:
+2022-05-11 21:56:25:5625 -- boop -- 1.  Newport Road
+2022-05-11 21:56:26:5626 -- boop -- the door is locked
+2022-05-11 21:56:26:5626 -- boop -- Currently in room: Entrance
+2022-05-11 21:57:17:5717 -- boop -- l
+2022-05-11 21:57:17:5717 -- boop -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:57:17:5717 -- boop -- Exits: 
+2022-05-11 21:57:17:5717 -- boop --     west - Living Room
+2022-05-11 21:57:17:5717 -- boop --     north - Floor 1 Hallway
+2022-05-11 21:57:17:5717 -- boop --     up - Floor 2 Landing
+2022-05-11 21:57:17:5717 -- boop --     south - Newport Road
+2022-05-11 21:57:17:5717 -- boop -- Items: 
+2022-05-11 21:57:17:5717 -- boop --     House Key
+2022-05-11 21:57:17:5717 -- boop --     Swordy McSwordface
+2022-05-11 21:57:17:5717 -- boop --     Matilda
+2022-05-11 21:57:17:5717 -- boop --     MedKit
+2022-05-11 21:57:17:5717 -- boop --     Glass
+2022-05-11 21:57:17:5717 -- boop -- Characters in the room:
+2022-05-11 21:57:17:5717 -- boop --     Sarah
+2022-05-11 21:57:17:5717 -- boop -- Getting list of players in the room
+2022-05-11 21:57:17:5717 -- boop -- Player name:boop room: 1
+2022-05-11 21:57:17:5717 -- boop -- Players in the room:
+2022-05-11 21:57:23:5723 -- boop -- attack sarah
+2022-05-11 21:57:23:5723 -- boop -- Player name:boop room: 1
+2022-05-11 21:57:23:5723 -- boop -- attacking NPC
+2022-05-11 21:57:23:5723 -- boop -- attack successful
+2022-05-11 21:57:23:5723 -- boop -- You were hit by Sarah with the Needle
+2022-05-11 21:57:23:5723 -- boop -- sarah has died
+2022-05-11 21:57:23:5723 -- boop -- you are bleeding find a medKit
+2022-05-11 21:57:33:5733 -- boop -- you are bleeding find a medKit
+2022-05-11 21:57:43:5743 -- boop -- you are bleeding find a medKit
+2022-05-11 21:57:43:5743 -- boop -- you are no longer bleeding you have survived
+2022-05-11 21:57:47:5747 -- boop -- inv
+2022-05-11 21:57:47:5747 -- boop -- HP: 14/19
+2022-05-11 21:57:47:5747 -- boop -- Inventory: 
+2022-05-11 21:57:47:5747 -- boop -- You're inventory is empty
+2022-05-11 21:58:40:5840 -- null -- What is your name?
+2022-05-11 21:58:45:5845 -- null -- What is your password?
+2022-05-11 21:58:47:5847 -- null -- password correct!
+2022-05-11 21:58:47:5847 -- l -- Registering player...
+2022-05-11 21:58:48:5848 -- l -- Building the world...
+2022-05-11 21:58:49:5849 -- l -- Entering the game...
+2022-05-11 21:58:50:5850 -- l -- 
+2022-05-11 21:58:50:5850 -- l -- Currently in room: Entrance
+2022-05-11 21:58:51:5851 -- l -- l
+2022-05-11 21:58:51:5851 -- l -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:58:51:5851 -- l -- Exits: 
+2022-05-11 21:58:51:5851 -- l --     west - Living Room
+2022-05-11 21:58:51:5851 -- l --     north - Floor 1 Hallway
+2022-05-11 21:58:51:5851 -- l --     up - Floor 2 Landing
+2022-05-11 21:58:51:5851 -- l --     south - Newport Road
+2022-05-11 21:58:51:5851 -- l -- Items: 
+2022-05-11 21:58:51:5851 -- l --     House Key
+2022-05-11 21:58:51:5851 -- l --     Swordy McSwordface
+2022-05-11 21:58:51:5851 -- l --     Matilda
+2022-05-11 21:58:51:5851 -- l --     MedKit
+2022-05-11 21:58:51:5851 -- l --     Glass
+2022-05-11 21:58:51:5851 -- l --     Needle
+2022-05-11 21:58:51:5851 -- l -- Getting list of players in the room
+2022-05-11 21:58:51:5851 -- l -- Player name:boop room: 1
+2022-05-11 21:58:51:5851 -- l -- Player name:l room: 1
+2022-05-11 21:58:51:5851 -- l -- Players in the room:
+2022-05-11 21:58:51:5851 -- l --     boop
+2022-05-11 21:58:58:5858 -- boop -- l
+2022-05-11 21:58:58:5858 -- boop -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:58:58:5858 -- boop -- Exits: 
+2022-05-11 21:58:58:5858 -- boop --     west - Living Room
+2022-05-11 21:58:58:5858 -- boop --     north - Floor 1 Hallway
+2022-05-11 21:58:58:5858 -- boop --     up - Floor 2 Landing
+2022-05-11 21:58:58:5858 -- boop --     south - Newport Road
+2022-05-11 21:58:58:5858 -- boop -- Items: 
+2022-05-11 21:58:58:5858 -- boop --     House Key
+2022-05-11 21:58:58:5858 -- boop --     Swordy McSwordface
+2022-05-11 21:58:58:5858 -- boop --     Matilda
+2022-05-11 21:58:58:5858 -- boop --     MedKit
+2022-05-11 21:58:58:5858 -- boop --     Glass
+2022-05-11 21:58:58:5858 -- boop --     Needle
+2022-05-11 21:58:58:5858 -- boop -- Getting list of players in the room
+2022-05-11 21:58:58:5858 -- boop -- Player name:boop room: 1
+2022-05-11 21:58:58:5858 -- boop -- Player name:l room: 1
+2022-05-11 21:58:58:5858 -- boop -- Players in the room:
+2022-05-11 21:58:58:5858 -- boop --     l
+2022-05-11 21:59:02:592 -- boop -- l
+2022-05-11 21:59:02:592 -- boop -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 21:59:02:592 -- boop -- Exits: 
+2022-05-11 21:59:02:592 -- boop --     west - Living Room
+2022-05-11 21:59:02:592 -- boop --     north - Floor 1 Hallway
+2022-05-11 21:59:02:592 -- boop --     up - Floor 2 Landing
+2022-05-11 21:59:02:592 -- boop --     south - Newport Road
+2022-05-11 21:59:02:592 -- boop -- Items: 
+2022-05-11 21:59:02:592 -- boop --     House Key
+2022-05-11 21:59:02:592 -- boop --     Swordy McSwordface
+2022-05-11 21:59:02:592 -- boop --     Matilda
+2022-05-11 21:59:02:592 -- boop --     MedKit
+2022-05-11 21:59:02:592 -- boop --     Glass
+2022-05-11 21:59:02:592 -- boop --     Needle
+2022-05-11 21:59:02:592 -- boop -- Getting list of players in the room
+2022-05-11 21:59:02:592 -- boop -- Player name:boop room: 1
+2022-05-11 21:59:02:592 -- boop -- Players in the room:
+2022-05-11 21:59:33:5933 -- boop -- help
+2022-05-11 21:59:33:5933 -- boop -- move (direction on compass) move to that place then once it asks for input again type one of the street names the console just showed you
+2022-05-11 21:59:33:5933 -- boop -- look to see your current surroundings and where you can go
+2022-05-11 21:59:33:5933 -- boop -- pickup (insert item name here) to pickup an item
+2022-05-11 21:59:33:5933 -- boop -- drop (insert item name here) to drop an item
+2022-05-11 21:59:33:5933 -- boop -- talk to (insert things.NPC name here) to talk to an things.NPC 
+2022-05-11 21:59:33:5933 -- boop -- inv to look at your inventory and HPf
+2022-05-11 21:59:33:5933 -- boop -- use (insert item name here) on (insert name of thing you'd like to use item on here) to use an item
+2022-05-11 21:59:33:5933 -- boop -- Attack (insert NPC name here) with (insert Item name here) to attack a Npc/Player
+2022-05-11 21:59:33:5933 -- boop -- for attacking you may attack with or without an item
+2022-05-11 21:59:33:5933 -- boop -- about to see credits of this game
+2022-05-11 21:59:33:5933 -- boop -- all of the above excluding inv can be shortened to their first letter e.g (m east or p house key)
+2022-05-11 21:59:33:5933 -- boop -- have fun!!!
+2022-05-11 21:59:33:5933 -- boop -- Traveller
+2022-05-11 21:59:33:5933 -- boop -- A multi user dungeon experience 
+2022-05-11 21:59:33:5933 -- boop -- Made For AQA CompSci NEA
+2022-05-11 21:59:33:5933 -- boop -- coded by Nathaniel Tomsett
+2022-05-11 21:59:33:5933 -- boop -- 
+thanks for playing 
+2022-05-11 21:59:33:5933 -- boop -- I'm sorry, I don't recognise that
+2022-05-11 21:59:40:5940 -- boop -- about
+2022-05-11 21:59:40:5940 -- boop -- Traveller
+2022-05-11 21:59:40:5940 -- boop -- A multi user dungeon experience 
+2022-05-11 21:59:40:5940 -- boop -- Made For AQA CompSci NEA
+2022-05-11 21:59:40:5940 -- boop -- coded by Nathaniel Tomsett
+2022-05-11 21:59:40:5940 -- boop -- 
+thanks for playing 
+2022-05-11 21:59:40:5940 -- boop -- I'm sorry, I don't recognise that
+2022-05-11 22:00:01:01 -- null -- What is your name?
+2022-05-11 22:00:02:02 -- null -- What is your password?
+2022-05-11 22:00:03:03 -- null -- password correct!
+2022-05-11 22:00:03:03 -- l -- Registering player...
+2022-05-11 22:00:04:04 -- l -- Building the world...
+2022-05-11 22:00:05:05 -- l -- Entering the game...
+2022-05-11 22:00:06:06 -- l -- 
+2022-05-11 22:00:06:06 -- l -- Currently in room: Entrance
+2022-05-11 22:00:11:011 -- l -- talkt to boopo
+2022-05-11 22:00:11:011 -- l -- I'm sorry, I don't recognise that
+2022-05-11 22:00:14:014 -- l -- talk to boop
+2022-05-11 22:00:14:014 -- l -- Getting list of players in the room
+2022-05-11 22:00:14:014 -- l -- Player name:boop room: 1
+2022-05-11 22:00:14:014 -- l -- Player name:l room: 1
+2022-05-11 22:00:14:014 -- l -- this persons not in the room with you
+2022-05-11 22:00:17:017 -- l -- l
+2022-05-11 22:00:17:017 -- l -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 22:00:17:017 -- l -- Exits: 
+2022-05-11 22:00:17:017 -- l --     west - Living Room
+2022-05-11 22:00:17:017 -- l --     north - Floor 1 Hallway
+2022-05-11 22:00:17:017 -- l --     up - Floor 2 Landing
+2022-05-11 22:00:17:017 -- l --     south - Newport Road
+2022-05-11 22:00:17:017 -- l -- Items: 
+2022-05-11 22:00:17:017 -- l --     House Key
+2022-05-11 22:00:17:017 -- l --     Swordy McSwordface
+2022-05-11 22:00:17:017 -- l --     Matilda
+2022-05-11 22:00:17:017 -- l --     MedKit
+2022-05-11 22:00:17:017 -- l --     Glass
+2022-05-11 22:00:17:017 -- l --     Needle
+2022-05-11 22:00:17:017 -- l -- Getting list of players in the room
+2022-05-11 22:00:17:017 -- l -- Player name:boop room: 1
+2022-05-11 22:00:17:017 -- l -- Player name:l room: 1
+2022-05-11 22:00:17:017 -- l -- Players in the room:
+2022-05-11 22:00:17:017 -- l --     boop
+2022-05-11 22:00:21:021 -- l -- t boop
+2022-05-11 22:00:21:021 -- l -- Getting list of players in the room
+2022-05-11 22:00:21:021 -- l -- Player name:boop room: 1
+2022-05-11 22:00:21:021 -- l -- Player name:l room: 1
+2022-05-11 22:00:21:021 -- l -- you've connected to boop
+2022-05-11 22:00:24:024 -- boop -- message from l: hi
+2022-05-11 22:00:30:030 -- boop -- talk l
+2022-05-11 22:00:30:030 -- boop -- Getting list of players in the room
+2022-05-11 22:00:30:030 -- boop -- Player name:boop room: 1
+2022-05-11 22:00:30:030 -- boop -- Player name:l room: 1
+2022-05-11 22:00:30:030 -- boop -- you've connected to l
+2022-05-11 22:00:32:032 -- l -- message from boop: hello
+2022-05-11 22:01:05:15 -- null -- What is your name?
+2022-05-11 22:01:07:17 -- null -- What is your password?
+2022-05-11 22:01:08:18 -- null -- password correct!
+2022-05-11 22:01:08:18 -- n -- Registering player...
+2022-05-11 22:01:09:19 -- n -- Building the world...
+2022-05-11 22:01:10:110 -- n -- Entering the game...
+2022-05-11 22:01:11:111 -- n -- 
+2022-05-11 22:01:11:111 -- n -- Currently in room: Entrance
+2022-05-11 22:01:16:116 -- n -- l
+2022-05-11 22:01:16:116 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 22:01:16:116 -- n -- Exits: 
+2022-05-11 22:01:16:116 -- n --     west - Living Room
+2022-05-11 22:01:16:116 -- n --     north - Floor 1 Hallway
+2022-05-11 22:01:16:116 -- n --     up - Floor 2 Landing
+2022-05-11 22:01:16:116 -- n --     south - Newport Road
+2022-05-11 22:01:16:116 -- n -- Items: 
+2022-05-11 22:01:16:116 -- n --     House Key
+2022-05-11 22:01:16:116 -- n --     Swordy McSwordface
+2022-05-11 22:01:16:116 -- n --     Matilda
+2022-05-11 22:01:16:116 -- n --     MedKit
+2022-05-11 22:01:16:116 -- n --     Glass
+2022-05-11 22:01:16:116 -- n -- Characters in the room:
+2022-05-11 22:01:16:116 -- n --     Sarah
+2022-05-11 22:01:16:116 -- n -- Getting list of players in the room
+2022-05-11 22:01:16:116 -- n -- Player name:n room: 1
+2022-05-11 22:01:16:116 -- n -- Players in the room:
+2022-05-11 22:01:21:121 -- n -- p medkit
+2022-05-11 22:01:21:121 -- n -- Added MedKit to your inventory
+2022-05-11 22:01:23:123 -- n -- inv
+2022-05-11 22:01:23:123 -- n -- HP: 14/14
+2022-05-11 22:01:23:123 -- n -- Inventory: 
+2022-05-11 22:01:23:123 -- n -- name: MedKit
+2022-05-11 22:01:25:125 -- n -- l
+2022-05-11 22:01:25:125 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 22:01:25:125 -- n -- Exits: 
+2022-05-11 22:01:25:125 -- n --     west - Living Room
+2022-05-11 22:01:25:125 -- n --     north - Floor 1 Hallway
+2022-05-11 22:01:25:125 -- n --     up - Floor 2 Landing
+2022-05-11 22:01:25:125 -- n --     south - Newport Road
+2022-05-11 22:01:25:125 -- n -- Items: 
+2022-05-11 22:01:25:125 -- n --     House Key
+2022-05-11 22:01:25:125 -- n --     Swordy McSwordface
+2022-05-11 22:01:25:125 -- n --     Matilda
+2022-05-11 22:01:25:125 -- n --     Glass
+2022-05-11 22:01:25:125 -- n -- Characters in the room:
+2022-05-11 22:01:25:125 -- n --     Sarah
+2022-05-11 22:01:25:125 -- n --     Mabel
+2022-05-11 22:01:25:125 -- n -- Getting list of players in the room
+2022-05-11 22:01:25:125 -- n -- Player name:n room: 1
+2022-05-11 22:01:25:125 -- n -- Players in the room:
+2022-05-11 22:01:34:134 -- n -- d medkit
+2022-05-11 22:01:34:134 -- n -- yay you dropped an item well done
+2022-05-11 22:01:36:136 -- n -- inv
+2022-05-11 22:01:36:136 -- n -- HP: 14/14
+2022-05-11 22:01:36:136 -- n -- Inventory: 
+2022-05-11 22:01:36:136 -- n -- You're inventory is empty
+2022-05-11 22:01:38:138 -- n -- l
+2022-05-11 22:01:38:138 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 22:01:38:138 -- n -- Exits: 
+2022-05-11 22:01:38:138 -- n --     west - Living Room
+2022-05-11 22:01:38:138 -- n --     north - Floor 1 Hallway
+2022-05-11 22:01:38:138 -- n --     up - Floor 2 Landing
+2022-05-11 22:01:38:138 -- n --     south - Newport Road
+2022-05-11 22:01:38:138 -- n -- Items: 
+2022-05-11 22:01:38:138 -- n --     House Key
+2022-05-11 22:01:38:138 -- n --     Swordy McSwordface
+2022-05-11 22:01:38:138 -- n --     Matilda
+2022-05-11 22:01:38:138 -- n --     Glass
+2022-05-11 22:01:38:138 -- n --     MedKit
+2022-05-11 22:01:38:138 -- n -- Characters in the room:
+2022-05-11 22:01:38:138 -- n --     Sarah
+2022-05-11 22:01:38:138 -- n --     Mabel
+2022-05-11 22:01:38:138 -- n -- Getting list of players in the room
+2022-05-11 22:01:38:138 -- n -- Player name:n room: 1
+2022-05-11 22:01:38:138 -- n -- Players in the room:
+2022-05-11 22:01:51:151 -- n -- inv
+2022-05-11 22:01:51:151 -- n -- HP: 14/14
+2022-05-11 22:01:51:151 -- n -- Inventory: 
+2022-05-11 22:01:51:151 -- n -- You're inventory is empty
+2022-05-11 22:02:11:211 -- n -- p swordy mcswordface
+2022-05-11 22:02:11:211 -- n -- Added Swordy McSwordface to your inventory
+2022-05-11 22:02:21:221 -- n -- attack n with swordy mcswordface
+2022-05-11 22:02:21:221 -- n -- Player name:n room: 1
+2022-05-11 22:02:21:221 -- n -- attacking playerentities.Player@4b8859d8
+2022-05-11 22:02:21:221 -- n -- attack successful
+2022-05-11 22:02:21:221 -- n -- you have been paralysed you can no longer move or do anything enjoy
+2022-05-11 22:02:21:221 -- n -- you have been attacked by n
+2022-05-11 22:02:27:227 -- n -- move north
+2022-05-11 22:02:27:227 -- n -- *your mind tells you you are paralysed and all struggle is in vain*
+2022-05-11 22:02:33:233 -- n -- pickup medkit
+2022-05-11 22:02:33:233 -- n -- *your mind tells you you are paralysed and all struggle is in vain*
+2022-05-11 22:02:37:237 -- n -- about
+2022-05-11 22:02:37:237 -- n -- *your mind tells you you are paralysed and all struggle is in vain*
+2022-05-11 22:02:53:253 -- n -- p glass
+2022-05-11 22:02:53:253 -- n -- *your mind tells you you are paralysed and all struggle is in vain*
+2022-05-11 22:03:00:30 -- null -- What is your name?
+2022-05-11 22:03:01:31 -- null -- What is your password?
+2022-05-11 22:03:03:33 -- null -- password correct!
+2022-05-11 22:03:03:33 -- n -- Registering player...
+2022-05-11 22:03:04:34 -- n -- Building the world...
+2022-05-11 22:03:05:35 -- n -- Entering the game...
+2022-05-11 22:03:06:36 -- n -- 
+2022-05-11 22:03:06:36 -- n -- Currently in room: Entrance
+2022-05-11 22:03:09:39 -- n -- p glass
+2022-05-11 22:03:09:39 -- n -- Added Glass to your inventory
+2022-05-11 22:03:14:314 -- n -- attack n with glass
+2022-05-11 22:03:14:314 -- n -- Player name:n room: 1
+2022-05-11 22:03:14:314 -- n -- attacking playerentities.Player@6a540600
+2022-05-11 22:03:14:314 -- n -- attack successful
+2022-05-11 22:03:14:314 -- n -- the glass shatters over n's head
+2022-05-11 22:03:14:314 -- n -- you are bleeding find a medKit
+2022-05-11 22:03:14:314 -- n -- you have been attacked by n
+2022-05-11 22:03:19:319 -- n -- inv
+2022-05-11 22:03:19:319 -- n -- HP: 3/12
+2022-05-11 22:03:19:319 -- n -- Inventory: 
+2022-05-11 22:03:19:319 -- n -- You're inventory is empty
+2022-05-11 22:03:22:322 -- n -- l
+2022-05-11 22:03:22:322 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 22:03:22:322 -- n -- Exits: 
+2022-05-11 22:03:22:322 -- n --     west - Living Room
+2022-05-11 22:03:22:322 -- n --     north - Floor 1 Hallway
+2022-05-11 22:03:22:322 -- n --     up - Floor 2 Landing
+2022-05-11 22:03:22:322 -- n --     south - Newport Road
+2022-05-11 22:03:22:322 -- n -- Items: 
+2022-05-11 22:03:22:322 -- n --     House Key
+2022-05-11 22:03:22:322 -- n --     Swordy McSwordface
+2022-05-11 22:03:22:322 -- n --     Matilda
+2022-05-11 22:03:22:322 -- n --     MedKit
+2022-05-11 22:03:22:322 -- n -- Characters in the room:
+2022-05-11 22:03:22:322 -- n --     Mabel
+2022-05-11 22:03:22:322 -- n -- Getting list of players in the room
+2022-05-11 22:03:22:322 -- n -- Player name:n room: 1
+2022-05-11 22:03:22:322 -- n -- Players in the room:
+2022-05-11 22:03:24:324 -- n -- you are bleeding find a medKit
+2022-05-11 22:03:28:328 -- n -- inv
+2022-05-11 22:03:28:328 -- n -- HP: 2/12
+2022-05-11 22:03:28:328 -- n -- Inventory: 
+2022-05-11 22:03:28:328 -- n -- You're inventory is empty
+2022-05-11 22:03:34:334 -- n -- you are bleeding find a medKit
+2022-05-11 22:03:40:340 -- n -- inv
+2022-05-11 22:03:40:340 -- n -- HP: 1/12
+2022-05-11 22:03:40:340 -- n -- Inventory: 
+2022-05-11 22:03:40:340 -- n -- You're inventory is empty
+2022-05-11 22:03:42:342 -- n -- 
+2022-05-11 22:03:42:342 -- n -- I'm sorry, I don't recognise that
+2022-05-11 22:03:44:344 -- n -- you just died due to your own stupidity well done here's a gold sticker
+2022-05-11 22:04:23:423 -- null -- What is your name?
+2022-05-11 22:04:25:425 -- null -- What is your password?
+2022-05-11 22:04:26:426 -- null -- password correct!
+2022-05-11 22:04:26:426 -- n -- Registering player...
+2022-05-11 22:04:27:427 -- n -- Building the world...
+2022-05-11 22:04:28:428 -- n -- Entering the game...
+2022-05-11 22:04:29:429 -- n -- 
+2022-05-11 22:04:29:429 -- n -- Currently in room: Entrance
+2022-05-11 22:04:32:432 -- n -- move smush
+2022-05-11 22:04:32:432 -- n -- You can move to these rooms:
+2022-05-11 22:04:32:432 -- n -- there are no rooms in this direction
+2022-05-11 22:04:32:432 -- n -- Currently in room: Entrance
+2022-05-11 22:04:51:451 -- n -- move s
+2022-05-11 22:04:51:451 -- n -- You can move to these rooms:
+2022-05-11 22:04:51:451 -- n -- 1.  Newport Road
+2022-05-11 22:05:00:50 -- n -- not a valid number
+2022-05-11 22:05:00:50 -- n -- Currently in room: Entrance
+2022-05-11 22:05:06:56 -- n -- move smush
+2022-05-11 22:05:06:56 -- n -- You can move to these rooms:
+2022-05-11 22:05:06:56 -- n -- there are no rooms in this direction
+2022-05-11 22:05:06:56 -- n -- Currently in room: Entrance
+2022-05-11 22:05:11:511 -- n -- move sasefe
+2022-05-11 22:05:11:511 -- n -- You can move to these rooms:
+2022-05-11 22:05:11:511 -- n -- there are no rooms in this direction
+2022-05-11 22:05:11:511 -- n -- Currently in room: Entrance
+2022-05-11 22:05:15:515 -- n -- move sl
+2022-05-11 22:05:15:515 -- n -- You can move to these rooms:
+2022-05-11 22:05:15:515 -- n -- there are no rooms in this direction
+2022-05-11 22:05:15:515 -- n -- Currently in room: Entrance
+2022-05-11 22:05:19:519 -- n -- sn
+2022-05-11 22:05:19:519 -- n -- I'm sorry, I don't recognise that
+2022-05-11 22:05:28:528 -- n -- use smush
+2022-05-11 22:05:28:528 -- n -- this item is not in your inventory
+2022-05-11 22:05:44:544 -- n -- attack smush
+2022-05-11 22:05:44:544 -- n -- Player name:n room: 1
+2022-05-11 22:05:44:544 -- n -- attacking NPC
+2022-05-11 22:05:44:544 -- n -- could not find a player of that name
+2022-05-11 22:05:51:551 -- n -- pickup smush
+2022-05-11 22:05:51:551 -- n -- item not found!
+2022-05-11 22:05:59:559 -- n -- l
+2022-05-11 22:05:59:559 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 22:05:59:559 -- n -- Exits: 
+2022-05-11 22:05:59:559 -- n --     west - Living Room
+2022-05-11 22:05:59:559 -- n --     north - Floor 1 Hallway
+2022-05-11 22:05:59:559 -- n --     up - Floor 2 Landing
+2022-05-11 22:05:59:559 -- n --     south - Newport Road
+2022-05-11 22:05:59:559 -- n -- Items: 
+2022-05-11 22:05:59:559 -- n --     House Key
+2022-05-11 22:05:59:559 -- n --     Swordy McSwordface
+2022-05-11 22:05:59:559 -- n --     Matilda
+2022-05-11 22:05:59:559 -- n --     MedKit
+2022-05-11 22:05:59:559 -- n --     Glass
+2022-05-11 22:05:59:559 -- n -- Getting list of players in the room
+2022-05-11 22:05:59:559 -- n -- Player name:n room: 1
+2022-05-11 22:05:59:559 -- n -- Players in the room:
+2022-05-11 22:06:05:65 -- n -- drop glass
+2022-05-11 22:06:05:65 -- n -- you don't have that item at the moment
+2022-05-11 22:06:21:621 -- n -- boop smush
+2022-05-11 22:06:21:621 -- n -- I'm sorry, I don't recognise that
+2022-05-11 22:06:29:629 -- n -- move north
+2022-05-11 22:06:29:629 -- n -- You can move to these rooms:
+2022-05-11 22:06:29:629 -- n -- 1.  Floor 1 Hallway
+2022-05-11 22:06:33:633 -- n -- the room doesn't exist
+2022-05-11 22:06:33:633 -- n -- Currently in room: Entrance
+2022-05-11 22:06:45:645 -- n -- l
+2022-05-11 22:06:45:645 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 22:06:45:645 -- n -- Exits: 
+2022-05-11 22:06:45:645 -- n --     west - Living Room
+2022-05-11 22:06:45:645 -- n --     north - Floor 1 Hallway
+2022-05-11 22:06:45:645 -- n --     up - Floor 2 Landing
+2022-05-11 22:06:45:645 -- n --     south - Newport Road
+2022-05-11 22:06:45:645 -- n -- Items: 
+2022-05-11 22:06:45:645 -- n --     House Key
+2022-05-11 22:06:45:645 -- n --     Swordy McSwordface
+2022-05-11 22:06:45:645 -- n --     Matilda
+2022-05-11 22:06:45:645 -- n --     MedKit
+2022-05-11 22:06:45:645 -- n --     Glass
+2022-05-11 22:06:45:645 -- n -- Characters in the room:
+2022-05-11 22:06:45:645 -- n --     James
+2022-05-11 22:06:45:645 -- n -- Getting list of players in the room
+2022-05-11 22:06:45:645 -- n -- Player name:n room: 1
+2022-05-11 22:06:45:645 -- n -- Players in the room:
+2022-05-11 22:06:52:652 -- n -- l
+2022-05-11 22:06:52:652 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 22:06:52:652 -- n -- Exits: 
+2022-05-11 22:06:52:652 -- n --     west - Living Room
+2022-05-11 22:06:52:652 -- n --     north - Floor 1 Hallway
+2022-05-11 22:06:52:652 -- n --     up - Floor 2 Landing
+2022-05-11 22:06:52:652 -- n --     south - Newport Road
+2022-05-11 22:06:52:652 -- n -- Items: 
+2022-05-11 22:06:52:652 -- n --     House Key
+2022-05-11 22:06:52:652 -- n --     Swordy McSwordface
+2022-05-11 22:06:52:652 -- n --     Matilda
+2022-05-11 22:06:52:652 -- n --     MedKit
+2022-05-11 22:06:52:652 -- n --     Glass
+2022-05-11 22:06:52:652 -- n -- Characters in the room:
+2022-05-11 22:06:52:652 -- n --     James
+2022-05-11 22:06:52:652 -- n -- Getting list of players in the room
+2022-05-11 22:06:52:652 -- n -- Player name:n room: 1
+2022-05-11 22:06:52:652 -- n -- Players in the room:
+2022-05-11 22:06:53:653 -- n -- l
+2022-05-11 22:06:53:653 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 22:06:53:653 -- n -- Exits: 
+2022-05-11 22:06:53:653 -- n --     west - Living Room
+2022-05-11 22:06:53:653 -- n --     north - Floor 1 Hallway
+2022-05-11 22:06:53:653 -- n --     up - Floor 2 Landing
+2022-05-11 22:06:53:653 -- n --     south - Newport Road
+2022-05-11 22:06:53:653 -- n -- Items: 
+2022-05-11 22:06:53:653 -- n --     House Key
+2022-05-11 22:06:53:653 -- n --     Swordy McSwordface
+2022-05-11 22:06:53:653 -- n --     Matilda
+2022-05-11 22:06:53:653 -- n --     MedKit
+2022-05-11 22:06:53:653 -- n --     Glass
+2022-05-11 22:06:53:653 -- n -- Characters in the room:
+2022-05-11 22:06:53:653 -- n --     James
+2022-05-11 22:06:53:653 -- n -- Getting list of players in the room
+2022-05-11 22:06:53:653 -- n -- Player name:n room: 1
+2022-05-11 22:06:53:653 -- n -- Players in the room:
+2022-05-11 22:06:59:659 -- n -- l
+2022-05-11 22:06:59:659 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 22:06:59:659 -- n -- Exits: 
+2022-05-11 22:06:59:659 -- n --     west - Living Room
+2022-05-11 22:06:59:659 -- n --     north - Floor 1 Hallway
+2022-05-11 22:06:59:659 -- n --     up - Floor 2 Landing
+2022-05-11 22:06:59:659 -- n --     south - Newport Road
+2022-05-11 22:06:59:659 -- n -- Items: 
+2022-05-11 22:06:59:659 -- n --     House Key
+2022-05-11 22:06:59:659 -- n --     Swordy McSwordface
+2022-05-11 22:06:59:659 -- n --     Matilda
+2022-05-11 22:06:59:659 -- n --     MedKit
+2022-05-11 22:06:59:659 -- n --     Glass
+2022-05-11 22:06:59:659 -- n -- Characters in the room:
+2022-05-11 22:06:59:659 -- n --     James
+2022-05-11 22:06:59:659 -- n -- Getting list of players in the room
+2022-05-11 22:06:59:659 -- n -- Player name:n room: 1
+2022-05-11 22:06:59:659 -- n -- Players in the room:
+2022-05-11 22:07:05:75 -- n -- l
+2022-05-11 22:07:05:75 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 22:07:05:75 -- n -- Exits: 
+2022-05-11 22:07:05:75 -- n --     west - Living Room
+2022-05-11 22:07:05:75 -- n --     north - Floor 1 Hallway
+2022-05-11 22:07:05:75 -- n --     up - Floor 2 Landing
+2022-05-11 22:07:05:75 -- n --     south - Newport Road
+2022-05-11 22:07:05:75 -- n -- Items: 
+2022-05-11 22:07:05:75 -- n --     House Key
+2022-05-11 22:07:05:75 -- n --     Swordy McSwordface
+2022-05-11 22:07:05:75 -- n --     Matilda
+2022-05-11 22:07:05:75 -- n --     MedKit
+2022-05-11 22:07:05:75 -- n --     Glass
+2022-05-11 22:07:05:75 -- n -- Characters in the room:
+2022-05-11 22:07:05:75 -- n --     James
+2022-05-11 22:07:05:75 -- n --     Mabel
+2022-05-11 22:07:05:75 -- n -- Getting list of players in the room
+2022-05-11 22:07:05:75 -- n -- Player name:n room: 1
+2022-05-11 22:07:05:75 -- n -- Players in the room:
+2022-05-11 22:07:16:716 -- n -- l
+2022-05-11 22:07:16:716 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 22:07:16:716 -- n -- Exits: 
+2022-05-11 22:07:16:716 -- n --     west - Living Room
+2022-05-11 22:07:16:716 -- n --     north - Floor 1 Hallway
+2022-05-11 22:07:16:716 -- n --     up - Floor 2 Landing
+2022-05-11 22:07:16:716 -- n --     south - Newport Road
+2022-05-11 22:07:16:716 -- n -- Items: 
+2022-05-11 22:07:16:716 -- n --     House Key
+2022-05-11 22:07:16:716 -- n --     Swordy McSwordface
+2022-05-11 22:07:16:716 -- n --     Matilda
+2022-05-11 22:07:16:716 -- n --     MedKit
+2022-05-11 22:07:16:716 -- n --     Glass
+2022-05-11 22:07:16:716 -- n -- Characters in the room:
+2022-05-11 22:07:16:716 -- n --     James
+2022-05-11 22:07:16:716 -- n -- Getting list of players in the room
+2022-05-11 22:07:16:716 -- n -- Player name:n room: 1
+2022-05-11 22:07:16:716 -- n -- Players in the room:
+2022-05-11 22:07:18:718 -- n -- m n
+2022-05-11 22:07:18:718 -- n -- You can move to these rooms:
+2022-05-11 22:07:18:718 -- n -- 1.  Floor 1 Hallway
+2022-05-11 22:07:20:720 -- n -- Currently in room: Floor 1 Hallway
+2022-05-11 22:07:21:721 -- n -- l
+2022-05-11 22:07:21:721 -- n -- A conjoining short hallway with dog toys and boxes full of mysterious things that seem to be just out of reach
+2022-05-11 22:07:21:721 -- n -- Exits: 
+2022-05-11 22:07:21:721 -- n --     west - Dining Room
+2022-05-11 22:07:21:721 -- n --     north - Kitchen
+2022-05-11 22:07:21:721 -- n --     south - Entrance
+2022-05-11 22:07:21:721 -- n -- Getting list of players in the room
+2022-05-11 22:07:21:721 -- n -- Player name:n room: 3
+2022-05-11 22:07:21:721 -- n -- Players in the room:
+2022-05-11 22:07:24:724 -- n -- m s 
+2022-05-11 22:07:24:724 -- n -- You can move to these rooms:
+2022-05-11 22:07:24:724 -- n -- 1.  Entrance
+2022-05-11 22:07:25:725 -- n -- You were hit by James with the golf club
+2022-05-11 22:07:25:725 -- n -- Currently in room: Entrance
+2022-05-11 22:07:26:726 -- n -- l
+2022-05-11 22:07:26:726 -- n -- A short hallway with a shoe cabinet on your right adn stairs leading further up into the house
+2022-05-11 22:07:26:726 -- n -- Exits: 
+2022-05-11 22:07:26:726 -- n --     west - Living Room
+2022-05-11 22:07:26:726 -- n --     north - Floor 1 Hallway
+2022-05-11 22:07:26:726 -- n --     up - Floor 2 Landing
+2022-05-11 22:07:26:726 -- n --     south - Newport Road
+2022-05-11 22:07:26:726 -- n -- Items: 
+2022-05-11 22:07:26:726 -- n --     House Key
+2022-05-11 22:07:26:726 -- n --     Swordy McSwordface
+2022-05-11 22:07:26:726 -- n --     Matilda
+2022-05-11 22:07:26:726 -- n --     MedKit
+2022-05-11 22:07:26:726 -- n --     Glass
+2022-05-11 22:07:26:726 -- n -- Characters in the room:
+2022-05-11 22:07:26:726 -- n --     James
+2022-05-11 22:07:26:726 -- n --     Mabel
+2022-05-11 22:07:26:726 -- n -- Getting list of players in the room
+2022-05-11 22:07:26:726 -- n -- Player name:n room: 1
+2022-05-11 22:07:26:726 -- n -- Players in the room:
+2022-05-11 22:26:16:2616 -- null -- What is your name?
+2022-05-11 22:28:15:2815 -- null -- What is your password?
+2022-05-11 22:28:16:2816 -- null -- password correct!
+2022-05-11 22:28:16:2816 -- n -- Registering player...
+2022-05-11 22:28:17:2817 -- n -- Building the world...
+2022-05-11 22:28:18:2818 -- n -- Entering the game...
+2022-05-11 22:28:19:2819 -- n -- 
+2022-05-11 22:28:19:2819 -- n -- Currently in room: Entrance

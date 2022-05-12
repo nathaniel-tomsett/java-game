@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "name": "Fraser",
+    "name": "James",
     "moveChance": 0,
     "currentRoomID": "2",
     "HP": 15,
@@ -25,7 +25,7 @@
   },
   {
     "id" : "2" ,
-    "name" :  "Bella" ,
+    "name" :  "Sarah" ,
     "moveChance" :  50,
     "currentRoomID" : "2",
     "HP" : 3,

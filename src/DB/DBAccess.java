@@ -4,7 +4,10 @@ package DB;
 
 import java.sql.*;
 
-
+/**
+ * DBAccess - this class is for setting up a database to store player credentials in so players can login and register to the game
+ * it has functions that use SQL to Interact with the database for finding players and adding players
+ */
 
 public class DBAccess {
 

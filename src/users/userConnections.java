@@ -31,6 +31,10 @@ public class userConnections {
         this.dbAccess = new DBAccess();
     }
 
+    /**
+     *this function creates a server socket  that is then set to listen for a connection request
+     * on the set port of whatever Machine its being run off of
+     */
     public void startListeningForUsers() {
         new Thread() {
             public void run() {
@@ -63,6 +67,12 @@ public class userConnections {
         }
     }
 
+    /**
+     * when a request to connect does occur this code is then ran
+     * this code deals with getting the player Logged in/ registered
+     * once the user has validated themselves they are put onto stream then
+     * @param stream this is the UserStream given to the player once they connect their unique thread that handles all their interactions with the world
+     */
     private void newUserConnectionRequest(UserStream stream) throws SQLException {
         List<NPC> NPCList = world.getNPCList();
         List<Player> PlayerList = new ArrayList<>();
